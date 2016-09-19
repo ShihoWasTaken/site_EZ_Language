@@ -1,0 +1,11 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Static:homepage }
+
+app_about:
+    path:     /about
+    defaults: { _controller: AppBundle:Static:about }
+
+app_contact:
+    path:     /contact
+    defaults: { _controller: AppBundle:Static:contact }
