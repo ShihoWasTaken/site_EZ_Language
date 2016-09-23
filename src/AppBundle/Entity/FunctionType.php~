@@ -1,0 +1,30 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Function_type")
+ */
+class FunctionType
+{
+
+    public function __construct()
+    {
+    }
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(name="Name", type="string", length=8)
+     */
+    private $name;
+
+}

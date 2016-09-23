@@ -20,35 +20,189 @@ class Argument
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(name="Id_fonction", type="integer")
      */
-    protected $id_fonction;
+    private $id_fonction;
 
     /**
     * @ORM\OneToOne(targetEntity="FunctionType")
      */
-    protected $type;
+    private $type;
 
     /**
      * @ORM\Column(name="Name", type="string", length=16)
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\Column(name="French_description", type="text")
      */
-    protected $french_description;
+    private $french_description;
 
     /**
      * @ORM\Column(name="English_description", type="text")
      */
-    protected $english_description;
+    private $english_description;
 
     /**
      * @ORM\Column(name="IsReturn", type="boolean")
      */
-    protected $isReturn;
+    private $isReturn;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idFonction
+     *
+     * @param integer $idFonction
+     *
+     * @return Argument
+     */
+    public function setIdFonction($idFonction)
+    {
+        $this->id_fonction = $idFonction;
+
+        return $this;
+    }
+
+    /**
+     * Get idFonction
+     *
+     * @return integer
+     */
+    public function getIdFonction()
+    {
+        return $this->id_fonction;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Argument
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set frenchDescription
+     *
+     * @param string $frenchDescription
+     *
+     * @return Argument
+     */
+    public function setFrenchDescription($frenchDescription)
+    {
+        $this->french_description = $frenchDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get frenchDescription
+     *
+     * @return string
+     */
+    public function getFrenchDescription()
+    {
+        return $this->french_description;
+    }
+
+    /**
+     * Set englishDescription
+     *
+     * @param string $englishDescription
+     *
+     * @return Argument
+     */
+    public function setEnglishDescription($englishDescription)
+    {
+        $this->english_description = $englishDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get englishDescription
+     *
+     * @return string
+     */
+    public function getEnglishDescription()
+    {
+        return $this->english_description;
+    }
+
+    /**
+     * Set isReturn
+     *
+     * @param boolean $isReturn
+     *
+     * @return Argument
+     */
+    public function setIsReturn($isReturn)
+    {
+        $this->isReturn = $isReturn;
+
+        return $this;
+    }
+
+    /**
+     * Get isReturn
+     *
+     * @return boolean
+     */
+    public function getIsReturn()
+    {
+        return $this->isReturn;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \AppBundle\Entity\FunctionType $type
+     *
+     * @return Argument
+     */
+    public function setType(\AppBundle\Entity\FunctionType $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \AppBundle\Entity\FunctionType
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 }

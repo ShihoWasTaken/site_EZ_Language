@@ -20,15 +20,73 @@ class Category
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(name="French_label", type="text")
      */
-    protected $french_label;
+    private $french_label;
 
     /**
      * @ORM\Column(name="English_label", type="text")
      */
-    protected $english_label;
+    private $english_label;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set frenchLabel
+     *
+     * @param string $frenchLabel
+     *
+     * @return Category
+     */
+    public function setFrenchLabel($frenchLabel)
+    {
+        $this->french_label = $frenchLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get frenchLabel
+     *
+     * @return string
+     */
+    public function getFrenchLabel()
+    {
+        return $this->french_label;
+    }
+
+    /**
+     * Set englishLabel
+     *
+     * @param string $englishLabel
+     *
+     * @return Category
+     */
+    public function setEnglishLabel($englishLabel)
+    {
+        $this->english_label = $englishLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get englishLabel
+     *
+     * @return string
+     */
+    public function getEnglishLabel()
+    {
+        return $this->english_label;
+    }
 }
