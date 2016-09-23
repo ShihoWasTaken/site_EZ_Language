@@ -10,9 +10,11 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User extends BaseUser {
+class User extends BaseUser
+{
 
-    public function __construct() {
+    public function __construct() 
+    {
         parent::__construct();
     }
 
@@ -28,7 +30,8 @@ class User extends BaseUser {
      *
      * @return integer
      */
-    public function getId() {
+    public function getId() 
+    {
         return $this->id;
     }
 
