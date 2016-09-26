@@ -165,7 +165,7 @@ class Argument
      *
      * @return Argument
      */
-    public function setIsReturn($isReturn)
+    public function setReturn($isReturn)
     {
         $this->isReturn = $isReturn;
 
@@ -177,7 +177,7 @@ class Argument
      *
      * @return boolean
      */
-    public function getIsReturn()
+    public function isReturn()
     {
         return $this->isReturn;
     }
