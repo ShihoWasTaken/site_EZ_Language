@@ -13,5 +13,4 @@
 /app/config/parameters_prod.yml
 /app/config/deploy.rb
 /.sonar/*
-/.idea/*
 /web/config.php
