@@ -2,6 +2,17 @@
  * Enzo Chevallier, création : 21/09/2016
  */
 
+/* SELECT */
+::selection{
+  background-color: #ffbb00;
+  color: white;
+}
+
+/* Firefox */
+::-moz-selection {
+  background-color: #ffbb00;
+  color: white;
+}
 
 /* NAVBAR */
 .navbar-default {
@@ -19,12 +30,36 @@
     font-size: 14px;
 }
 
-.navbar-nav > li > a:hover {
-    color: #e2ba32;
+/* NAVBAR - TITLE */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffbb00;
+  background-color: transparent;
 }
 
-.active {
-    color: #e2ba32;
+/* NAVBAR - BRANDS */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffbb00;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #ffbb00;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #ffbb00;
+}
+
+/* NAVBAR - SEARCH */
+
+.search {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: green;
 }
 
 /* BUTTONS */
@@ -32,6 +67,7 @@
     border-radius: 0px;
     text-transform: uppercase;
 }
+
 
 /* TEXTBOX */
 input[type=text] {
@@ -47,4 +83,12 @@ input[type=text] {
     -o-box-shadow: 0px 8px 10px 0px #656565;
     box-shadow: 0px 8px 10px 0px #656565;
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=10);
+}
+
+/* HREF */
+a {
+    color: #ffbb00;
+}
+a:hover, a:focus {
+    text-decoration: none;
 }
