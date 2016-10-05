@@ -1,0 +1,50 @@
+/*
+ * Enzo Chevallier, création : 21/09/2016
+ */
+
+
+/* NAVBAR */
+.navbar-default {
+    background-color: #2d2d2d;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.navbar-nav > li > a:hover {
+    color: #e2ba32;
+}
+
+.active {
+    color: #e2ba32;
+}
+
+/* BUTTONS */
+.btn {
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+/* TEXTBOX */
+input[type=text] {
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    background-color: #eaeaea;
+    /* Ombre */
+    -moz-box-shadow: 0px 8px 10px 0px #656565;
+    -webkit-box-shadow: 0px 8px 10px 0px #656565;
+    -o-box-shadow: 0px 8px 10px 0px #656565;
+    box-shadow: 0px 8px 10px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=10);
+}
