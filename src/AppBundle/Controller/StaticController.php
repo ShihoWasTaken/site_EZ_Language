@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Contact;
-use AppBundle\Form\ContactType;
+use AppBundle\Form\Type\ContactType;
 
 class StaticController extends Controller
 {
