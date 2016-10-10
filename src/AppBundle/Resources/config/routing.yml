@@ -11,4 +11,4 @@ app_about:
 app_contact:
     path:     /contact
     defaults: { _controller: AppBundle:Static:contact }
-    methods: GET
+    methods: GET|POST
