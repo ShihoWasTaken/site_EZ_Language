@@ -34,7 +34,8 @@ class StaticController extends Controller
                     ->setSubject('Contact enquiry from symblog')
                     ->setFrom('ezlanguage.contact@gmail.com')
                     ->setTo('kenny.guiougou@gmail.com')
-                    ->setBody($this->renderView('AppBundle:Mail:contact.html.twig', array('contact' => $contact)));
+                    ->setBody($this->renderView('AppBundle:Mail:contact.html.twig', array('contact' => $contact))
+                        ,'text/html');
                 $this->get('mailer')->send($message);
 
 
