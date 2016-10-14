@@ -67,7 +67,9 @@ class StaticController extends Controller
             throw new NotFoundHttpException('Sorry not existing!');
         }
         */
-        return new Response($request->request->get('searchbar'));
+        $searchtext = $request->request->get('searchbar');
+        if($searchtext === '')
+        return new Response($searchtext);
         return $this->redirectToRoute('app_function', array('functionId' => $functionId));
     }
 

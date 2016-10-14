@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="EZFunction")
+ * @ORM\HasLifecycleCallbacks()
  */
 class EZFunction
 {
@@ -48,19 +49,24 @@ class EZFunction
     private $user;
 
     /**
-     * @ORM\Column(name="LastUpdateDate", type="datetime")
+     * @ORM\Column(name="updatedAt", type="datetime")
      * */
-    private $lastUpdateDate;
+    private $updatedAt;
 
     /**
-     * @ORM\PrePersist
-     * @ORM\PreUpdate
-     */
-    public function updateLastUpdateDate()
+    * @ORM\PrePersist
+    */
+    public function prePersistEvent()
     {
-        $date = date_create();
-        date_timestamp_set($date, time());
-        $this->lastUpdateDate = $date;
+        $this->updatedAt = new \DateTime();
+    }
+
+    /**
+    * @ORM\PreUpdate
+    */
+    public function preUpdateEvent()
+    {
+        $this->updatedAt = new \DateTime();
     }
 
     /**
@@ -146,27 +152,27 @@ class EZFunction
     }
 
     /**
-     * Set lastUpdateDate
+     * Set updatedAt
      *
-     * @param \DateTime $lastUpdateDate
+     * @param \DateTime $updatedAt
      *
      * @return EZFunction
      */
-    public function setLastUpdateDate($lastUpdateDate)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->lastUpdateDate = $lastUpdateDate;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Get lastUpdateDate
+     * Get updatedAt
      *
      * @return \DateTime
      */
-    public function getLastUpdateDate()
+    public function getUpdatedAt()
     {
-        return $this->lastUpdateDate;
+        return $this->updatedAt;
     }
 
     /**
