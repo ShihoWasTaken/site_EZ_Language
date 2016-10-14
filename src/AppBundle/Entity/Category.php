@@ -33,6 +33,11 @@ class Category
     private $english_label;
 
     /**
+     * @ORM\OneToMany(targetEntity="EZFunction", mappedBy="category")
+     */
+    private $EZFunctions;
+
+    /**
      * Get id
      *
      * @return integer
@@ -88,5 +93,39 @@ class Category
     public function getEnglishLabel()
     {
         return $this->english_label;
+    }
+
+    /**
+     * Add EZFunction
+     *
+     * @param \AppBundle\Entity\EZFunction $EZFunction
+     *
+     * @return Category
+     */
+    public function addEZFunction(\AppBundle\Entity\EZFunction $EZFunction)
+    {
+        $this->EZFunctions[] = $EZFunction;
+
+        return $this;
+    }
+
+    /**
+     * Remove EZFunction
+     *
+     * @param \AppBundle\Entity\EZFunction $EZFunction
+     */
+    public function removeEZFunction(\AppBundle\Entity\EZFunction $EZFunction)
+    {
+        $this->EZFunctions->removeElement($EZFunction);
+    }
+
+    /**
+     * Get eZFunctions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEZFunctions()
+    {
+        return $this->EZFunctions;
     }
 }

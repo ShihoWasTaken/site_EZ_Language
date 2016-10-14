@@ -39,18 +39,21 @@ class EZFunction
     private $english_label;
 
     /**
-    * @ORM\OneToOne(targetEntity="Category")
-    */
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="EZFunctions")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
     private $category;
 
     /**
-    * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
     /**
      * @ORM\Column(name="updatedAt", type="datetime")
-     * */
+     * 
+     */
     private $updatedAt;
 
     /**

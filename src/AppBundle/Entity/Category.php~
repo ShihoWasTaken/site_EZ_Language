@@ -31,4 +31,67 @@ class Category
      * @ORM\Column(name="English_label", type="text")
      */
     private $english_label;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Feature", mappedBy="product")
+     */
+    private $EZFunctions;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set frenchLabel
+     *
+     * @param string $frenchLabel
+     *
+     * @return Category
+     */
+    public function setFrenchLabel($frenchLabel)
+    {
+        $this->french_label = $frenchLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get frenchLabel
+     *
+     * @return string
+     */
+    public function getFrenchLabel()
+    {
+        return $this->french_label;
+    }
+
+    /**
+     * Set englishLabel
+     *
+     * @param string $englishLabel
+     *
+     * @return Category
+     */
+    public function setEnglishLabel($englishLabel)
+    {
+        $this->english_label = $englishLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get englishLabel
+     *
+     * @return string
+     */
+    public function getEnglishLabel()
+    {
+        return $this->english_label;
+    }
 }
