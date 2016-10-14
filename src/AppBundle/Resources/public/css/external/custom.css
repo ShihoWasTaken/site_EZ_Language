@@ -58,8 +58,6 @@
 /* NAVBAR - SEARCH */
 #divSearch {
     width: 50px;
-    padding-top: 7px;
-    padding-bottom: 7px;
 }
 #txtSearch {
     width: 50px;
@@ -109,9 +107,12 @@ a:hover, a:focus {
     /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
 }
 
-#form-login {
+#form-login, #form-register {
     background-color: #EAEAEA;
     margin-top: 10%;
+}
+#form-register {
+    padding-bottom: 10px;
 }
 
 /* ALERT */
