@@ -2,11 +2,12 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	{% stylesheets '@bootstrap_css' output='css/bootstrap.css' %}
+
+	{% stylesheets filter='cssrewrite' '@bootstrap_css' output='css/bootstrap.css' %}
 		<link rel="stylesheet" href="{{ asset_url }}" />
 	{% endstylesheets %}
 	{% stylesheets 'bundles/app/css/*' filter='cssrewrite, uglifycss' %}
-	<link rel="stylesheet" href="{{ asset_url }}" />
+		<link rel="stylesheet" href="{{ asset_url }}" />
 	{% endstylesheets %}
 	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}" />
 {% endblock stylesheets %}

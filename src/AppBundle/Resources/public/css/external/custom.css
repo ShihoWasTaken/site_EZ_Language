@@ -55,11 +55,21 @@
 }
 
 /* NAVBAR - SEARCH */
-
-.search {
-    display: inline-block;
-    vertical-align: middle;
-    background-color: green;
+#divSearch {
+    width: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#txtSearch {
+    width: 50px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#txtSearch:focus {
+   width: 200px;
+   border: 0px;
 }
 
 /* BUTTONS */
