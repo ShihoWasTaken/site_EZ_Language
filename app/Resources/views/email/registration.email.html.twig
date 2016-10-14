@@ -1,15 +1,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block subject %}
-    {% autoescape 'html' %}
-        {{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl})|raw }}
-    {% endautoescape %}
+    {{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl})|escape }}
 {% endblock %}
 
 {% block body_html %}
     {{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
-    Merci de votre inscription
-    voici vos données
-    user
-    password
 {% endblock %}
