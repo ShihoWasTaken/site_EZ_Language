@@ -12,3 +12,8 @@ app_contact:
     path:     /contact
     defaults: { _controller: AppBundle:Static:contact }
     methods: GET|POST
+
+app_profile:
+    path:     /profile/{userId}
+    defaults: { _controller: AppBundle:Static:profile }
+    methods: GET
