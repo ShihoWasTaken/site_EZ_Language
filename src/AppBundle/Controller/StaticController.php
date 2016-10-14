@@ -7,8 +7,6 @@ use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class StaticController extends Controller
 {
@@ -57,19 +55,7 @@ class StaticController extends Controller
 
     public function searchbarAction(Request $request)
     {
-        /*
-        $api = $this->container->get('app.lolapi');
-        // On doit traiter le nom du summoner
-        $summonerName =  str_replace(' ', '', strtolower($request->request->get('searchbar-summonerName')));
-        $summoner = $api->getSummonerByNames(array($summonerName));
-        if(isset($summoner['errorCode']))
-        {
-            throw new NotFoundHttpException('Sorry not existing!');
-        }
-        */
         $searchtext = $request->request->get('searchbar');
-        if($searchtext === '')
-        return new Response($searchtext);
         return $this->redirectToRoute('app_function', array('functionId' => $functionId));
     }
 
