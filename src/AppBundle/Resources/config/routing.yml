@@ -13,7 +13,17 @@ app_contact:
     defaults: { _controller: AppBundle:Static:contact }
     methods: GET|POST
 
+app_search:
+    path:     /search
+    defaults: { _controller: AppBundle:Static:searchbar }
+    methods: POST
+
 app_profile:
     path:     /profile/{userId}
     defaults: { _controller: AppBundle:Static:profile }
+    methods: GET
+
+app_function:
+    path:     /function/{functionId}
+    defaults: { _controller: AppBundle:Static:function }
     methods: GET
