@@ -19,6 +19,7 @@
     background-color: #2d2d2d;
     border-radius: 0px;
     text-transform: uppercase;
+    z-index: 150;
 }
 
 .navbar-nav > li > a {
@@ -66,6 +67,7 @@
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
+    /* text-transform: uppercase; */
 }
 #txtSearch:focus {
    width: 200px;
@@ -82,7 +84,6 @@
 /* TEXTBOX */
 input[type=text] {
     border-radius: 0px;
-    text-transform: uppercase;
 }
 
 .jumbotron {
@@ -101,4 +102,24 @@ a {
 }
 a:hover, a:focus {
     text-decoration: none;
+}
+
+/* LOGIN */
+.wrapper_login {
+    /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
+}
+
+#form-login {
+    background-color: #EAEAEA;
+    margin-top: 10%;
+}
+
+/* ALERT */
+.alert {
+    border-radius: 0px;
+}
+
+/* GENERALS */
+.right {
+    float: right;
 }
