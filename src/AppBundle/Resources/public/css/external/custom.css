@@ -111,6 +111,9 @@ a:hover, a:focus {
     background-color: #EAEAEA;
     margin-top: 10%;
 }
+#form-register {
+    padding-bottom: 10px;
+}
 
 /* ALERT */
 .alert {
