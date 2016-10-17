@@ -36,7 +36,7 @@ class Page
     /**
      * @ORM\Column(name="English_text", type="text")
      */
-    private $english_test;
+    private $english_text;
 
     /**
     * @ORM\OneToOne(targetEntity="User")
@@ -118,27 +118,27 @@ class Page
     }
 
     /**
-     * Set englishTest
+     * Set englishText
      *
-     * @param string $englishTest
+     * @param string $englishText
      *
      * @return Page
      */
-    public function setEnglishTest($englishTest)
+    public function setEnglishText($englishText)
     {
-        $this->english_test = $englishTest;
+        $this->english_text = $englishText;
 
         return $this;
     }
 
     /**
-     * Get englishTest
+     * Get englishText
      *
      * @return string
      */
-    public function getEnglishTest()
+    public function getEnglishText()
     {
-        return $this->english_test;
+        return $this->english_text;
     }
 
     /**

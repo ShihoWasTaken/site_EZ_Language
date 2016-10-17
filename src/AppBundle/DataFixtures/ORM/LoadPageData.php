@@ -33,7 +33,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             
             //Create Page Home
             $page = new Page();
-            $page->setEnglishTest("[ENGLISH]" . $faker->text(400));
+            $page->setEnglishText("[ENGLISH]" . $faker->text(400));
             $page->setFrenchText("[FRANCAIS]" . $faker->text(400));
             $page->setName("HOME");
             $page->setUser($this->getReference('user'.rand(0, 9)));
@@ -43,7 +43,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             
             //Create Page Contact
             $pageContact = new Page();
-            $pageContact->setEnglishTest("[ENGLISH]" . $faker->text(400));
+            $pageContact->setEnglishText("[ENGLISH]" . $faker->text(400));
             $pageContact->setFrenchText("[FRANCAIS]" . $faker->text(400));
             $pageContact->setName("CONTACT");
             $pageContact->setUser($this->getReference('user'.rand(0, 9)));
@@ -57,6 +57,6 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
 	
 	public function getOrder()
 	{
-		return 4;
+            return 4;
 	}
 }
