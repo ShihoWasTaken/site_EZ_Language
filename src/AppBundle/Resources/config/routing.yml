@@ -27,3 +27,15 @@ app_function:
     path:     /function/{functionId}
     defaults: { _controller: AppBundle:Static:function }
     methods: GET
+
+app_pageList:
+    path:     /page/list
+    defaults: { _controller: AppBundle:Page:list }
+    methods: GET
+    
+app_pageEdit:
+    path:     /page/edit/{id}
+    defaults: { _controller: AppBundle:Page:edit }
+    methods: GET|POST
+    requirements:
+        id:  \d+
