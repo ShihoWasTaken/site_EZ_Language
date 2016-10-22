@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ page.id }}</td>
                 <td>{{ page.name }}</td>
-                <td><a href="{{ path('app_pageEdit', {'id': page.id } ) }}" class="glyphicon glyphicon-pencil"></a></td>
+                <td><a href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}" class="glyphicon glyphicon-pencil"></a></td>
             </tr>
             {% endfor %}
         </tbody>

@@ -28,13 +28,13 @@ app_function:
     defaults: { _controller: AppBundle:Static:function }
     methods: GET
 
-app_pageList:
-    path:     /page/list
+app_admin_pageList:
+    path:     /admin/page/
     defaults: { _controller: AppBundle:Page:list }
     methods: GET
     
-app_pageEdit:
-    path:     /page/edit/{id}
+app_admin_pageEdit:
+    path:     /admin/page/{id}/edit
     defaults: { _controller: AppBundle:Page:edit }
     methods: GET|POST
     requirements:
