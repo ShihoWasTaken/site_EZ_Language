@@ -1,0 +1,22 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+    
+    <h1>Form Update Page</h1>
+
+    <form action="{{ path('app_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.french_text) }}
+        {{ form_row(form.english_text) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+        
+{% endblock content %}

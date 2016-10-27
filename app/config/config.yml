@@ -127,5 +127,5 @@ fos_js_routing:
 
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, es, de, it]
+    locales: [en, fr]
     strategy: prefix_except_default

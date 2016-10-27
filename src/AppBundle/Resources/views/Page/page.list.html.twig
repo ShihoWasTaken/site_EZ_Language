@@ -1,0 +1,29 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+
+    <h1>List Page</h1>
+    
+    <table class="table  table-bordered">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+            <tr>
+                <td>{{ page.id }}</td>
+                <td>{{ page.name }}</td>
+                <td><a href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}" class="glyphicon glyphicon-pencil"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

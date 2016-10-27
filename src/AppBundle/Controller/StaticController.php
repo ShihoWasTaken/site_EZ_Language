@@ -12,7 +12,21 @@ class StaticController extends Controller
 {
     public function homepageAction()
     {
-		return $this->render('AppBundle:Static:homepage.html.twig');
+      
+        $lang  = $this->get('request')->getLocale();
+        
+        //Load Page "Home"
+        $em    = $this->getDoctrine()->getManager();
+        $page  = $em->getRepository('AppBundle:Page')->findOneById(1);
+        $text  = '';
+        if ($page !== null) {
+            $text = $lang === 'en' ? $page->getEnglishText() : $page->getFrenchText();
+        }
+
+
+        return $this->render('AppBundle:Static:homepage.html.twig', array(
+            'text' => $text
+        ));
     }
 
     public function aboutAction()
