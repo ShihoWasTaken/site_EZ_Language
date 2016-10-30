@@ -53,11 +53,7 @@ class StaticController extends Controller
     }
 
 
-    public function searchbarAction(Request $request)
-    {
-        $searchtext = $request->request->get('searchbar');
-        return $this->redirectToRoute('app_function', array('functionId' => $functionId));
-    }
+   
 
     public function profileAction($userId)
     {

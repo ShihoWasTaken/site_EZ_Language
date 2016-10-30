@@ -1,0 +1,26 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div clas="row">
+			Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
+		</div>
+		
+		{# display result #}
+		<ul>
+			{% for element in pagination %}
+			<li>
+				<h2>{{ element.name }}</h2>
+				<p>{{  app.request.locale == 'en' ? element.englishLabel : element.frenchLabel }}</p>
+			</li>
+			{% endfor %}
+		</ul>
+		{# display navigation #}
+		<div class="navigation">
+			{{ knp_pagination_render(pagination) }}
+		</div>
+	</div>
+{% endblock content %}
