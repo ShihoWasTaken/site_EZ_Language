@@ -7,7 +7,7 @@
     
     <h1>Form Update Page</h1>
 
-    <form action="{{ path('app_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
+    <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
         {{ form_errors(form) }}
 
         {{ form_row(form.name) }}
