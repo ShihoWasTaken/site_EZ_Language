@@ -49,6 +49,7 @@ class PageController extends Controller {
         if ($form->isValid()) {
             //Save $page;
             $em->flush();
+            return $this->redirectToRoute('app_admin_pageList');
         }
 
         return $this->render('AppBundle:Page:page.edit.html.twig', array(
