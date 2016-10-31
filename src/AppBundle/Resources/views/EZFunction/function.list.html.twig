@@ -1,0 +1,29 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+
+    <h1>List Function</h1>
+    
+    <table class="table  table-bordered">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for function in functions %}
+            <tr>
+                <td>{{ function.id }}</td>
+                <td>{{ function.name }}</td>
+                <td><a href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}" class="glyphicon glyphicon-pencil"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

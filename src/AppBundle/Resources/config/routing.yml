@@ -39,3 +39,15 @@ app_admin_pageEdit:
     methods: GET|POST
     requirements:
         id: \d+
+
+app_admin_functionList:
+    path:     /admin/function/
+    defaults: { _controller: AppBundle:EZFunction:list }
+    methods: GET
+
+app_admin_functionEdit:
+    path:     /admin/function/{id}/edit
+    defaults: { _controller: AppBundle:EZFunction:edit }
+    methods: GET|POST
+    requirements:
+        id: \d+
