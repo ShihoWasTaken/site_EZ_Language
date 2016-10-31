@@ -24,11 +24,13 @@ class Argument
 
     /**
      * @ORM\ManyToOne(targetEntity="EZFunction")
+     * @ORM\JoinColumn(name="cezfunction_id", referencedColumnName="id")
      */
     private $EZFunction;
 
     /**
-    *  @ORM\ManyToOne(targetEntity="FunctionType")
+    * @ORM\ManyToOne(targetEntity="FunctionType")
+    * @ORM\JoinColumn(name="functiontype_id", referencedColumnName="id")
      */
     private $type;
 
