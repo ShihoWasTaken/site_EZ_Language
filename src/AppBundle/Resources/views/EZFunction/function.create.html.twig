@@ -9,10 +9,25 @@
 
     <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
 
-        {{ form_rest(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.french_description) }}
+        {{ form_row(form.english_description) }}
+        {{ form_row(form.french_html) }}
+        {{ form_row(form.english_html) }}
+        {{ form_row(form.category) }}
+
+        <h3>Argument</h3>
+        <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
+        </ul>
 
         <input type="submit" value="Submit" />
     </form>
 
-
 {% endblock content %}
+
+{% block javascripts_body %}
+{{ parent() }}
+
+<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/js/add_argument.js') }}"></script>
+
+{% endblock javascripts_body %}
