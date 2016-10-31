@@ -50,6 +50,9 @@ assetic:
         uglifyjs:
           bin: /usr/local/bin/uglifyjs
     assets:
+      jquery_js:
+        inputs:
+        - '@AppBundle/Resources/public/js/external/jquery-2.2.3.min.js'
       bootstrap_js:
         inputs:
         - '@AppBundle/Resources/public/js/external/jquery-2.2.3.min.js'
