@@ -55,6 +55,11 @@ class EZFunction
     private $category;
 
     /**
+    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction")
+    */
+    private $arguments;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -282,5 +287,39 @@ class EZFunction
     public function getEnglishDescription()
     {
         return $this->english_description;
+    }
+
+    /**
+     * Add argument
+     *
+     * @param \AppBundle\Entity\Argument $argument
+     *
+     * @return EZFunction
+     */
+    public function addArgument(\AppBundle\Entity\Argument $argument)
+    {
+        $this->arguments[] = $argument;
+
+        return $this;
+    }
+
+    /**
+     * Remove argument
+     *
+     * @param \AppBundle\Entity\Argument $argument
+     */
+    public function removeArgument(\AppBundle\Entity\Argument $argument)
+    {
+        $this->arguments->removeElement($argument);
+    }
+
+    /**
+     * Get arguments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArguments()
+    {
+        return $this->arguments;
     }
 }
