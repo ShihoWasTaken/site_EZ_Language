@@ -21,6 +21,34 @@ class EZFunctionController extends Controller {
         ));
     }
 
+
+    /**
+     * Show Function
+     * 
+     * @param int $id => ID Page
+     * @return 
+     */
+    public function showAction($id) {
+
+        //Get Page by Id
+        $em         = $this->getDoctrine()->getManager();
+        $function   = $em->getRepository('AppBundle:EZFunction')->findOneById($id);
+
+        // Page exist
+        if (!$function) {
+            throw $this->createNotFoundException(
+                    '[Function] No found for id ' . $id
+            );
+        }
+
+        $lang = $this->get('request')->getLocale();
+
+        return $this->render('AppBundle:EZFunction:function.show.html.twig', array(
+                    'function'      => $function,
+                    'language'      => $lang
+        ));
+    }
+
     /**
      * Edit Function
      * 

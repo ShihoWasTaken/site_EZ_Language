@@ -23,11 +23,6 @@ app_profile:
     defaults: { _controller: AppBundle:Static:profile }
     methods: GET
 
-app_function:
-    path:     /function/{functionId}
-    defaults: { _controller: AppBundle:Static:function }
-    methods: GET
-
 app_admin_pageList:
     path:     /admin/page/
     defaults: { _controller: AppBundle:Page:list }
@@ -56,3 +51,10 @@ app_admin_functionCreate:
     path:     /admin/function/create
     defaults: { _controller: AppBundle:EZFunction:create }
     methods: GET|POST
+
+app_functionShow:
+    path:     /function/{id}
+    defaults: { _controller: AppBundle:EZFunction:show }
+    methods: GET|POST
+    requirements:
+        id: \d+
