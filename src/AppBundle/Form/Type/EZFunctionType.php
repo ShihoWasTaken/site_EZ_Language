@@ -3,8 +3,11 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use AppBundle\Form\Type\ArgumentType;
+use AppBundle\Form\Type\CategoryType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class EZFunctionType extends AbstractType
 {
@@ -17,7 +20,16 @@ class EZFunctionType extends AbstractType
                 ->add('french_description')
                 ->add('english_description')
                 ->add('french_html')
-                ->add('english_html');
+                ->add('english_html')
+                ->add('arguments', "collection", array(
+                    'type' => ArgumentType::class,
+                    'allow_add'    => true,
+                    'allow_delete' => true,
+                ))                
+                ->add('category', EntityType::class, array(
+                    'class' => 'AppBundle:Category',
+                    'choice_label' => ($options["locale"] === "en" ? 'english_label' : 'french_label')
+                ));
     }
     
     /**
@@ -26,7 +38,8 @@ class EZFunctionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\EZFunction'
+            'data_class' => 'AppBundle\Entity\EZFunction',
+            'locale'     => 'en'
         ));
     }
 
