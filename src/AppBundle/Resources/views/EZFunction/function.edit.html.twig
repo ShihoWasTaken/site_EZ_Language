@@ -9,8 +9,8 @@
 
     <form action="{{ path('app_admin_functionEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
-        {{ form(form) }}
         {{ form_widget(form) }}
+        {{ form_rest(form) }}
 
         <input type="submit" value="Submit" />
     </form>
