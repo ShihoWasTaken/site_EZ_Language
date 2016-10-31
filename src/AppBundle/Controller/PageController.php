@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\Page;
 use AppBundle\Form\Type\PageType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,6 +48,7 @@ class PageController extends Controller {
         if ($form->isValid()) {
             //Save $page;
             $em->flush();
+            return $this->redirectToRoute('app_admin_pageList');
         }
 
         return $this->render('AppBundle:Page:page.edit.html.twig', array(

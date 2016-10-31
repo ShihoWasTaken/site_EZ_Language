@@ -38,4 +38,4 @@ app_admin_pageEdit:
     defaults: { _controller: AppBundle:Page:edit }
     methods: GET|POST
     requirements:
-        id:  \d+
+        id: \d+
