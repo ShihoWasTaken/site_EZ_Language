@@ -40,13 +40,13 @@ class FunctionTypeData extends AbstractFixture implements OrderedFixtureInterfac
 		$manager->persist($function);
 		$this->addReference('functionType1', $function);
 		$manager->persist($function1);
-		$this->addReference('functionType1', $function1);
+		$this->addReference('functionType2', $function1);
 		$manager->persist($function2);
-		$this->addReference('functionType1', $function2);
+		$this->addReference('functionType3', $function2);
 		$manager->persist($function3);
-		$this->addReference('functionType1', $function3);
+		$this->addReference('functionType4', $function3);
 		$manager->persist($function4);
-		$this->addReference('functionType1', $function4);
+		$this->addReference('functionType5', $function4);
 
 		$manager->flush();
 	}
