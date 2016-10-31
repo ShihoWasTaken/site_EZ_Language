@@ -51,3 +51,8 @@ app_admin_functionEdit:
     methods: GET|POST
     requirements:
         id: \d+
+
+app_admin_functionCreate:
+    path:     /admin/function/create
+    defaults: { _controller: AppBundle:EZFunction:create }
+    methods: GET|POST

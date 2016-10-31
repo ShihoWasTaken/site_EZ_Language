@@ -5,12 +5,11 @@
 
 {% block content %}
     
-    <h1>Form Update Function</h1>
+    <h1>Create Function</h1>
 
-    <form action="{{ path('app_admin_functionEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
+    <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
 
         {{ form(form) }}
-        {{ form_widget(form) }}
 
         <input type="submit" value="Submit" />
     </form>
