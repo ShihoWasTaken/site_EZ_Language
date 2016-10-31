@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\EZFunctionType;
+use AppBundle\Entity\EZFunction;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -40,7 +41,9 @@ class EZFunctionController extends Controller {
         }
 
         //Create form
-        $form = $this->get('form.factory')->create(new EZFunctionType, $function);
+        $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
+            'locale' => $this->get('request')->getLocale())
+        );
         
         $request = $this->getRequest();
         $form->handleRequest($request);
@@ -52,6 +55,38 @@ class EZFunctionController extends Controller {
         }
 
         return $this->render('AppBundle:EZFunction:function.edit.html.twig', array(
+                    'form' => $form->createView()
+        ));
+    }
+
+
+    /**
+     * Create Function
+     * 
+     * @return 
+     */
+    public function createAction() {
+
+        $function = new EZFunction();
+
+        //Create form
+        $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
+            'locale' => $this->get('request')->getLocale())
+        );
+        
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            //Save $function;
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($function);
+
+            $em->flush();
+            return $this->redirectToRoute('app_admin_functionList');
+        }
+
+        return $this->render('AppBundle:EZFunction:function.create.html.twig', array(
                     'form' => $form->createView()
         ));
     }
