@@ -23,12 +23,12 @@ class Argument
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="EZFunction", inversedBy="arguments")
+     * @ORM\ManyToOne(targetEntity="EZFunction")
      */
     private $EZFunction;
 
     /**
-    * @ORM\OneToOne(targetEntity="FunctionType")
+    *  @ORM\ManyToOne(targetEntity="FunctionType")
      */
     private $type;
 
