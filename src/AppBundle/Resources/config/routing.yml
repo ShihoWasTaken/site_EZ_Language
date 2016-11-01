@@ -52,6 +52,11 @@ app_admin_functionCreate:
     defaults: { _controller: AppBundle:EZFunction:create }
     methods: GET|POST
 
+app_admin_functionRemove:
+    path:     /admin/function/{id}/remove
+    defaults: { _controller: AppBundle:EZFunction:remove }
+    methods: DELETE
+
 app_functionShow:
     path:     /function/{id}
     defaults: { _controller: AppBundle:EZFunction:show }

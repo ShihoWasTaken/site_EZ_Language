@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\EZFunctionType;
 use AppBundle\Entity\EZFunction;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -121,6 +120,30 @@ class EZFunctionController extends Controller {
         return $this->render('AppBundle:EZFunction:function.create.html.twig', array(
                     'form' => $form->createView()
         ));
+    }
+
+    /**
+     * Remove Function
+     * 
+     * @return 
+     */
+    public function removeAction($id) {
+
+        //Get Function by Id
+        $em         = $this->getDoctrine()->getManager();
+        $function   = $em->getRepository('AppBundle:EZFunction')->findOneById($id);
+
+         // Function exist
+        if (!$function) {
+            throw $this->createNotFoundException(
+                    '[Function] No found for id ' . $id
+            );
+        }
+        
+        $em->remove($function);
+        $em->flush();
+
+        return new Response('Delete function', Response::HTTP_OK);
     }
 
 }

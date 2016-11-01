@@ -20,10 +20,33 @@
             <tr>
                 <td>{{ function.id }}</td>
                 <td>{{ function.name }}</td>
-                <td><a href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}" class="glyphicon glyphicon-pencil"></a></td>
+                <td><a class="btn btn-default" href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}"><i class="fa fa-pencil"></i></a>
+                <button class="btn btn-default deleteFunction" data-id="{{ function.id  }}" ><i class="fa fa-times"></i></button></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
 {% endblock content %}
+
+{% block javascripts_body %}
+{{ parent() }}
+
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+
+        $('.deleteFunction').on('click', function(){
+            var self = $(this);
+            $.ajax({
+                url: self.attr('data-id') +"/remove",
+                type: 'DELETE',
+                success: function(result) {
+                    self.parent().parent().remove();
+                }
+            });
+        });
+        
+    });
+</script>
+
+{% endblock javascripts_body %}
