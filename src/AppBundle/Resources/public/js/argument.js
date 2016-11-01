@@ -1,8 +1,5 @@
  var $collectionHolder;
 
-// setup an "add a argument" link
-var $addargumentLink = $('<a href="#" class="add_argument_link">Add a argument</a>');
-var $newLinkLi = $('<li></li>').append($addargumentLink);
 
 jQuery(document).ready(function() {
 
@@ -21,25 +18,43 @@ jQuery(document).ready(function() {
         $collectionHolder.data('index', index + 1); 
 
         // Display the form in the page in an li, before the "Add a tag" link li
-        var $newFormLi = $('<li></li>').append(newForm);
-        $newLinkLi.before($newFormLi);
+        $collectionHolder.append($newLinkLi.append(newForm));
+    }
+
+    function addTagFormDeleteLink($tagFormLi) {
+        var $removeFormA = $('<a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>');
+        $tagFormLi.prepend($removeFormA);
+
+        $removeFormA.on('click', function(e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+
+            // remove the li for the tag form
+            $tagFormLi.remove();
+        });
     }
 
     // Get the ul that holds the collection of arguments
     $collectionHolder = $('ul.arguments');
 
-    // add the "add a argument" anchor and li to the arguments ul
-    $collectionHolder.append($newLinkLi);
+    $collectionHolder.find('li').each(function() {
+        addTagFormDeleteLink($(this));
+    });
+
 
     // count the current form inputs we have (e.g. 2), use that as the new
     // index when inserting a new item (e.g. 2)
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
-    $addargumentLink.on('click', function(e) {
+    $('#add_argument_link').on('click', function(e) {
         // prevent the link from creating a "#" on the URL
         e.preventDefault();
 
+        // setup an "add a argument" link
+        var $newLinkLi = $('<li></li>');
+
         // add a new argument form (see next code block)
         addArgumentForm($collectionHolder, $newLinkLi);
+        addTagFormDeleteLink($newLinkLi);
     });
 });
