@@ -7,6 +7,7 @@ use AppBundle\Form\Type\EZFunctionType;
 use AppBundle\Entity\EZFunction;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class EZFunctionController extends Controller {
 
@@ -30,11 +31,11 @@ class EZFunctionController extends Controller {
      */
     public function showAction($id) {
 
-        //Get Page by Id
+        //Get Function by Id
         $em         = $this->getDoctrine()->getManager();
         $function   = $em->getRepository('AppBundle:EZFunction')->findOneById($id);
 
-        // Page exist
+        // Function exist
         if (!$function) {
             throw $this->createNotFoundException(
                     '[Function] No found for id ' . $id
@@ -57,11 +58,11 @@ class EZFunctionController extends Controller {
      */
     public function editAction($id) {
 
-        //Get Page by Id
+        //Get Function by Id
         $em         = $this->getDoctrine()->getManager();
         $function   = $em->getRepository('AppBundle:EZFunction')->findOneById($id);
 
-        // Page exist
+        // Function exist
         if (!$function) {
             throw $this->createNotFoundException(
                     '[Function] No found for id ' . $id
@@ -75,11 +76,14 @@ class EZFunctionController extends Controller {
         
         $request = $this->getRequest();
         $form->handleRequest($request);
-        
+
         if ($form->isValid()) {
+
             //Save $function;
+            $em->persist($function);
             $em->flush();
-            return $this->redirectToRoute('app_admin_functionList');
+
+            //return $this->redirectToRoute('app_admin_functionList');
         }
 
         return $this->render('AppBundle:EZFunction:function.edit.html.twig', array(

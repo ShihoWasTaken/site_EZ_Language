@@ -55,7 +55,7 @@ class EZFunction
     private $category;
 
     /**
-    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction")
+    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction", cascade={"persist", "remove"}, orphanRemoval=true) 
     */
     private $arguments;
 
@@ -298,6 +298,8 @@ class EZFunction
      */
     public function addArgument(\AppBundle\Entity\Argument $argument)
     {
+        $argument->setEZFunction($this);
+
         $this->arguments[] = $argument;
 
         return $this;

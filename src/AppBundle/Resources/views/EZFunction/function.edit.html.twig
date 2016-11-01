@@ -9,11 +9,32 @@
 
     <form action="{{ path('app_admin_functionEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
-        {{ form_widget(form) }}
-        {{ form_rest(form) }}
+        	
+        {{ form_widget(form._token) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.french_description) }}
+        {{ form_row(form.english_description) }}
+        {{ form_row(form.french_html) }}
+        {{ form_row(form.english_html) }}
+        {{ form_row(form.category) }}
+
+        <h3>Argument</h3>
+        <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
+        <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
+            {% for argument in form.arguments %}
+                <li>{{ form_row(argument) }}</li>
+            {% endfor %}
+        </ul>
 
         <input type="submit" value="Submit" />
     </form>
-
-
+<br><br><br><br><br><br><br><br>
 {% endblock content %}
+
+{% block javascripts_body %}
+{{ parent() }}
+
+<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/js/argument.js') }}"></script>
+
+{% endblock javascripts_body %}
