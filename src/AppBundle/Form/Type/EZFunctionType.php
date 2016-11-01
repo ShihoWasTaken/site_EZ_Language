@@ -25,6 +25,7 @@ class EZFunctionType extends AbstractType
                     'type' => ArgumentType::class,
                     'allow_add'    => true,
                     'allow_delete' => true,
+                    'by_reference' => false,
                 ))                
                 ->add('category', EntityType::class, array(
                     'class' => 'AppBundle:Category',

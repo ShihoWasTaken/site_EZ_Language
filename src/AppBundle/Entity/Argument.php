@@ -23,7 +23,7 @@ class Argument
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="EZFunction")
+     * @ORM\ManyToOne(targetEntity="EZFunction", inversedBy="arguments")
      * @ORM\JoinColumn(name="cezfunction_id", referencedColumnName="id")
      */
     private $EZFunction;
