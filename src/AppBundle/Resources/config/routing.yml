@@ -15,8 +15,8 @@ app_contact:
 
 app_search:
     path:     /search
-    defaults: { _controller: AppBundle:Static:searchbar }
-    methods: POST
+    defaults: { _controller: AppBundle:Search:searchbar }
+    methods: GET
 
 app_profile:
     path:     /profile/{userId}

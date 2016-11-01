@@ -14,4 +14,3 @@
 /app/config/deploy.rb
 /.sonar/*
 /web/config.php
-/nbproject/*

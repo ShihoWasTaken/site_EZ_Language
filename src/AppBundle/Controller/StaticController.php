@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class StaticController extends Controller
@@ -67,11 +66,7 @@ class StaticController extends Controller
     }
 
 
-    public function searchbarAction(Request $request)
-    {
-        $searchtext = $request->request->get('searchbar');
-        return $this->redirectToRoute('app_function', array('functionId' => $functionId));
-    }
+   
 
     public function profileAction($userId)
     {
