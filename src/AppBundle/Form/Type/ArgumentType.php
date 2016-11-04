@@ -3,7 +3,6 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use AppBundle\Form\Type\FunctionTypeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
