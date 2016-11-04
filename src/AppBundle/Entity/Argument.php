@@ -209,30 +209,6 @@ class Argument
     }
 
     /**
-     * Set isReturn
-     *
-     * @param boolean $isReturn
-     *
-     * @return Argument
-     */
-    public function setReturn($isReturn)
-    {
-        $this->isReturn = $isReturn;
-
-        return $this;
-    }
-
-    /**
-     * Get isReturn
-     *
-     * @return boolean
-     */
-    public function IsReturn()
-    {
-        return $this->isReturn;
-    }
-
-    /**
      * Set eZFunction
      *
      * @param \AppBundle\Entity\EZFunction $eZFunction
