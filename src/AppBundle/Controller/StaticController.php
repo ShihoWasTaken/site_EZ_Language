@@ -72,10 +72,5 @@ class StaticController extends Controller
     {
         return new Response('Il faut faire la vue de cette action');
     }
-
-    public function functionAction($functionId)
-    {
-        return new Response('Il faut faire la vue de cette action');
-    }
 }
 

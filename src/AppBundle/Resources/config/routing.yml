@@ -23,11 +23,6 @@ app_profile:
     defaults: { _controller: AppBundle:Static:profile }
     methods: GET
 
-app_function:
-    path:     /function/{functionId}
-    defaults: { _controller: AppBundle:Static:function }
-    methods: GET
-
 app_admin_pageList:
     path:     /admin/page/
     defaults: { _controller: AppBundle:Page:list }
@@ -36,6 +31,35 @@ app_admin_pageList:
 app_admin_pageEdit:
     path:     /admin/page/{id}/edit
     defaults: { _controller: AppBundle:Page:edit }
+    methods: GET|POST
+    requirements:
+        id: \d+
+
+app_admin_functionList:
+    path:     /admin/function/
+    defaults: { _controller: AppBundle:EZFunction:list }
+    methods: GET
+
+app_admin_functionEdit:
+    path:     /admin/function/{id}/edit
+    defaults: { _controller: AppBundle:EZFunction:edit }
+    methods: GET|POST
+    requirements:
+        id: \d+
+
+app_admin_functionCreate:
+    path:     /admin/function/create
+    defaults: { _controller: AppBundle:EZFunction:create }
+    methods: GET|POST
+
+app_admin_functionRemove:
+    path:     /admin/function/{id}/remove
+    defaults: { _controller: AppBundle:EZFunction:remove }
+    methods: DELETE
+
+app_functionShow:
+    path:     /function/{id}
+    defaults: { _controller: AppBundle:EZFunction:show }
     methods: GET|POST
     requirements:
         id: \d+

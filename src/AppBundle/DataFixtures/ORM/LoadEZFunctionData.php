@@ -30,16 +30,16 @@ class LoadEZFunctionData extends AbstractFixture implements OrderedFixtureInterf
     {
         $faker = \Faker\Factory::create();
 
-
-
         for ($i=0; $i<self::MAX_NB_FUNCTIONS; ++$i)
         {
             // On crée un nouvel utilisateur.
             $EZFunction = new EZFunction();
             $EZFunction->setName($faker->text(10));
             $EZFunction->setUser($this->getReference('user'.rand(0, 9)));
-            $EZFunction->setFrenchLabel($faker->text(250));
-            $EZFunction->setEnglishLabel($faker->text(250));
+            $EZFunction->setFrenchDescription($faker->text(100));
+            $EZFunction->setEnglishDescription($faker->text(100));
+            $EZFunction->setEnglishHtml($faker->text(1000));
+            $EZFunction->setFrenchHtml($faker->text(1000));
             $EZFunction->setCategory($this->getReference('category'.rand(0, 9)));
             $manager->persist($EZFunction);
         }                

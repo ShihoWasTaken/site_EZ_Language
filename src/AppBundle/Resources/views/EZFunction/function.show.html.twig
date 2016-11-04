@@ -1,0 +1,23 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+    
+    <h1>Function :  {{ function.name }}</h1>
+
+   <!-- 
+   
+    Il faut jouer avec l'objet function pour afficher toutes les informations sur la fonction 
+    Il y a aussi la variable {{ language }} pour savoir si on affiche en francais ou en anglais
+
+    Sinon pour la mise en page :
+    - 1er block     : Titre
+    - 2eme block    : description
+    - 3eme block    : Arguments (faire un foreach)
+    - 4eme block    : HTML  
+   
+   -->
+
+{% endblock content %}

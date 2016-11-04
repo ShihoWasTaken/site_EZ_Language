@@ -12,6 +12,10 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts_body %}{% endblock %}
+        {% block javascripts_body %}
+            {% javascripts '@jquery_js' output='js/query-min.js'	%}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>

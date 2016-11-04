@@ -32,7 +32,7 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
                 
 		for ($i=0; $i<self::MAX_NB_CATEGORY; ++$i)
 		{
-			// On crée un nouvel utilisateur.
+			// On crée une nouvelle categorie.
 			$category = new Category();
 			$category->setFrenchLabel($faker->text(10));
             $category->setEnglishLabel($faker->text(10));

@@ -29,20 +29,35 @@ class EZFunction
     private $name;
 
     /**
-     * @ORM\Column(name="French_label", type="text")
+     * @ORM\Column(name="French_description", type="text")
      */
-    private $french_label;
+    private $french_description;
 
     /**
-     * @ORM\Column(name="English_label", type="text")
+     * @ORM\Column(name="English_description", type="text")
      */
-    private $english_label;
+    private $english_description;
 
+    /**
+     * @ORM\Column(name="French_html", type="text")
+     */
+    private $french_html;
+
+    /**
+     * @ORM\Column(name="English_html", type="text")
+     */
+    private $english_html;
+    
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="EZFunctions")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction", cascade={"persist", "remove"}, orphanRemoval=true) 
+    */
+    private $arguments;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
@@ -104,54 +119,6 @@ class EZFunction
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set frenchLabel
-     *
-     * @param string $frenchLabel
-     *
-     * @return EZFunction
-     */
-    public function setFrenchLabel($frenchLabel)
-    {
-        $this->french_label = $frenchLabel;
-
-        return $this;
-    }
-
-    /**
-     * Get frenchLabel
-     *
-     * @return string
-     */
-    public function getFrenchLabel()
-    {
-        return $this->french_label;
-    }
-
-    /**
-     * Set englishLabel
-     *
-     * @param string $englishLabel
-     *
-     * @return EZFunction
-     */
-    public function setEnglishLabel($englishLabel)
-    {
-        $this->english_label = $englishLabel;
-
-        return $this;
-    }
-
-    /**
-     * Get englishLabel
-     *
-     * @return string
-     */
-    public function getEnglishLabel()
-    {
-        return $this->english_label;
     }
 
     /**
@@ -224,5 +191,137 @@ class EZFunction
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set frenchHtml
+     *
+     * @param string $frenchHtml
+     *
+     * @return EZFunction
+     */
+    public function setFrenchHtml($frenchHtml)
+    {
+        $this->french_html = $frenchHtml;
+
+        return $this;
+    }
+
+    /**
+     * Get frenchHtml
+     *
+     * @return string
+     */
+    public function getFrenchHtml()
+    {
+        return $this->french_html;
+    }
+
+    /**
+     * Set englishHtml
+     *
+     * @param string $englishHtml
+     *
+     * @return EZFunction
+     */
+    public function setEnglishHtml($englishHtml)
+    {
+        $this->english_html = $englishHtml;
+
+        return $this;
+    }
+
+    /**
+     * Get englishHtml
+     *
+     * @return string
+     */
+    public function getEnglishHtml()
+    {
+        return $this->english_html;
+    }
+
+    /**
+     * Set frenchDescription
+     *
+     * @param string $frenchDescription
+     *
+     * @return EZFunction
+     */
+    public function setFrenchDescription($frenchDescription)
+    {
+        $this->french_description = $frenchDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get frenchDescription
+     *
+     * @return string
+     */
+    public function getFrenchDescription()
+    {
+        return $this->french_description;
+    }
+
+    /**
+     * Set englishDescription
+     *
+     * @param string $englishDescription
+     *
+     * @return EZFunction
+     */
+    public function setEnglishDescription($englishDescription)
+    {
+        $this->english_description = $englishDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get englishDescription
+     *
+     * @return string
+     */
+    public function getEnglishDescription()
+    {
+        return $this->english_description;
+    }
+
+    /**
+     * Add argument
+     *
+     * @param \AppBundle\Entity\Argument $argument
+     *
+     * @return EZFunction
+     */
+    public function addArgument(\AppBundle\Entity\Argument $argument)
+    {
+        $argument->setEZFunction($this);
+
+        $this->arguments[] = $argument;
+
+        return $this;
+    }
+
+    /**
+     * Remove argument
+     *
+     * @param \AppBundle\Entity\Argument $argument
+     */
+    public function removeArgument(\AppBundle\Entity\Argument $argument)
+    {
+        $this->arguments->removeElement($argument);
+    }
+
+    /**
+     * Get arguments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArguments()
+    {
+        return $this->arguments;
     }
 }

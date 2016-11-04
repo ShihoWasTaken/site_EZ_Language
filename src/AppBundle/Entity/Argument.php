@@ -23,12 +23,14 @@ class Argument
     private $id;
 
     /**
-     * @ORM\Column(name="Id_fonction", type="integer")
+     * @ORM\ManyToOne(targetEntity="EZFunction", inversedBy="arguments")
+     * @ORM\JoinColumn(name="cezfunction_id", referencedColumnName="id")
      */
-    private $id_fonction;
+    private $EZFunction;
 
     /**
-    * @ORM\OneToOne(targetEntity="FunctionType")
+    * @ORM\ManyToOne(targetEntity="FunctionType")
+    * @ORM\JoinColumn(name="functiontype_id", referencedColumnName="id")
      */
     private $type;
 
@@ -204,5 +206,53 @@ class Argument
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set isReturn
+     *
+     * @param boolean $isReturn
+     *
+     * @return Argument
+     */
+    public function setIsReturn($isReturn)
+    {
+        $this->isReturn = $isReturn;
+
+        return $this;
+    }
+
+    /**
+     * Get isReturn
+     *
+     * @return boolean
+     */
+    public function getIsReturn()
+    {
+        return $this->isReturn;
+    }
+
+    /**
+     * Set eZFunction
+     *
+     * @param \AppBundle\Entity\EZFunction $eZFunction
+     *
+     * @return Argument
+     */
+    public function setEZFunction(\AppBundle\Entity\EZFunction $eZFunction = null)
+    {
+        $this->EZFunction = $eZFunction;
+
+        return $this;
+    }
+
+    /**
+     * Get eZFunction
+     *
+     * @return \AppBundle\Entity\EZFunction
+     */
+    public function getEZFunction()
+    {
+        return $this->EZFunction;
     }
 }
