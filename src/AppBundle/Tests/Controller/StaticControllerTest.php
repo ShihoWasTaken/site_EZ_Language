@@ -46,10 +46,58 @@ class DefaultControllerTest extends WebTestCase
     	$this->checkThatPageIsSuccessful('/contact');
     }
 
+    public function testFormContactShouldValidate()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/contact');
+        $form = $crawler->selectButton('Submit')->form(array(
+            'contact[name]'      => 'Kenny GUIOUGOU',
+            'contact[email]'     => 'kenny.guiougou@gmail.com',
+            'contact[subject]'   => 'Test du formulaire',
+            'contact[body]'      => 'Coucou je veux juste tester le formulaire avec PHP Unit',
+        ));
+        $client->submit($form);
+        $this->assertTrue($client->getResponse()->isRedirect());
+        $client->followRedirect();
+    }
+
+    public function testFormContactShouldNotValidateWithIncorrectEmail()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/contact');
+        $form = $crawler->selectButton('Submit')->form(array(
+            'contact[name]'      => 'Kenny GUIOUGOU',
+            'contact[email]'     => 'kenny.guiougougmail.com',
+            'contact[subject]'   => 'Test du formulaire',
+            'contact[body]'      => 'Coucou je veux juste tester le formulaire avec PHP Unit',
+        ));
+        $client->submit($form);
+        $this->assertFalse($client->getResponse()->isRedirect());
+    }
+
 	// Page "/fr/contact"
     public function testThatFrenchContactIsSuccessful()
     {
     	$this->checkThatPageIsSuccessful('/fr/contact');
     }
+
+    public function testFrenchFormContact()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/fr/contact');
+        $form = $crawler->selectButton('Submit')->form(array(
+            'contact[name]'      => 'Kenny GUIOUGOU',
+            'contact[email]'     => 'kenny.guiougou@gmail.com',
+            'contact[subject]'   => 'Test du formulaire',
+            'contact[body]'      => 'Coucou je veux juste tester le formulaire avec PHP Unit',
+        ));
+        $client->submit($form);
+        $this->assertTrue($client->getResponse()->isRedirect());
+        $client->followRedirect();
+    }
+
 
 }
