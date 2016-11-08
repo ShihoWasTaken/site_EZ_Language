@@ -52,7 +52,7 @@ class Argument
     /**
      * @ORM\Column(name="IsReturn", type="boolean")
      */
-    private $isReturn;
+    private $return;
 
     /**
      * Get id
@@ -161,27 +161,27 @@ class Argument
     }
 
     /**
-     * Set isReturn
+     * Set return
      *
-     * @param boolean $isReturn
+     * @param boolean $return
      *
      * @return Argument
      */
-    public function setReturn($isReturn)
+    public function setReturn($return)
     {
-        $this->isReturn = $isReturn;
+        $this->return = $return;
 
         return $this;
     }
 
     /**
-     * Get isReturn
+     * Get return
      *
      * @return boolean
      */
     public function isReturn()
     {
-        return $this->isReturn;
+        return $this->return;
     }
 
     /**
