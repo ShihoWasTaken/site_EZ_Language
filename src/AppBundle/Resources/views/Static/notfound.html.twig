@@ -1,0 +1,29 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+	<div class="jumbotron">
+		<div class="container">
+			<div clas="row">
+				<div class="col-md-12">
+					<p>
+						Bienvenue sur le site d'EZ Language, le site est actuellement en construction.
+						<button class="btn btn-default">btn-default</button>
+						<button class="btn btn-primary">btn-primary</button>
+						<button class="btn btn-success">btn-success</button>
+						<button class="btn btn-info">btn-info</button>
+						<button class="btn btn-warning">btn-warning</button>
+						<button class="btn btn-danger">btn-danger</button>
+					</p>
+				</div>
+			</div>
+			{#
+			<h1>{{ 'home_page.title'|trans }}</h1>
+			<p>{{ 'home_page.content'|trans }}</p>
+			<p><a class="btn btn-primary btn-lg" role="button" href="{{	url('app_about') }}">{{ 'home_page.more'|trans }}</a></p>
+			#}
+		</div>
+	</div>
+{% endblock content %}

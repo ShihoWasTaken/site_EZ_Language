@@ -2,7 +2,7 @@ app_homepage:
     path:     /
     defaults: { _controller: AppBundle:Static:homepage }
     methods: GET
-    
+
 app_about:
     path:     /about
     defaults: { _controller: AppBundle:Static:about }
@@ -23,6 +23,7 @@ app_profile:
     defaults: { _controller: AppBundle:Static:profile }
     methods: GET
 
+<<<<<<< Updated upstream
 app_admin_pageList:
     path:     /admin/page/
     defaults: { _controller: AppBundle:Page:list }
@@ -63,3 +64,14 @@ app_functionShow:
     methods: GET|POST
     requirements:
         id: \d+
+=======
+app_function:
+    path:     /function/{functionId}
+    defaults: { _controller: AppBundle:Static:function }
+    methods: GET
+
+app_function:
+    path:     /404
+    defaults: { _controller: AppBundle:Static:notfound }
+    methods: GET
+>>>>>>> Stashed changes

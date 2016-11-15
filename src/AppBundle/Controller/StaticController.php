@@ -33,6 +33,11 @@ class StaticController extends Controller
 		return $this->render('AppBundle:Static:about.html.twig');
 	}
 
+    public function notfoundAction()
+	{
+		return $this->render('AppBundle:Static:notfound.html.twig');
+	}
+
     public function contactAction()
     {
         $contact = new Contact();
