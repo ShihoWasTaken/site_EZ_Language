@@ -124,3 +124,47 @@ a:hover, a:focus {
 .right {
     float: right;
 }
+
+.center {
+    margin:auto;
+    text-align:center;
+}
+
+/* 404 */
+span#cmd {
+	font-family: monospace;
+	font-size: 2em;
+}
+span#cmd:after {
+	content:"█";
+	opacity: 0;
+	animation: cursor 1s infinite;
+}
+@keyframes cursor {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/* styling */
+#prompt {
+	text-align: center;
+	display: table;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
