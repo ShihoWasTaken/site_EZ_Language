@@ -5,3 +5,5 @@ php app/console doctrine:fixtures:load
 
 //Ajout utilisateur Admin
 app/console fos:user:promote user ROLE_ADMIN
+
+//test
