@@ -3,4 +3,5 @@ php app/console doctrine:database:create
 php app/console doctrine:schema:update --force
 php app/console doctrine:fixtures:load
 
+//Ajout utilisateur Admin
 app/console fos:user:promote user ROLE_ADMIN
