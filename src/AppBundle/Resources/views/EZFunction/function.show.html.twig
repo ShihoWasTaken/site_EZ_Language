@@ -4,20 +4,70 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
-    
-    <h1>Function :  {{ function.name }}</h1>
 
-   <!-- 
-   
-    Il faut jouer avec l'objet function pour afficher toutes les informations sur la fonction 
-    Il y a aussi la variable {{ language }} pour savoir si on affiche en francais ou en anglais
+    <div class="jumbotron">
+        <div class="container">
 
-    Sinon pour la mise en page :
-    - 1er block     : Titre
-    - 2eme block    : description
-    - 3eme block    : Arguments (faire un foreach)
-    - 4eme block    : HTML  
-   
-   -->
+            <div class="function">
+
+                <!-- FUNCTION NAME -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h1>{{ function.name }}
+                                {% set aArgs = [] %}
+
+                                {% for argument in function.arguments %}
+                                    {% set aArgs = aArgs|merge([argument.name]) %}
+                                {% endfor %}
+
+                                ({{ aArgs|join(', ') }})
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FUNCTION DESCRIPTION -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="description">
+                           {% if (language == "en") %}
+                               {{ function.getEnglishDescription }}
+                           {% else %}
+                               {{ function.getFrenchDescription }}
+                           {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARGUMENTS -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="arguments">
+                            Arguments :
+                            {% for argument in function.getArguments %}
+                                {{ argument.name }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML EXAMPLES -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="html">
+                           {% if (language == "en") %}
+                               {{ function.getEnglishHtml }}
+                           {% else %}
+                               {{ function.getFrenchHtml }}
+                           {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 {% endblock content %}

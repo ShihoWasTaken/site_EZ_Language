@@ -47,7 +47,7 @@ class EZFunction
      * @ORM\Column(name="English_html", type="text")
      */
     private $english_html;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="EZFunctions")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
@@ -55,7 +55,7 @@ class EZFunction
     private $category;
 
     /**
-    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction", cascade={"persist", "remove"}, orphanRemoval=true) 
+    * @ORM\OneToMany(targetEntity="Argument", mappedBy="EZFunction", cascade={"persist", "remove"}, orphanRemoval=true)
     */
     private $arguments;
 
@@ -67,7 +67,7 @@ class EZFunction
 
     /**
      * @ORM\Column(name="updatedAt", type="datetime")
-     * 
+     *
      */
     private $updatedAt;
 
@@ -324,4 +324,5 @@ class EZFunction
     {
         return $this->arguments;
     }
+
 }

@@ -168,3 +168,38 @@ span#cmd:after {
     box-sizing: border-box;
     vertical-align: middle;
 }
+
+
+
+/* -------------------
+SHOW FUNCTION
+-------------------- */
+.function {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.function .title {
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.function .title:hover {
+    -webkit-transform: skewX(-10deg);
+    -moz-transform: skewX(-10deg);
+    -o-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.function .description {
+
+}
+.function .arguments {
+    margin-top: 25px;
+}
+.function .html {
+    margin-top: 25px;
+    border: 1px solid #2D2D2D;
+    background-color: white;
+}
