@@ -4,7 +4,7 @@
   <property name="workspace" value="${basedir}" />
   <property name="sourcedir" value="${basedir}/src" />
   <property name="builddir" value="${workspace}/app/build" />
-  <target name="build" depends="prepare,vendors,parameters,phpunit"/>
+  <target name="build" depends="prepare,parameters,phpunit"/>
  
   <target name="clean" description="Cleanup build artifacts">
     <delete dir="${builddir}/api"/>
@@ -27,13 +27,6 @@
     <exec executable="phpunit" failonerror="true">
       <arg value="-c" />
       <arg path="${basedir}/app/phpunit.xml" />
-    </exec>
-  </target>
-
-  <target name="vendors" description="Update vendors">
-    <exec executable="php" failonerror="true">
-        <arg value="composer.phar" />
-        <arg value="update" />
     </exec>
   </target>
 
