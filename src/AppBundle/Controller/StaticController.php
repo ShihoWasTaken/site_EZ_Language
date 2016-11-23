@@ -11,9 +11,9 @@ class StaticController extends Controller
 {
     public function homepageAction()
     {
-      
+
         $lang  = $this->get('request')->getLocale();
-        
+
         //Load Page "Home"
         $em    = $this->getDoctrine()->getManager();
         $page  = $em->getRepository('AppBundle:Page')->findOneById(1);
@@ -31,6 +31,11 @@ class StaticController extends Controller
     public function aboutAction()
 	{
 		return $this->render('AppBundle:Static:about.html.twig');
+	}
+
+    public function notfoundAction()
+	{
+		return $this->render('AppBundle:Static:notfound.html.twig');
 	}
 
     public function contactAction()
@@ -66,11 +71,10 @@ class StaticController extends Controller
     }
 
 
-   
+
 
     public function profileAction($userId)
     {
         return new Response('Il faut faire la vue de cette action');
     }
 }
-
