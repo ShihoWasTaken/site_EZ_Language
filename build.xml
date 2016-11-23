@@ -4,36 +4,22 @@
   <property name="workspace" value="${basedir}" />
   <property name="sourcedir" value="${basedir}/src" />
   <property name="builddir" value="${workspace}/app/build" />
-  <target name="build" depends="prepare,parameters,phpunit"/>
+
+  <target name="build" depends="prepare,phpunit"/>
  
   <target name="clean" description="Cleanup build artifacts">
-    <delete dir="${builddir}/api"/>
-    <delete dir="${builddir}/code-browser"/>
-    <delete dir="${builddir}/coverage"/>
     <delete dir="${builddir}/logs"/>
-    <delete dir="${builddir}/pdepend"/>
     <delete dir="${builddir}/docs/*"/>
   </target>
 
   <target name="prepare" depends="clean" description="Prepare for build">
-    <mkdir dir="${builddir}/api"/>
-    <mkdir dir="${builddir}/code-browser"/>
-    <mkdir dir="${builddir}/coverage"/>
     <mkdir dir="${builddir}/logs"/>
-    <mkdir dir="${builddir}/pdepend"/>
   </target>
  
   <target name="phpunit" description="Run unit tests with PHPUnit">
     <exec executable="phpunit" failonerror="true">
       <arg value="-c" />
       <arg path="${basedir}/app/phpunit.xml" />
-    </exec>
-  </target>
-
-  <target name="parameters" description="Copy parameters">
-    <exec executable="cp" failonerror="true">
-      <arg path="app/config/parameters.jenkins.yml" />
-      <arg path="app/config/parameters.yml" />
     </exec>
   </target>
 
