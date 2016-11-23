@@ -1,1 +1,24 @@
 Erreur 403 - Vous n'avez pas l'autorisation d'accéder à cette page
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+	<div class="jumbotron">
+		<div class="container">
+			<div clas="row">
+				<div class="col-md-12 center">
+					<div id="prompt">
+						<span id="cmd">ezlangage@home:~$ > 403_NotAuthorized</span>
+					</div>
+				</div>
+			</div>
+			{#
+			<h1>{{ 'home_page.title'|trans }}</h1>
+			<p>{{ 'home_page.content'|trans }}</p>
+			<p><a class="btn btn-primary btn-lg" role="button" href="{{	url('app_about') }}">{{ 'home_page.more'|trans }}</a></p>
+			#}
+		</div>
+	</div>
+{% endblock content %}
