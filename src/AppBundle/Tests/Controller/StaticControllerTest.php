@@ -99,5 +99,11 @@ class DefaultControllerTest extends WebTestCase
         $client->followRedirect();
     }
 
+    // Test faux
+    public function testFaux()
+    {
+        $this->checkThatPageIsSuccessful('/adrien/caselles/');
+    }
+
 
 }
