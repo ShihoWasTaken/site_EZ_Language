@@ -211,3 +211,20 @@ Override row
     margin-left: 0px;
     margin-top: 0px;
 }
+.main_title {
+font-family: "Open Sans",Arial,sans-serif;
+}
+.main_title:before{
+    padding: 1px 5px;
+    content: "";
+    background: #2c3e50;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+body{
+    background-image:url("../../../../../../bundles/app/images/backgrounds/mirrored_squares.png");
+}
+.contact_background{
+    background: #FFFFFF;
+}
