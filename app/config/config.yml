@@ -61,6 +61,7 @@ assetic:
         inputs:
         - '@AppBundle/Resources/public/css/external/bootstrap.css'
         - '@AppBundle/Resources/public/css/external/custom.css'
+        - '@AppBundle/Resources/public/css/external/animate.css'
         #- '@AppBundle/Resources/public/css/external/bootstrap.min.css'
         #- '@AppBundle/Resources/public/css/external/bootstrap-theme.min.css'
 

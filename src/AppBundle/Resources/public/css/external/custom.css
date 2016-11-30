@@ -203,3 +203,11 @@ SHOW FUNCTION
     border: 1px solid #2D2D2D;
     background-color: white;
 }
+
+/* -------------------
+Override row
+-------------------- */
+.row {
+    margin-left: 0px;
+    margin-top: 0px;
+}
