@@ -4,6 +4,16 @@
     {{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl})|escape }}
 {% endblock %}
 
-{% block body_html %}
+{% block body_html %} 
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Bonjour {{ user.username }}</h1>
+            Bienvenue sur la documentation EZ Language, merci de confirmer votre adresse email
+            <a class="btn btn-primary" href="{{confirmationUrl}}">Confirmer</a>
+            Si le bouton ne fontionne pas, cliquez ici : <a href="{{confirmationUrl}}">{{confirmationUrl}}</a>
+        </div>
+    </div>
+
     {{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
 {% endblock %}
