@@ -1,20 +1,13 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
 
-      					 
+<div class="col-md-push-3 col-md-6 white_background">
 
-   
-
-<div class="contact_background">
-<div class="col-md-push-3 col-md-6">
-
-
- <h2 class="main_title">Contactez nous</h2>
-<hr>
+	<h2 class="main_title">{{ 'contact.title' | trans }}</h2>
+	<hr>
     <form action="{{ path('app_contact') }}" method="post" {{ form_enctype(form) }} class="app">
 
          {{ form_errors(form) }}
@@ -38,7 +31,6 @@
         {{ form_rest(form) }}
 
         <input type="submit" value="Envoyer" class="btn btn-primary" />
-    </form> 
-</dive>
+    </form>
 </div>
 {% endblock content %}
