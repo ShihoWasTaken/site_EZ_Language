@@ -10,7 +10,7 @@
 `php app/console doctrine:fixtures:load`
 
 # Promotion de l'user user en admin
-`php app/console fos:user:promote user ROLE_ADMIN```
+`php app/console fos:user:promote user ROLE_ADMIN`
 
 # Installer les ressources (images)
 `php app/console assets:install --symlink`
