@@ -1,5 +1,6 @@
 # Création et supression de la BDD
 `php app/console doctrine:database:drop --force`
+
 `php app/console doctrine:database:create`
 
 # Update des tables de la BDD ( à faire après chaque modification d'une entité)
