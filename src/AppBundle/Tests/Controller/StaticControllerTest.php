@@ -99,5 +99,4 @@ class DefaultControllerTest extends WebTestCase
         $client->followRedirect();
     }
 
-
 }
