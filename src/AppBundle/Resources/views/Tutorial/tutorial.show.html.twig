@@ -1,0 +1,22 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+    
+    <h1>{{ tutorial.frenchTitle }}</h1>
+        {% autoescape false %}
+            {{ tutorial.frenchHtml|raw  }}
+        {% endautoescape %}
+     
+     {#
+     AJOUTER LE SUIVANT ET PRECEDENT 
+     SEULEMENT S'ILS SONT DIFFERENTS DE NULL
+     
+     &&
+     
+     NE PAS OUBLIER QUE LA PAGE PEUT-ETRE AFFICHER EN FRANCAIS OU EN ANGLAIS UTILISER LA VARIABLE {{ lang }}
+     
+     #}     
+{% endblock content %}

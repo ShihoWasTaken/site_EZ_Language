@@ -1,0 +1,29 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+    
+    <h1>Liste des tutos</h1>
+    
+    <table class="table  table-bordered">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tutorial in tutorials %}
+        <tr>
+            <td>{{ tutorial.id }}</td>
+            <td>{{ tutorial.frenchTitle }}</td>
+                <td><a class="btn btn-default" href="{{ path('app_admin_tutorialEdit', {'id': tutorial.id } ) }}"><i class="fa fa-pencil"></i></a>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            
+{% endblock content %}
