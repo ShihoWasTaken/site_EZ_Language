@@ -6,9 +6,9 @@
 {% block content %}
     
     <h1>{{ tutorial.frenchTitle }}</h1>
-    
-    {{ tutorial.frenchHtml|raw  }}
-
+        {% autoescape false %}
+            {{ tutorial.frenchHtml|raw  }}
+        {% endautoescape %}
      <!--
      
      AJOUTER LE SUIVANT ET PRECEDENT 
