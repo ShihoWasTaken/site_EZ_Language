@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class ArgumentType extends AbstractType
 {
@@ -17,7 +18,9 @@ class ArgumentType extends AbstractType
         $builder->add('name')
                 ->add('french_description')
                 ->add('english_description')
-                ->add('isReturn')
+                ->add('isReturn', CheckboxType::class,  array(
+                        'required' => false
+                    ))
                 ->add('type', EntityType::class , array(
                     'class' => 'AppBundle:FunctionType',
                     'choice_label' => 'name'

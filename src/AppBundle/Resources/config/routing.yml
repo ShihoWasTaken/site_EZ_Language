@@ -64,11 +64,6 @@ app_functionShow:
     requirements:
         id: \d+
 
-app_function:
-    path:     /function/{functionId}
-    defaults: { _controller: AppBundle:Static:function }
-    methods: GET
-
 app_notfound:
     path:     /notfound
     defaults: { _controller: AppBundle:Static:notfound }

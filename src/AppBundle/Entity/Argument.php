@@ -35,7 +35,7 @@ class Argument
     private $type;
 
     /**
-     * @ORM\Column(name="Name", type="string", length=16)
+     * @ORM\Column(name="Name", type="string", length=255)
      */
     private $name;
 
@@ -167,7 +167,7 @@ class Argument
      *
      * @return Argument
      */
-    public function setReturn($return)
+    public function setIsReturn($return)
     {
         $this->return = $return;
 

@@ -72,9 +72,27 @@ class StaticController extends Controller
 
 
 
-
+    /**
+     * Show user
+     * @param int $userId
+     * @return type
+     * @throws type
+     */
     public function profileAction($userId)
     {
-        return new Response('Il faut faire la vue de cette action');
+        //Get user by Id
+        $em         = $this->getDoctrine()->getManager();
+        $user       = $em->getRepository('AppBundle:User')->findOneById($userId);
+
+        // user exist
+        if (!$user) {
+            throw $this->createNotFoundException(
+                    '[User] No found for id ' . $userId
+            );
+        }
+
+        return $this->render('AppBundle:Static:profil.html.twig', array(
+                    'user'      => $user
+        ));
     }
 }
