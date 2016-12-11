@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\TutorialType;
 use AppBundle\Entity\Tutorial;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class TutorialController extends Controller
 {
@@ -42,7 +44,27 @@ class TutorialController extends Controller
     } 
     
     public function createAction(){
+        $tutorial = new Tutorial();
+
+        //Create form
+        $form = $this->get('form.factory')->create(new TutorialType, $tutorial, array(
+            'locale' => $this->get('request')->getLocale())
+        );
         
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tutorial);
+
+            $em->flush();
+            return $this->redirectToRoute('app_admin_tutorialList');
+        }
+
+        return $this->render('AppBundle:Tutorial:tutorial.create.html.twig', array(
+                'form' => $form->createView()
+        ));
     } 
     
     public function editAction($id){

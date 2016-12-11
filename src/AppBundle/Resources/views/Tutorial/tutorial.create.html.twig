@@ -1,0 +1,23 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+    
+    <h1>Create Tuto</h1>
+
+    <form action="{{ path('app_admin_tutorialCreate') }}" method="post" {{ form_enctype(form) }} class="app">
+        {{ form_widget(form._token) }}
+        {{ form_errors(form) }}
+        
+        {{ form_row(form.french_title) }}
+        {{ form_row(form.english_title) }}
+        {{ form_row(form.french_html) }}
+        {{ form_row(form.english_html) }}
+        {{ form_row(form.tuto_next) }}
+        {{ form_row(form.tuto_prev) }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock content %}
+
