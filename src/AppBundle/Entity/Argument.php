@@ -160,14 +160,15 @@ class Argument
         return $this->english_description;
     }
 
-    /**
+
+     /**
      * Set return
      *
      * @param boolean $return
      *
      * @return Argument
      */
-    public function setIsReturn($return)
+    public function setReturn($return)
     {
         $this->return = $return;
 

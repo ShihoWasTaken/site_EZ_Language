@@ -18,7 +18,7 @@ class ArgumentType extends AbstractType
         $builder->add('name')
                 ->add('french_description')
                 ->add('english_description')
-                ->add('isReturn', CheckboxType::class,  array(
+                ->add('return', CheckboxType::class,  array(
                         'required' => false
                     ))
                 ->add('type', EntityType::class , array(

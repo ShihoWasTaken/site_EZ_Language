@@ -60,7 +60,7 @@ app_admin_functionRemove:
 app_functionShow:
     path:     /function/{id}
     defaults: { _controller: AppBundle:EZFunction:show }
-    methods: GET|POST
+    methods: GET
     requirements:
         id: \d+
 
