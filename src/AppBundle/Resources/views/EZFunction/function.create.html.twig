@@ -8,7 +8,9 @@
     <h1>Create Function</h1>
 
     <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
-
+        {{ form_row(form._token) }}
+        {{ form_errors(form) }}
+        
         {{ form_row(form.name) }}
         {{ form_row(form.french_description) }}
         {{ form_row(form.english_description) }}
@@ -19,7 +21,6 @@
         <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
         <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
         </ul>
-
         <input type="submit" value="Submit" />
     </form>
 
