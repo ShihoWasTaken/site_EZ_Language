@@ -81,7 +81,7 @@ class EZFunctionController extends Controller {
             $em->persist($function);
             $em->flush();
 
-            //return $this->redirectToRoute('app_admin_functionList');
+            return $this->redirectToRoute('app_admin_functionEdit', array('id' => $function->getId() ));
         }
 
         return $this->render('AppBundle:EZFunction:function.edit.html.twig', array(
