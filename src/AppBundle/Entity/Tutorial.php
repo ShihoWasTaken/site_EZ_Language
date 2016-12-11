@@ -38,10 +38,15 @@ class Tutorial
     
 
     /**
-     * @ORM\Column(name="Name", type="string", length=255)
+     * @ORM\Column(name="French_title", type="string", length=255)
      */
-    private $name;
-
+    private $french_title;
+    
+    
+      /**
+     * @ORM\Column(name="English_title", type="string", length=255)
+     */
+    private $english_title;
     
     /**
      * @ORM\Column(name="French_html", type="text")
@@ -66,27 +71,51 @@ class Tutorial
     }
 
     /**
-     * Set name
+     * Set frenchTitle
      *
-     * @param string $name
+     * @param string $frenchTitle
      *
      * @return Tutorial
      */
-    public function setName($name)
+    public function setFrenchTitle($frenchTitle)
     {
-        $this->name = $name;
+        $this->french_title = $frenchTitle;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get frenchTitle
      *
      * @return string
      */
-    public function getName()
+    public function getFrenchTitle()
     {
-        return $this->name;
+        return $this->french_title;
+    }
+
+    /**
+     * Set englishTitle
+     *
+     * @param string $englishTitle
+     *
+     * @return Tutorial
+     */
+    public function setEnglishTitle($englishTitle)
+    {
+        $this->english_title = $englishTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get englishTitle
+     *
+     * @return string
+     */
+    public function getEnglishTitle()
+    {
+        return $this->english_title;
     }
 
     /**
