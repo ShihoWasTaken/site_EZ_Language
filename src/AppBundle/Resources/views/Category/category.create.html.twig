@@ -1,0 +1,30 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+
+{% block content %}
+
+    <h1>Les categories</h1>
+    
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.frenchLabel }} <span>{{ category.getEZFunctions()|length }}</span></li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Ajouter une catégorie</h2>
+    
+     <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
+
+        {{ form_widget(form._token) }}
+        {{ form_errors(form) }}
+        
+        {{ form_row(form.french_label) }}
+        {{ form_row(form.english_label) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+        
+{% endblock content %}
+
