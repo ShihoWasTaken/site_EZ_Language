@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
-use Symfony\Component\HttpFoundation\Response;
 
 class StaticController extends Controller
 {
