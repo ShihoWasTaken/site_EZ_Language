@@ -68,3 +68,8 @@ app_notfound:
     path:     /notfound
     defaults: { _controller: AppBundle:Static:notfound }
     methods: GET
+
+app_admin_category:
+    path:     /admin/category
+    defaults: { _controller: AppBundle:Category:create }
+    methods: GET|POST
