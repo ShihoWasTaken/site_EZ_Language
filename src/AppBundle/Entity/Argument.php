@@ -167,7 +167,7 @@ class Argument
      *
      * @return Argument
      */
-    public function setReturn($return)
+    public function setIsReturn($return)
     {
         $this->return = $return;
 
