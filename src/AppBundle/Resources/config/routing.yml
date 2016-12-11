@@ -73,3 +73,27 @@ app_admin_category:
     path:     /admin/category
     defaults: { _controller: AppBundle:Category:create }
     methods: GET|POST
+    
+app_admin_tutorialList:
+    path:     /admin/tutorial/
+    defaults: { _controller: AppBundle:Tutorial:list }
+    methods: GET
+    
+app_admin_tutorialCreate:
+    path:     /admin/tutorial/create
+    defaults: { _controller: AppBundle:Tutorial:create }
+    methods: GET|POST
+    
+app_admin_tutorialEdit:
+    path:     /admin/tutorial/{id}/edit
+    defaults: { _controller: AppBundle:Tutorial:edit }
+    methods: GET|POST
+    requirements:
+        id: \d+
+        
+app_tutorialShow:
+    path:     /function/{id}
+    defaults: { _controller: AppBundle:Tutorial:show }
+    methods: GET|POST
+    requirements:
+        id: \d+

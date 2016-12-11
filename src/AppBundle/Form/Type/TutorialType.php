@@ -7,19 +7,23 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class ArgumentType extends AbstractType
+class TutorialType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')
-                ->add('french_description')
-                ->add('english_description')
-                ->add('isReturn')
-                ->add('type', EntityType::class , array(
-                    'class' => 'AppBundle:FunctionType',
+        $builder->add('french_title')
+                ->add('english_title')
+                ->add('french_html')
+                ->add('english_html')
+                ->add('tuto_next', EntityType::class , array(
+                    'class' => 'AppBundle:TutorialType',
+                    'choice_label' => 'name'
+                ))
+                ->add('tuto_prev', EntityType::class , array(
+                    'class' => 'AppBundle:TutorialType',
                     'choice_label' => 'name'
                 ));
     }
@@ -30,7 +34,7 @@ class ArgumentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Argument'
+            'data_class' => 'AppBundle\Entity\Tutorial'
         ));
     }
 
@@ -39,7 +43,7 @@ class ArgumentType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_argument';
+        return 'appbundle_tutorial';
     }
 
 
