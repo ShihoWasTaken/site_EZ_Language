@@ -10,6 +10,15 @@ class TutorialController extends Controller
 {
     public function listAction(){
         
+        $em = $this->getDoctrine()->getManager();
+        $tutorials = $em->getRepository('AppBundle:Tutorial')->findAll();
+
+        $lang = $this->get('request')->getLocale();
+        
+        return $this->render('AppBundle:Tutorial:tutorial.list.html.twig', array(
+            'tutorials' => $tutorials,
+            'lang'      => $lang
+        ));
     } 
     
     public function showAction($id){
