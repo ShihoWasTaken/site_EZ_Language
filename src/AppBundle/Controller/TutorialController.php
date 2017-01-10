@@ -5,8 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\TutorialType;
 use AppBundle\Entity\Tutorial;
-use Symfony\Component\HttpFoundation\Response;
-
 
 class TutorialController extends Controller
 {
