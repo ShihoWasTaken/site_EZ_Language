@@ -6,7 +6,7 @@
 {% block content %}
     
     <h1>{{ tutorial.frenchTitle }}</h1>
-        {% autoescape 'html' %}
+        {% autoescape 'js' %}
             {{ tutorial.frenchHtml|raw  }}
         {% endautoescape %}
      
