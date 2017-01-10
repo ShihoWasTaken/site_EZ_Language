@@ -6,9 +6,7 @@
 {% block content %}
     
     <h1>{{ tutorial.frenchTitle }}</h1>
-        {% autoescape 'js' %}
-            {{ tutorial.frenchHtml|raw  }}
-        {% endautoescape %}
+        {{ tutorial.frenchHtml|raw  }}
      
      {#
      AJOUTER LE SUIVANT ET PRECEDENT 
