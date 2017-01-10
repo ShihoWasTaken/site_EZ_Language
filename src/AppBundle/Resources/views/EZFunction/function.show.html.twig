@@ -39,24 +39,7 @@
             <div class="jumbotron animated slideInUp">
                 <div class="container">
                     <div class="description">
-                       {% if (language == "en") %}
-                           {{ function.getEnglishDescription }}
-                       {% else %}
-                           {{ function.getFrenchDescription }}
-                       {% endif %}
-                    </div>
-                    <div class="arguments">
-                        Arguments :
-                        {% for argument in function.getArguments %}
-                            {{ argument.name }}
-                        {% endfor %}
-                    </div>
-                    <div class="html">
-                       {% if (language == "en") %}
-                           {{ function.getEnglishHtml }}
-                       {% else %}
-                           {{ function.getFrenchHtml }}
-                       {% endif %}
+                        {% include '_description.html.twig.html' with {'function': function, 'language': language} %}
                     </div>
                 </div>
             </div>
