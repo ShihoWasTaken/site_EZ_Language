@@ -7,3 +7,8 @@ services:
     # Nullify this service. It is deprecated and raises an error on SensioLabs Insight
     twig.extension.actions:
         class: AppBundle\Twig\NullExtension
+    app.twig_extension:
+        class: AppBundle\Twig\AppExtension
+        public: false
+        tags:
+            - { name: twig.extension }
