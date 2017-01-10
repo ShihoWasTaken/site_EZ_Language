@@ -1,0 +1,10 @@
+about: 'A propos'
+contact: 'Contact'
+navbar.register: "S'enregistrer"
+navbar.login: 'Connexion'
+navbar.account: 'Mon compte'
+navbar.about: 'A propos'
+navbar.contact: 'Contact'
+sitename: 'EZ Language'
+home_page.title: 'Accueil'
+contact.title: 'Nous contacter'
