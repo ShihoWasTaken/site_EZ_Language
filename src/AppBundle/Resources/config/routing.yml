@@ -94,6 +94,6 @@ app_admin_tutorialEdit:
 app_tutorialShow:
     path:     /tutorial/{id}
     defaults: { _controller: AppBundle:Tutorial:show }
-    methods: GET|POST
+    methods: GET
     requirements:
         id: \d+
