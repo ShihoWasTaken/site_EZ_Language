@@ -1,10 +1,16 @@
-about: 'About'
-contact: 'Contact'
-navbar.register: 'Register'
-navbar.login: 'Login'
+about: About
+contact: Contact
+navbar.register: Register
+navbar.login: Login
 navbar.account: 'My account'
-navbar.about: 'About'
-navbar.contact: 'Contact'
+navbar.about: About
+navbar.contact: Contact
 sitename: 'EZ Language'
 home_page.title: 'Home'
 contact.title: 'Contact us'
+navbar.admin.function: 'Functions'
+navbar.admin.function.list: 'List'
+navbar.admin.function.create: 'Create'
+navbar.admin.category: 'Category'
+navbar.admin.tutorial.list: 'List'
+navbar.admin.tutorial.create: 'Create'
