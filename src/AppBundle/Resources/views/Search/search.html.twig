@@ -10,14 +10,19 @@
 		</div>
 		
 		{# display result #}
-		<ul>
+
+		<div class="list_result col-md-8 col-md-offset-2">
 			{% for element in pagination %}
-			<li>
-				<h2>{{ element.name }}</h2>
-				<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
-			</li>
+				<div class="result">
+					<div class="result_title">
+						<h2>{{ element.name }}</h2>
+					</div>
+					<div class="result_content">
+						<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
+					</div>
+				</div>
 			{% endfor %}
-		</ul>
+		</div>
 		{# display navigation #}
 		<div class="navigation">
 			{{ knp_pagination_render(pagination) }}
