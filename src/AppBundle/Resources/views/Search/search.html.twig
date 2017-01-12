@@ -15,7 +15,7 @@
 			{% for element in pagination %}
 				<div class="result">
 					<div class="result_title">
-						<h2>{{ element.name }}</h2>
+						<a href="{{ path('app_functionShow', {'id': element.id } ) }}"><h2>{{ element.name }}</h2></a>
 					</div>
 					<div class="result_content">
 						<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
