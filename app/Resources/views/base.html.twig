@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block javascripts_head %}{% endblock %}
     </head>
-    <body>
+    <body class="{% block class_body %}{% endblock %}">
         {% block body %}{% endblock %}
         {% block javascripts_body %}
             {% javascripts '@jquery_js' output='js/query-min.js'	%}
