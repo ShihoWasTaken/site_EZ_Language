@@ -6,9 +6,9 @@
 {% block content %}
 	<div class="container">
 		<div clas="row">
-			<form class="col-md-12" role="search" action="{{ path('app_search') }}" method="GET">
-				<div class="input-group">
-					<input type="text" name="q" class="form-control" placeholder="Search for...">
+			<form class="col-md-12 boxElement marginTop" role="search" action="{{ path('app_search') }}" method="GET">
+				<div class="input-group boxRecherche">
+					<input type="text" name="q" class="form-control" placeholder="Search for..." value="{{ searchtext }}">
 					<div class="input-group-addon">
 						<button class="btn btn-transparent" type="submit">
 							<i class="fa fa-search" aria-hidden="true"></i>
@@ -16,13 +16,12 @@
 					</div>
 				</div>
 			</form>
-			<div class="col-md-12">
-				Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
-			</div>
 
 			{# display result #}
 
-			<div class="list_result col-md-8 col-md-offset-2">
+			<div class="list_result col-md-12 boxElement">
+				Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
+				<hr>
 				{% for element in pagination %}
 					<div class="result">
 						<div class="result_title">
@@ -35,7 +34,7 @@
 				{% endfor %}
 			</div>
 			{# display navigation #}
-			<div class="navigation col-md-12 col-md">
+			<div class="navigation col-md-12 boxElement">
 				{{ knp_pagination_render(pagination) }}
 			</div>
 
