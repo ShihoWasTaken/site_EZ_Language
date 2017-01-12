@@ -240,3 +240,7 @@ textarea
 {
 	resize: none;
 }
+
+.btn-transparent{
+    background: transparent;
+}
