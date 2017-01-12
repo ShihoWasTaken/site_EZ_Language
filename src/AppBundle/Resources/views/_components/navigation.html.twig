@@ -29,6 +29,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				{% include 'AppBundle:_components:admin_navigation.html.twig' %}
 				{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 				<li><a href="{{ path('fos_user_registration_register') }}">{{ 'navbar.register' | trans }}</a></li>
 				<li><a href="{{ path('fos_user_security_login') }}">{{ 'navbar.login' | trans }}</a></li>
