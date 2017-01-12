@@ -4,17 +4,32 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
-    
-    <h1>Form Update Tuto</h1>
 
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 center">
+            <h1>Form Update Tuto</h1>
+        </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
     <form action="{{ path('app_admin_tutorialEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
         {{ form_widget(form._token) }}
         {{ form_errors(form) }}
-        
+
         {{ form_row(form.french_title) }}
         {{ form_row(form.english_title) }}
-        {{ form_row(form.french_html) }}
+        {{ form_row(form.french_html, {'label': 'HTML Français'}) }}
+
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
         {{ form_row(form.english_html) }}
         {{ form_row(form.tuto_next) }}
         {{ form_row(form.tuto_prev) }}
