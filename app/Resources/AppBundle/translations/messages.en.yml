@@ -8,10 +8,11 @@ navbar.contact: Contact
 sitename: 'EZ Language'
 home_page.title: Home
 contact.title: 'Contact us'
+navbar.admin.label: Admin
 navbar.admin.function: Functions
-navbar.admin.function.list: List
-navbar.admin.function.create: Create
+navbar.admin.function.list: List Function
+navbar.admin.function.create: Create Function
 navbar.admin.category: Category
-navbar.admin.tutorial.list: List
-navbar.admin.tutorial.create: Create
+navbar.admin.tutorial.list: List Tutorial
+navbar.admin.tutorial.create: Create Tutorial
 navbar.admin.tutorial: Tutorial
