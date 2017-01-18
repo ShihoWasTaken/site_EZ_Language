@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
         var newForm = prototype.replace(/__name__/g, index);
 
         // increase the index with one for the next item
-        $collectionHolder.data('index', index + 1); 
+        $collectionHolder.data('index', index + 1);
 
         // Display the form in the page in an li, before the "Add a tag" link li
         $collectionHolder.append($newLinkLi.append(newForm));
