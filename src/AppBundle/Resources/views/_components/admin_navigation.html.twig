@@ -1,0 +1,18 @@
+{# Créer par :Sara ZALARHE #}
+
+{% if is_granted('ROLE_ADMIN') %}
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			{{ 'navbar.admin.label' | trans }}
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="{{ url('app_admin_functionList') }}">{{ 'navbar.admin.function.list' | trans }}</a></li>
+			<li><a href="{{ url('app_admin_functionCreate') }}">{{ 'navbar.admin.function.create' | trans }}</a></li>
+			<li><a href="{{ url('app_admin_tutorialList') }}">{{ 'navbar.admin.tutorial.list' | trans }}</a></li>
+			<li><a href="{{ url('app_admin_tutorialCreate') }}">{{ 'navbar.admin.tutorial.create' | trans }}</a></li>
+			<li><a href="{{ url('app_admin_category') }}">{{ 'navbar.admin.category' | trans }}</a></li>
+		</ul>
+	</li>
+{% endif %}
+

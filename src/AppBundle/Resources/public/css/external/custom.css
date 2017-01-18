@@ -1,5 +1,6 @@
 /*
  * Enzo Chevallier, création : 21/09/2016
+ * Modifié par Sara ZALARHE
  */
 
 /* Mise à 0 des border radius */
@@ -222,7 +223,7 @@ font-family: "Open Sans",Arial,sans-serif;
 .main_title:before{
     padding: 1px 5px;
     content: "";
-    background: #2c3e50;
+    background: #52d3aa;
     margin-right: 10px;
     margin-left: 0px;
 }
@@ -239,4 +240,27 @@ body{
 textarea
 {
 	resize: none;
+}
+
+.btn-transparent{
+    background: transparent;
+}
+
+.boxElement{
+    box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
+    margin-bottom: 50px;
+    padding: 30px;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus  {
+    background: #686869;
+}
+#fh5co-header #navbar li a span{
+    margin: 0 auto;
+}
+#fh5co-header #navbar .dropdown-menu li a{
+    color:  #686869;
+}
+#fh5co-header #navbar li a:hover{
+    background: #686869;
+    color:  #FFF;
 }
