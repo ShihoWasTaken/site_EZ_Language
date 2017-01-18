@@ -264,3 +264,19 @@ textarea
     background: #686869;
     color:  #FFF;
 }
+
+table {
+  border-collapse: collapse;
+}
+tr { 
+  border: solid;
+  border-width: 1px 0;
+  border-color: rgba(163, 174, 184, 0.4)
+}
+
+tr:first-child {
+  border-top: none;
+}
+tr:last-child {
+  border-bottom: none;
+}
