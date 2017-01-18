@@ -5,10 +5,9 @@
 
 {% block content %}
 
+<div class="col-md-push-2 col-md-8 white_background boxElement">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <h1>Form Update Tuto</h1>
-        </div>
+        <h2 class="main_title">Form Update Tuto</h1>
     </div>
 
     <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
@@ -17,17 +16,31 @@
         {{ form_widget(form._token) }}
         {{ form_errors(form) }}
 
-        {{ form_row(form.french_title) }}
-        {{ form_row(form.english_title) }}
-        {{ form_row(form.french_html, {'label': 'HTML Français'}) }}
-        {{ form_row(form.english_html) }}
+        <div class="form-group">
+            {{ form_row(form.french_title, {'label': 'Titre Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(form.english_title, {'label': 'Titre Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(form.french_html, {'label': 'HTML Français'}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(form.english_html, {'label': 'HTML Anglais'}) }}
+        </div>
         <script>
             CKEDITOR.replace('appbundle_tutorial_french_html');
             CKEDITOR.replace('appbundle_tutorial_english_html');
         </script>
-        {{ form_row(form.tuto_next) }}
-        {{ form_row(form.tuto_prev) }}
-
-        <input type="submit" value="Submit" />
+        <div class="form-group">
+            {{ form_row(form.tuto_next, {'label': 'Tutoriel précédent', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(form.tuto_prev, {'label': 'Tutoriel suivant', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Valider" class="btn btn-primary" />
+        </div>
     </form>
+</div>
 {% endblock content %}
