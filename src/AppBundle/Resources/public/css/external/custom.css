@@ -250,6 +250,7 @@ textarea
     box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
     margin-bottom: 50px;
     padding: 30px;
+    background: #FFF;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus  {
     background: #686869;
@@ -263,6 +264,22 @@ textarea
 #fh5co-header #navbar li a:hover{
     background: #686869;
     color:  #FFF;
+}
+
+.marginTop{
+    margin-top: 30px;
+}
+.boxRecherche .form-control{
+    color: #2C3E52 !important;
+    height: 68px;
+}
+.boxRecherche .btn:hover, .boxRecherche .btn:active, .boxRecherche .btn:focus{
+    background: #ECF0F1 !important;
+    color: #2C3E52 !important;
+}
+
+.navigation{
+    margin-top: 30px;
 }
 
 table {

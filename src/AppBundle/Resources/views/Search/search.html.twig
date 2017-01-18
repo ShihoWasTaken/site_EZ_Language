@@ -1,3 +1,6 @@
+{#
+## Bourbon Mathieu
+#}
 {% extends 'AppBundle::layout.html.twig' %}
 
 
@@ -6,26 +9,38 @@
 {% block content %}
 	<div class="container">
 		<div clas="row">
-			Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
-		</div>
-		
-		{# display result #}
-
-		<div class="list_result col-md-8 col-md-offset-2">
-			{% for element in pagination %}
-				<div class="result">
-					<div class="result_title">
-						<a href="{{ path('app_functionShow', {'id': element.id } ) }}"><h2>{{ element.name }}</h2></a>
-					</div>
-					<div class="result_content">
-						<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
+			<form class="col-md-12 boxElement marginTop" role="search" action="{{ path('app_search') }}" method="GET">
+				<div class="input-group boxRecherche">
+					<input type="text" name="q" class="form-control" placeholder="Search for..." value="{{ searchtext }}">
+					<div class="input-group-addon">
+						<button class="btn btn-transparent" type="submit">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
 					</div>
 				</div>
-			{% endfor %}
-		</div>
-		{# display navigation #}
-		<div class="navigation">
-			{{ knp_pagination_render(pagination) }}
+			</form>
+
+			{# display result #}
+
+			<div class="list_result col-md-12 boxElement">
+				Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
+				<hr>
+				{% for element in pagination %}
+					<div class="result">
+						<div class="result_title">
+							<a href="{{ path('app_functionShow', {'id': element.id } ) }}"><h2>{{ element.name }}</h2></a>
+						</div>
+						<div class="result_content">
+							<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
+						</div>
+					</div>
+					<hr/>
+				{% endfor %}
+				{# display navigation #}
+				<div class="navigation col-md-12 text-center">
+					{{ knp_pagination_render(pagination) }}
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock content %}

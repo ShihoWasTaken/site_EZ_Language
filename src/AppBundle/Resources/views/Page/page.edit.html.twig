@@ -4,20 +4,38 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
-    
-    <h1>Form Update Page</h1>
 
-    <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
-        {{ form_row(form._token) }}
-        {{ form_errors(form) }}
 
-        {{ form_row(form.name) }}
-        {{ form_row(form.french_text) }}
-        {{ form_row(form.english_text) }}
+        <div class="col-md-push-2 col-md-8 white_background boxElement">
+            <div class="row">
+                <h2 class="main_title">Form Update Page</h1>
+            </div>
 
-        {{ form_rest(form) }}
+            <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
+            <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
-        <input type="submit" value="Submit" />
-    </form>
-        
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
+
+                <div class="form-group">
+                    {{ form_row(form.name, {'label': 'Nom', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.french_text, {'label': 'Titre Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_text, {'label': 'Titre Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <script>
+                    CKEDITOR.replace('appbundle_page_french_text');
+                    CKEDITOR.replace('appbundle_page_english_text');
+                </script>
+
+                {{ form_rest(form) }}
+
+                <div class="form-group">
+                    <input type="submit" value="Valider" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
 {% endblock content %}
