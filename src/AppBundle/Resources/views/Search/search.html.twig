@@ -1,3 +1,6 @@
+{#
+## Bourbon Mathieu
+#}
 {% extends 'AppBundle::layout.html.twig' %}
 
 
@@ -31,10 +34,11 @@
 							<p>{{  app.request.locale == 'en' ? element.englishDescription : element.frenchDescription }}</p>
 						</div>
 					</div>
+					<hr/>
 				{% endfor %}
 			</div>
 			{# display navigation #}
-			<div class="navigation col-md-12 boxElement">
+			<div class="navigation col-md-12 text-center">
 				{{ knp_pagination_render(pagination) }}
 			</div>
 
