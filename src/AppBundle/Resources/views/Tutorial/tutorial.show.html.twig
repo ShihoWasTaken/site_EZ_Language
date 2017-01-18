@@ -1,12 +1,43 @@
-{% extends 'AppBundle::layout.html.twig' %}
+{% extends 'AppBundle::layout_tutorial.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'tutorial.title'|trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}{% endblock %}
 
 {% block content %}
     
-    <h1>{{ tutorial.frenchTitle }}</h1>
-        {{ tutorial.frenchHtml|html  }}
+    <h1>{{ 'tutorial.title' |trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}</h1>
+
+
+    {{  app.request.locale == 'en' ? tutorial.englishHtml|html : tutorial.frenchHtml|html }}
+
+    <pre>
+        <code class="cpp prettyprint lang-cpp">
+            #include &lt;SFML/Graphics.hpp&gt;
+
+            int main()
+            {
+            sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+            sf::CircleShape shape(100.f);
+            shape.setFillColor(sf::Color::Green);
+
+            while (window.isOpen())
+            {
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+            if (event.type == sf::Event::Closed)
+            window.close();
+            }
+
+            window.clear();
+            window.draw(shape);
+            window.display();
+            }
+
+            return 0;
+            }
+        </code>
+    </pre>
      
      {#
      AJOUTER LE SUIVANT ET PRECEDENT 
