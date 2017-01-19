@@ -6,17 +6,27 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\EZFunctionType;
 use AppBundle\Entity\EZFunction;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class EZFunctionController extends Controller {
 
-    public function listAction() {
+    public function listAction(Request $request) {
 
-        $em = $this->getDoctrine()->getManager();
+        $page        = $request->get('page');
+
+        $em          = $this->getDoctrine()->getManager();
         $tabFunction = $em->getRepository('AppBundle:EZFunction')->findAll();
 
 
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tabFunction, 
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
+
         return $this->render('AppBundle:EZFunction:function.list.html.twig', array(
-                    'functions' => $tabFunction
+              'functions' => $pagination
         ));
     }
 
