@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 class EZFunctionController extends Controller {
 
     public function listAction(Request $request) {
-
+        // Variable
         $page        = $request->get('page');
 
         $em          = $this->getDoctrine()->getManager();
         $tabFunction = $em->getRepository('AppBundle:EZFunction')->findAll();
 
+        // Lang
+        $lang = $this->get('request')->getLocale();
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -26,7 +28,8 @@ class EZFunctionController extends Controller {
         );
 
         return $this->render('AppBundle:EZFunction:function.list.html.twig', array(
-              'functions' => $pagination
+              'functions' => $pagination,
+              'lang' => $lang
         ));
     }
 
