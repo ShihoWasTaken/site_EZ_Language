@@ -1,22 +1,25 @@
 {% extends 'AppBundle::layout_tutorial.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'tutorial.title'|trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ app.request.locale == 'en' ? tutorial.EnglishTitle: tutorial.FrenchTitle }}{% endblock %}
 
 {% block content %}
-
-    <h1>{{ 'tutorial.title' |trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}</h1>
-
-
-    {{  app.request.locale == 'en' ? tutorial.englishHtml|html : tutorial.frenchHtml|html }}
+    <div class="container">
+        <div class="boxElement">
+            <h2 class="main_title">{{ app.request.locale == 'en' ? tutorial.EnglishTitle: tutorial.FrenchTitle}}</h2>
 
 
-    {%  if tutorial.tutoPrev is not null %}
-        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoPrev.id}) }}">{{ 'tutorial.prev'|trans }}</a>
-    {%  endif %}
+            {{  app.request.locale == 'en' ? tutorial.englishHtml|html : tutorial.frenchHtml|html }}
 
-    {%  if tutorial.tutoNext is not null %}
-        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoNext.id}) }}">{{ 'tutorial.next'|trans }}</a>
-    {%  endif %}
+            <div class="botPage">
+                {%  if tutorial.tutoPrev is not null %}
+                    <a class="btn btn-default btn-md" href="{{ path('app_tutorialShow', {'id': tutorial.tutoPrev.id}) }}">{{ 'tutorial.prev'|trans }}</a>
+                {%  endif %}
 
+                {%  if tutorial.tutoNext is not null %}
+                    <a class="btn btn-default btn-md" href="{{ path('app_tutorialShow', {'id': tutorial.tutoNext.id}) }}">{{ 'tutorial.next'|trans }}</a>
+                {%  endif %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}
