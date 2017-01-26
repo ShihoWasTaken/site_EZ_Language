@@ -297,3 +297,12 @@ tr:first-child {
 tr:last-child {
   border-bottom: none;
 }
+
+.botPage{
+    margin:auto;
+    margin-top: 25px;
+    text-align:center;
+}
+.botPage a{
+    text-decoration: none;
+}
