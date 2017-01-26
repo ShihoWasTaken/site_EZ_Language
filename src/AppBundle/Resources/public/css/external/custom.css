@@ -228,6 +228,7 @@ Catégories
     padding:0;
     margin:0;
     list-style-type:none;
+    overflow: hidden;
 }
 .category_li {
     margin: 10px;

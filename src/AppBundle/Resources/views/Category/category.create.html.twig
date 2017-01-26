@@ -6,41 +6,39 @@
 {% block content %}
 
 <div class="container">
-    <div class="col-md-push-2 col-md-8 white_background boxElement">
-        <div class="row">
-            <h1 class="main_title">Les Catégories</h1>
+    <div class="row">
+        <div class="col-md-push-2 col-md-8 white_background boxElement">
+                <h1 class="main_title">Les Catégories</h1>
+
+                <ul class="category_ul">
+                    {% for category in categories %}
+                        <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
+                    {% endfor %}
+                </ul>
+
+                <div class="top-buffer">
+                    <h2 class="main_title">Ajouter une catégorie</h2>
+                </div>
+
+            <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
+
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
+
+
+                <div class="form-group">
+                    {{ form_row(form.french_label, {'label': 'Label Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_label, {'label': 'Label Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Valider" class="btn btn-primary" />
+                </div>
+            </form>
+
         </div>
-
-        <div class="row">
-            <ul class="category_ul">
-                {% for category in categories %}
-                    <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="row top-buffer">
-            <h2 class="main_title">Ajouter une catégorie</h2>
-        </div>
-
-        <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
-
-            {{ form_widget(form._token) }}
-            {{ form_errors(form) }}
-
-
-            <div class="form-group">
-                {{ form_row(form.french_label, {'label': 'Label Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.english_label, {'label': 'Label Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Valider" class="btn btn-primary" />
-            </div>
-        </form>
-
     </div>
 </div>
 
