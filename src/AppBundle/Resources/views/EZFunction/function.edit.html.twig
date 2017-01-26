@@ -48,12 +48,13 @@
             <div class="form-group">
                 <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
             </div>
+            {#{% form_theme form 'EZFunction/_argument.html.twig' %}#}
             <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
                 {% for argument in form.arguments %}
-                    <li>{{ form_row(argument) }}</li>
+                    <li>{{ form_widget(argument) }}</li>
                 {% endfor %}
             </ul>
-
+            
             <input type="submit" value="Submit" />
         </form>
     </div>
