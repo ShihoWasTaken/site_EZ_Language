@@ -5,60 +5,43 @@
 
 {% block content %}
 
-<div class="col-md-push-2 col-md-8 white_background boxElement">
-    <div class="row">
-        <h1 class="main_title">Les Catégories</h1>
-    </div>
-
-    <div class="row">
-        <ul class="category_ul">
-            {% for category in categories %}
-                <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
-            {% endfor %}
-        </ul>
-
-        <style>
-        .category_ul {
-             padding:0;
-             margin:0;
-             list-style-type:none;
-         }
-        .category_li {
-            margin: 10px;
-             border: 1px solid black;
-             padding: 5px;
-             background-color: #52D3AA;
-             float:left; /*pour IE*/
-         }
-         .category_number_li {
-             border-left: 1px solid black;
-             padding-left: 5px;
-         }
-        </style>
-    </div>
-
-    <div class="row">
-        <h2 class="main_title">Ajouter une catégorie</h2>
-    </div>
-
-     <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
-
-        {{ form_widget(form._token) }}
-        {{ form_errors(form) }}
-
-
-        <div class="form-group">
-            {{ form_row(form.french_label, {'label': 'Label Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-        </div>
-        <div class="form-group">
-            {{ form_row(form.english_label, {'label': 'Label Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+<div class="container">
+    <div class="col-md-push-2 col-md-8 white_background boxElement">
+        <div class="row">
+            <h1 class="main_title">Les Catégories</h1>
         </div>
 
-        <div class="form-group">
-            <input type="submit" value="Valider" class="btn btn-primary" />
+        <div class="row">
+            <ul class="category_ul">
+                {% for category in categories %}
+                    <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
+                {% endfor %}
+            </ul>
         </div>
-    </form>
 
+        <div class="row top-buffer">
+            <h2 class="main_title">Ajouter une catégorie</h2>
+        </div>
+
+        <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
+
+            {{ form_widget(form._token) }}
+            {{ form_errors(form) }}
+
+
+            <div class="form-group">
+                {{ form_row(form.french_label, {'label': 'Label Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.english_label, {'label': 'Label Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Valider" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
 </div>
 
 {% endblock content %}
