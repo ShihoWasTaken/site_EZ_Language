@@ -20,11 +20,13 @@ class TutorialType extends AbstractType
                 ->add('english_html')
                 ->add('tuto_next', EntityType::class , array(
                     'class' => 'AppBundle:Tutorial',
-                    'choice_label' => ($options["locale"] === "en" ? 'english_title' : 'french_title')
+                    'choice_label' => ($options["locale"] === "en" ? 'english_title' : 'french_title'),
+                    'required'  => false
                 ))
                 ->add('tuto_prev', EntityType::class , array(
                     'class' => 'AppBundle:Tutorial',
-                    'choice_label' => ($options["locale"] === "en" ? 'english_title' : 'french_title')
+                    'choice_label' => ($options["locale"] === "en" ? 'english_title' : 'french_title'),
+                    'required'  => false
                 ));
     }
     
