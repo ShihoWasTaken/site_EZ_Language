@@ -4,48 +4,19 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'tutorial.title'|trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}{% endblock %}
 
 {% block content %}
-    
+
     <h1>{{ 'tutorial.title' |trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}</h1>
 
 
     {{  app.request.locale == 'en' ? tutorial.englishHtml|html : tutorial.frenchHtml|html }}
 
-    <pre>
-        <code class="cpp prettyprint lang-cpp">
-            #include &lt;SFML/Graphics.hpp&gt;
 
-            int main()
-            {
-            sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-            sf::CircleShape shape(100.f);
-            shape.setFillColor(sf::Color::Green);
+    {%  if tutorial.tutoPrev is not null %}
+        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoPrev.id}) }}">{{ 'tutorial.prev'|trans }}</a>
+    {%  endif %}
 
-            while (window.isOpen())
-            {
-            sf::Event event;
-            while (window.pollEvent(event))
-            {
-            if (event.type == sf::Event::Closed)
-            window.close();
-            }
+    {%  if tutorial.tutoNext is not null %}
+        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoNext.id}) }}">{{ 'tutorial.next'|trans }}</a>
+    {%  endif %}
 
-            window.clear();
-            window.draw(shape);
-            window.display();
-            }
-
-            return 0;
-            }
-        </code>
-    </pre>
-     
-     {#
-     AJOUTER LE SUIVANT ET PRECEDENT 
-     SEULEMENT S'ILS SONT DIFFERENTS DE NULL
-     
-     &&
-     
-     NE PAS OUBLIER QUE LA PAGE PEUT-ETRE AFFICHER EN FRANCAIS OU EN ANGLAIS UTILISER LA VARIABLE {{ lang }}
-     
-     #}     
 {% endblock content %}

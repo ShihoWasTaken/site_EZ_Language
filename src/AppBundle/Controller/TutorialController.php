@@ -5,18 +5,30 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\TutorialType;
 use AppBundle\Entity\Tutorial;
+use Symfony\Component\HttpFoundation\Request;
 
 class TutorialController extends Controller
 {
-    public function listAction(){
-        
-        $em = $this->getDoctrine()->getManager();
-        $tutorials = $em->getRepository('AppBundle:Tutorial')->findAll();
+    public function listAction(Request $request){
+        // Variable
+        $page        = $request->get('page');
 
+        $em          = $this->getDoctrine()->getManager();
+        $tutorials   = $em->getRepository('AppBundle:Tutorial')->findAll();
+
+        // Lang
         $lang = $this->get('request')->getLocale();
-        
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tutorials, 
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
+
+
         return $this->render('AppBundle:Tutorial:tutorial.list.html.twig', array(
-            'tutorials' => $tutorials,
+            'tutorials' => $pagination,
             'lang'      => $lang
         ));
     } 
