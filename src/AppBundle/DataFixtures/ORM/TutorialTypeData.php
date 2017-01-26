@@ -29,8 +29,62 @@ class TutorialData extends AbstractFixture implements OrderedFixtureInterface, C
 		$tuto = new Tutorial();
 		$tuto->setFrenchTitle("Title french");
 		$tuto->setEnglishTitle("Title english");
-		$tuto->setFrenchHtml("<p style='color: red'>description en rouge - french</p>");
-		$tuto->setEnglishHtml("<p style='color: red'>description en rouge - english</p>");
+		$tuto->setFrenchHtml("<p style='color: red'>description en rouge - french</p><pre>
+        <code class=\"cpp prettyprint lang-cpp\">
+            #include <SFML/Graphics.hpp>
+
+            int main()
+            {
+                sf::RenderWindow window(sf::VideoMode(200, 200), \"SFML works!\");
+                sf::CircleShape shape(100.f);
+                shape.setFillColor(sf::Color::Green);
+
+                while (window.isOpen())
+                {
+                    sf::Event event;
+                    while (window.pollEvent(event))
+                    {
+                        if (event.type == sf::Event::Closed)
+                        window.close();
+                    }
+
+                    window.clear();
+                    window.draw(shape);
+                    window.display();
+                }
+
+                return 0;
+            }
+        </code>
+    </pre>");
+		$tuto->setEnglishHtml("<p style='color: red'>description en rouge - english</p><pre>
+        <code class=\"cpp prettyprint lang-cpp\">
+            #include <SFML/Graphics.hpp>
+
+            int main()
+            {
+                sf::RenderWindow window(sf::VideoMode(200, 200), \"SFML works!\");
+                sf::CircleShape shape(100.f);
+                shape.setFillColor(sf::Color::Green);
+
+                while (window.isOpen())
+                {
+                    sf::Event event;
+                    while (window.pollEvent(event))
+                    {
+                        if (event.type == sf::Event::Closed)
+                        window.close();
+                    }
+
+                    window.clear();
+                    window.draw(shape);
+                    window.display();
+                }
+
+                return 0;
+            }
+        </code>
+    </pre>");
 
 		$manager->persist($tuto);
 		$this->addReference('tuto1', $tuto);

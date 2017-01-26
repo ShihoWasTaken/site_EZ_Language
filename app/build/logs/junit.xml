@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Project Test Suite" tests="9" assertions="6" failures="0" errors="3" time="0.201965">
+    <testsuite name="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" tests="9" assertions="6" failures="0" errors="3" time="0.201965">
+      <testcase name="testThatIndexIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="20" assertions="1" time="0.079398"/>
+      <testcase name="testThatFrenchIndexIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="26" assertions="1" time="0.010749"/>
+      <testcase name="testThatAboutIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="32" assertions="1" time="0.010658"/>
+      <testcase name="testThatFrenchAboutIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="38" assertions="1" time="0.010617"/>
+      <testcase name="testThatContactIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="44" assertions="1" time="0.030239"/>
+      <testcase name="testFormContactShouldValidate" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="49" assertions="0" time="0.013723">
+        <error type="PHPUnit_Framework_ExceptionWrapper">AppBundle\Tests\Controller\DefaultControllerTest::testFormContactShouldValidate
+InvalidArgumentException: The current node list is empty.
+
+/var/www/html/site_EZ_Language/vendor/symfony/symfony/src/Symfony/Component/DomCrawler/Crawler.php:752
+/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php:55
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</error>
+      </testcase>
+      <testcase name="testFormContactShouldNotValidateWithIncorrectEmail" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="65" assertions="0" time="0.013027">
+        <error type="PHPUnit_Framework_ExceptionWrapper">AppBundle\Tests\Controller\DefaultControllerTest::testFormContactShouldNotValidateWithIncorrectEmail
+InvalidArgumentException: The current node list is empty.
+
+/var/www/html/site_EZ_Language/vendor/symfony/symfony/src/Symfony/Component/DomCrawler/Crawler.php:752
+/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php:72
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</error>
+      </testcase>
+      <testcase name="testThatFrenchContactIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="82" assertions="1" time="0.012830"/>
+      <testcase name="testFrenchFormContact" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="87" assertions="0" time="0.020724">
+        <error type="PHPUnit_Framework_ExceptionWrapper">AppBundle\Tests\Controller\DefaultControllerTest::testFrenchFormContact
+InvalidArgumentException: The current node list is empty.
+
+/var/www/html/site_EZ_Language/vendor/symfony/symfony/src/Symfony/Component/DomCrawler/Crawler.php:752
+/var/www/html/site_EZ_Language/src/AppBundle/Tests/Controller/StaticControllerTest.php:93
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>

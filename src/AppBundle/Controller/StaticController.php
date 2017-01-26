@@ -50,7 +50,7 @@ class StaticController extends Controller
             if ($form->isValid())
             {
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Contact enquiry from symblog')
+                    ->setSubject('[EzLanguage.com] Contact')
                     ->setFrom('ezlanguage.contact@gmail.com')
                     ->setTo('kenny.guiougou@gmail.com')
                     ->setBody($this->renderView('AppBundle:Mail:contact.html.twig', array('contact' => $contact))

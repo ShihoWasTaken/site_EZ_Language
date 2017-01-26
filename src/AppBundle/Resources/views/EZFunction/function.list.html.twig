@@ -28,12 +28,15 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {# display navigation #}
-            <div class="navigation col-md-12 text-center">
-                {{ knp_pagination_render(pagination) }}
+            <div class="row">
+                {# display navigation #}
+                <div class="navigation col-md-12 text-center">
+                    {{ knp_pagination_render(functions) }}
+                </div>
             </div>
         </div>
     </div>
+
 {% endblock content %}
 
 {% block javascripts_body %}

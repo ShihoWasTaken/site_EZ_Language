@@ -1,20 +1,22 @@
-{% extends 'AppBundle::layout.html.twig' %}
+{% extends 'AppBundle::layout_tutorial.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'tutorial.title'|trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}{% endblock %}
 
 {% block content %}
-    
-    <h1>{{ tutorial.frenchTitle }}</h1>
-        {{ tutorial.frenchHtml|html  }}
-     
-     {#
-     AJOUTER LE SUIVANT ET PRECEDENT 
-     SEULEMENT S'ILS SONT DIFFERENTS DE NULL
-     
-     &&
-     
-     NE PAS OUBLIER QUE LA PAGE PEUT-ETRE AFFICHER EN FRANCAIS OU EN ANGLAIS UTILISER LA VARIABLE {{ lang }}
-     
-     #}     
+
+    <h1>{{ 'tutorial.title' |trans({'%english_title%': tutorial.englishTitle, '%french_title%': tutorial.frenchTitle}, "app") }}</h1>
+
+
+    {{  app.request.locale == 'en' ? tutorial.englishHtml|html : tutorial.frenchHtml|html }}
+
+
+    {%  if tutorial.tutoPrev is not null %}
+        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoPrev.id}) }}">{{ 'tutorial.prev'|trans }}</a>
+    {%  endif %}
+
+    {%  if tutorial.tutoNext is not null %}
+        <a class="btn btn-default btn-lg" href="{{ path('app_tutorialShow', {'id': tutorial.tutoNext.id}) }}">{{ 'tutorial.next'|trans }}</a>
+    {%  endif %}
+
 {% endblock content %}
