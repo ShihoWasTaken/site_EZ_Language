@@ -16,3 +16,8 @@ navbar.admin.category: Catégorie
 navbar.admin.tutorial.list: Liste Tutoriel
 navbar.admin.tutorial.create: Créer Tutoriel
 navbar.admin.tutorial: Tutoriel
+form.email: 'Mail' 
+form.name: 'Nom' 
+form.subject: 'Sujet'
+form.body: 'Message'
+form.submit: 'Envoyer'

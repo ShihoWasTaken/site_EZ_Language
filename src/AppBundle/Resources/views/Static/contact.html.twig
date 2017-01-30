@@ -1,4 +1,3 @@
-{#Sara ZALARHE #}
 
 {% extends 'AppBundle::layout.html.twig' %}
 
@@ -15,28 +14,27 @@
 
 				{{ form_errors(form) }}
 			<div class="form-group">
-				{{ form_label(form.name, "Votre nom :") }}
+				{{ form_label(form.name,'form.name'|trans) }}
 				{{ form_widget(form.name,{'attr': {'class': 'form-control'}})}}
 			</div>
-				<div class="form-group">
-				{{ form_label(form.email, "Votre email :") }}
+			<div class="form-group">
+				{{ form_label(form.email,'form.email'|trans) }}
 				{{ form_widget(form.email,{'attr': {'class': 'form-control'}})}}
 			</div>
 			<div class="form-group">
-				{{ form_label(form.subject, "Sujet :") }}
+				{{ form_label(form.subject, 'form.subject'|trans) }}
 				{{ form_widget(form.subject,{'attr': {'class': 'form-control'}})}}
 			</div>
 			<div class="form-group">
-				{{ form_label(form.body, "Votre message :") }}
+				{{ form_label(form.body, 'form.body'|trans) }}
 				{{ form_widget(form.body,{'attr': {'class': 'form-control'}})}}
 			</div>      
 
 				{{ form_rest(form) }}
 
-				<input type="submit" value="Envoyer" class="btn btn-primary" />
+				<input type="submit" value="{{'form.submit'|trans}}" class="btn btn-primary" />
 			</form>
 		</div>
 	</div>
 </div>
 {% endblock content %}
-
