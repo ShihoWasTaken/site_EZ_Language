@@ -338,3 +338,6 @@ tr:last-child {
 .botPage a{
     text-decoration: none;
 }
+#fh5co-intro .fh5co-block{
+    min-height: 385px !important;
+}
