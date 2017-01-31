@@ -30,27 +30,7 @@
 	{% javascripts '@bootstrap_js' output='js/bootstrap.js'	%}
 		<script src="{{ asset_url }}"></script>
 	{% endjavascripts %}
-	<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/js/jquery.tubular.1.0.js') }}"></script>
 	<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
-	<script>
-		var start = (new Date()).getTime();
-		var THRESHOLD = 1000; // a number we will calculate below (2.5 sec)
-		speedTest();
-
-		function speedTest() {
-			//Array des videos YouTube
-			var videos = ["3hGK4MJrKys", "a87GC4ahmjA", "Dhmxh7LHaj4", "jbf0n9wPuds", "E43dHhS_9CI", "UNrDZR97rg4"];
-
-			var duration = (new Date()).getTime() - start;
-			if (duration < THRESHOLD) {
-				$(document).ready(function() {
-					$(".wrapper_login").tubular({videoId: videos[Math.floor(Math.random() * videos.length)], repeat: true});
-				});
-			} else {
-				//Connexion trop lente, on ne charge pas la vid�o
-			}
-		}
-	</script>
 {% endblock javascripts_body %}
 
 {% block body %}
