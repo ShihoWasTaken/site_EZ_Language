@@ -23,12 +23,12 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(name="French_label", type="text")
+     * @ORM\Column(name="French_label", type="string", length=255)
      */
     private $french_label;
 
     /**
-     * @ORM\Column(name="English_label", type="text")
+     * @ORM\Column(name="English_label", type="string", length=255)
      */
     private $english_label;
 
