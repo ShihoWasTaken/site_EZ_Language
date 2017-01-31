@@ -4,12 +4,11 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
-
-
+<div class="container">
+    <div class="row">
         <div class="col-md-push-2 col-md-8 white_background boxElement">
-            <div class="row">
+            
                 <h2 class="main_title">Form Update Page</h1>
-            </div>
 
             <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
             <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
@@ -38,4 +37,6 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
 {% endblock content %}

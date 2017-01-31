@@ -14,11 +14,11 @@
 				<li><a href="{{ url('app_contact') }}" data-nav-section="contact"><span>{{ "contact" | trans }}</span></a></li>
 				{% include 'AppBundle:_components:admin_navigation.html.twig' %}
 				{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-					<li><a data-nav-section="register" href="{{ path('fos_user_registration_register') }}">{{ 'navbar.register' | trans }}</a></li>
-					<li><a data-nav-section="login" href="{{ path('fos_user_security_login') }}">{{ 'navbar.login' | trans }}</a></li>
+					<li><a data-nav-section="register" href="{{ path('fos_user_registration_register') }}"><span>{{ 'navbar.register' | trans }}</span></a></li>
+					<li><a data-nav-section="login" href="{{ path('fos_user_security_login') }}"><span>{{ 'navbar.login' | trans }}</span></a></li>
 				{% else %}
-					<li><a data-nav-section="account" href="{{ path('app_profile',  {'userId':app.user.id}) }}">{{ 'navbar.account' | trans }}</a></li>
-					<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+					<li><a data-nav-section="account" href="{{ path('app_profile',  {'userId':app.user.id}) }}"><span>{{ 'navbar.account' | trans }}</span></a></li>
+					<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>Se déconnecter</span></a></li>
 				{% endif %}
 				<li><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 				</ul>
