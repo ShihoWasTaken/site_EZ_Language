@@ -29,7 +29,20 @@ class StaticController extends Controller
 
     public function aboutAction()
 	{
-		return $this->render('AppBundle:Static:about.html.twig');
+        $lang  = $this->get('request')->getLocale();
+
+        //Load Page "about"
+        $em    = $this->getDoctrine()->getManager();
+        $page  = $em->getRepository('AppBundle:Page')->findOneById(3);
+        $text  = '';
+        if ($page !== null) {
+            $text = $lang === 'en' ? $page->getEnglishText() : $page->getFrenchText();
+        }
+
+
+        return $this->render('AppBundle:Static:about.html.twig', array(
+            'text' => $text
+        ));
 	}
 
     public function notfoundAction()
