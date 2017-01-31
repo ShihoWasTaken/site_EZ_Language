@@ -1,7 +1,7 @@
 {% if (language == "en") %}
-    {{ function.getEnglishDescription }}
+    {{ function.getEnglishDescription|html}}
 {% else %}
-    {{ function.getFrenchDescription }}
+    {{ function.getFrenchDescription|html }}
 {% endif %}
 </div>
 <div class="arguments">
@@ -12,8 +12,8 @@
 </div>
 <div class="html">
     {% if (language == "en") %}
-        {{ function.getEnglishHtml }}
+        {{ function.getEnglishHtml|html }}
     {% else %}
-        {{ function.getFrenchHtml }}
+        {{ function.getFrenchHtml|html }}
     {% endif %}
 </div>
