@@ -19,7 +19,7 @@ navbar.admin.tutorial: Tutorial
 navbar.admin.page.list: 'List Page'
 form.email: E-Mail
 form.name: Name
-form.subject: subject
+form.subject: Subject
 form.body: Message
 form.submit: Submit
 home.title: 'Do something you love.'
@@ -37,13 +37,13 @@ home.bloc4: Released
 list.code: Code
 list.name: Name
 list.action: Action
-home: 'Home'
-navbar.logout: 'Logout'
+home: Home
+navbar.logout: Logout
 functionList.title: 'Functions list'
 functionCreate.title: 'Create function'
 functionEdit.title: 'Edit Function'
 functionEdit.addArg: 'Add function argument'
-form.send: 'Send'
+form.send: Send
 pageEdit.title: 'Edit Page'
 form.frenchTitle: 'French title'
 form.englishTitle: 'English title'
@@ -52,15 +52,13 @@ tutoEdit.title: 'Edit tutorial'
 form.frenchHTML: 'French HTML'
 form.englishHTML: 'English HTML'
 tutoCreate.title: 'Create tutorial'
-form.back: 'Previous'
-form.next: 'Next'
-category.title: 'Category'
+category.title: Category
 category.add: 'Add category'
 form.frenchLabel: 'French label'
 form.englishLabel: 'English label'
 search.placeholder: 'Search for ...'
-search.searchLabel: 'Search'
-search.resultLabel: 'Result(s)'
+search.searchLabel: Search
+search.resultLabel: Result(s)
 pageList.title: 'Pages list'
-tutorial.prev: 'Previous'
-tutorial.next: 'Next'
+tutorial.prev: Previous
+tutorial.next: Next

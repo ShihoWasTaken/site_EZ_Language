@@ -62,3 +62,6 @@ search.resultLabel: Result(s)
 pageList.title: 'Pages list'
 tutorial.prev: Previous
 tutorial.next: Next
+notFound.title: 'Page not found'
+profil.title: 'My account'
+searchPage.title: 'Search'

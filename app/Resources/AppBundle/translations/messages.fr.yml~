@@ -35,32 +35,30 @@ home.bloc4: Avancement
 list.code: Code
 list.name: Nom
 list.action: Action
-home: 'Accueil'
+home: Accueil
 navbar.logout: 'Se déconnecter'
 navbar.admin.page.list: 'Liste des pages'
 functionList.title: 'Liste des fonctions'
 functionCreate.title: 'Créer un fonction'
 functionEdit.title: 'Editer une fonction'
 functionEdit.addArg: 'Ajouter un argument'
-form.send: 'Envoyer'
+form.send: Envoyer
 search.placeholder: 'Rechercher ...'
-search.searchLabel: 'Recherche'
-search.resultLabel: 'Résultat(s)'
+search.searchLabel: Recherche
+search.resultLabel: Résultat(s)
 pageList.title: 'Liste des pages'
 pageEdit.title: 'Modifier une page'
 form.frenchTitle: 'Titre en français'
 form.englishTitle: 'Titre en anglais'
 tutoList.title: 'Liste des tutoriels'
-tutorial.prev: 'Précédent'
-tutorial.next: 'Suivant'
+tutorial.prev: Précédent
+tutorial.next: Suivant
 tutoEdit.title: 'Modifier un tutoriel'
 form.frenchHTML: 'HTML en français'
 form.englishHTML: 'HTML en anglais'
 tutoCreate.title: 'Créer un tutoriel'
-form.back: 'Précédent'
-form.next: 'Suivant'
-form.submit: 'Valider'
-category.title: 'Catégories'
+form.submit: Valider
+category.title: Catégories
 category.add: 'Ajouter une catégorie'
 form.frenchLabel: 'Label en français'
 form.englishLabel: 'Label en anglais'
