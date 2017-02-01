@@ -25,7 +25,7 @@
 <code>{{ str_code }}</code>
 </div>
 <div class="arguments">
-    <h2>Arguments</h2>
+    <h2 class="main_title">Arguments</h2>
     <ul>
     {% set returnValue = null %}
     {% for argument in function.getArguments %}
@@ -44,7 +44,7 @@
     {% endfor %}
     </ul>
     {% if returnValue %}
-        <h2>Valeur de retour</h2>
+        <h2 class="main_title">Valeur de retour</h2>
         <ul>
             <li><h3>{{ returnValue.type.name }}</h3>
                 {% if (language == "en") %}
@@ -57,7 +57,7 @@
     {% endif %}
 </div>
 <div class="html">
-    <h2>Description</h2>
+    <h2 class="main_title">Description</h2>
     {% if (language == "en") %}
         {{ function.getEnglishHtml }}
     {% else %}
