@@ -19,7 +19,7 @@ navbar.admin.tutorial: Tutorial
 navbar.admin.page.list: 'List Page'
 form.email: E-Mail
 form.name: Name
-form.subject: subject
+form.subject: Subject
 form.body: Message
 form.submit: Submit
 home.title: 'Do something you love.'
