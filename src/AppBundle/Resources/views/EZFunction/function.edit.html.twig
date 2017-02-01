@@ -5,7 +5,7 @@
 
 {% block content %}
     
-    <h1>Form Update Function</h1>
+    <h1>{{'functionEdit.title' | trans}}</h1>
 
     <form action="{{ path('app_admin_functionEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
@@ -20,14 +20,14 @@
         {{ form_row(form.category) }}
 
         <h3>Argument</h3>
-        <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
+        <button class="btn btn-default" id="add_argument_link" type="button">{{'functionEdit.addArg' | trans}}</button>
         <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
             {% for argument in form.arguments %}
                 <li>{{ form_row(argument) }}</li>
             {% endfor %}
         </ul>
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="{{'form.submit' | trans}}" />
     </form>
 <br><br><br><br><br><br><br><br>
 {% endblock content %}

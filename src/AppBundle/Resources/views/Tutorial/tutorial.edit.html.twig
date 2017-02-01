@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-push-2 col-md-8 white_background boxElement">
-            <h2 class="main_title">Form Update Tuto</h1>
+            <h2 class="main_title">{{'tutoEdit.title' | trans}}</h1>
 
             <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
             <form action="{{ path('app_admin_tutorialEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
@@ -17,29 +17,29 @@
                 {{ form_errors(form) }}
 
                 <div class="form-group">
-                    {{ form_row(form.french_title, {'label': 'Titre Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.french_title, {'label': 'form.frenchTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.english_title, {'label': 'Titre Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.english_title, {'label': 'form.englishTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.french_html, {'label': 'HTML Français'}) }}
+                    {{ form_row(form.french_html, {'label': 'form.frenchHTML' | trans}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.english_html, {'label': 'HTML Anglais'}) }}
+                    {{ form_row(form.english_html, {'label': 'form.englishHTML' | trans}) }}
                 </div>
                 <script>
                     CKEDITOR.replace('appbundle_tutorial_french_html');
                     CKEDITOR.replace('appbundle_tutorial_english_html');
                 </script>
                 <div class="form-group">
-                    {{ form_row(form.tuto_next, {'label': 'Tutoriel précédent', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.tuto_next, {'label': 'tutorial.prev' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.tuto_prev, {'label': 'Tutoriel suivant', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.tuto_prev, {'label': 'tutorial.prev' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Valider" class="btn btn-primary" />
+                    <input type="submit" value="{{'form.submit' | trans}}" class="btn btn-primary" />
                 </div>
             </form>
         </div>

@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-push-2 col-md-8 white_background boxElement">
             
-                <h2 class="main_title">Form Update Page</h1>
+                <h2 class="main_title">{{'pageEdit.title' | trans}}</h1>
 
             <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
             <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
@@ -17,13 +17,13 @@
                 {{ form_errors(form) }}
 
                 <div class="form-group">
-                    {{ form_row(form.name, {'label': 'Nom', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.name, {'label': 'form.name' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.french_text, {'label': 'Titre Français', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.french_text, {'label': 'form.frenchTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.english_text, {'label': 'Titre Anglais', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                    {{ form_row(form.english_text, {'label': 'form.englishTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
                 </div>
                 <script>
                     CKEDITOR.replace('appbundle_page_french_text');
@@ -33,7 +33,7 @@
                 {{ form_rest(form) }}
 
                 <div class="form-group">
-                    <input type="submit" value="Valider" class="btn btn-primary" />
+                    <input type="submit" value="{{'form.submit' | trans}}" class="btn btn-primary" />
                 </div>
             </form>
         </div>
