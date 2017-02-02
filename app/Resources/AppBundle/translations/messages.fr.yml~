@@ -62,3 +62,6 @@ category.title: Catégories
 category.add: 'Ajouter une catégorie'
 form.frenchLabel: 'Label en français'
 form.englishLabel: 'Label en anglais'
+notFound.title: 'Page introuvable'
+profil.title: 'Mon compte'
+searchPage.title: 'Recherche'
