@@ -28,14 +28,8 @@
                 <input class="btn btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
                 <hr>
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-sm">{{ 'layout.register'|trans }}</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-default btn-sm right">{{ 'security.forgotPassword'|trans }}</a>
-                        </div>
-                    </div>
+                    <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-sm pull-left">{{ 'layout.register'|trans }}</a>
+                    <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-default btn-sm right pull-right">{{ 'security.forgotPassword'|trans }}</a>
                 </div>
             </form>
         </div>
