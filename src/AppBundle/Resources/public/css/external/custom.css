@@ -112,10 +112,6 @@ a:hover, a:focus {
     /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
 }
 
-#form-login, #form-register {
-    background-color: #EAEAEA;
-    margin-top: 10%;
-}
 #form-register {
     padding-bottom: 10px;
 }
@@ -197,9 +193,7 @@ SHOW FUNCTION
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
 }
-.function .description {
 
-}
 .function .arguments {
     margin-top: 25px;
 }
@@ -216,6 +210,40 @@ Override row
     margin-left: 0px;
     margin-top: 0px;
 }
+
+/* ------------------
+Top buffer for rows
+-------------------- */
+.top-buffer { margin-top:20px; }
+
+/* -----------------
+Catégories
+------------------- */
+.category_ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    overflow: hidden;
+}
+.category_li {
+    margin: 10px;
+    padding: 5px;
+    background-color: #52d3aa;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    float:left; /*pour IE*/
+}
+.category_number_li {
+    padding-left: 5px;
+    border-left: 1px solid white;
+}
+
+
+
+
 .main_title {
 font-family: "Open Sans",Arial,sans-serif;
 }
@@ -295,4 +323,58 @@ tr:first-child {
 }
 tr:last-child {
   border-bottom: none;
+}
+
+.botPage{
+    margin:auto;
+    margin-top: 25px;
+    text-align:center;
+}
+.botPage a{
+    text-decoration: none;
+}
+#fh5co-intro .fh5co-block{
+    min-height: 385px !important;
+}
+
+.titleFunction {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.titleFunction > div{
+    padding-bottom: 0;
+}
+.titleFunction h1{
+    margin-bottom: 0;
+    padding: 10px;
+    font-weight: normal;
+    color: #777;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+}
+.description_block h2{
+    margin: 40px 0 10px 0;
+    padding: 5px 0;
+}
+.description_block ul h3, .description_block ul p{
+    margin: 0;
+}
+.description_block ul li{
+    margin-bottom: 20px;
+}
+
+
+/* -----------------
+FORM LOGIN
+------------------- */
+.login_form {
+    background-color: #FFFFFF;
+    margin-left: 0%;
+    width: 100%;
+}
+.fos_user_resetting_request {
+    width: 100%;
+    margin-left: 0px;
+}
+.wrapper_login {
+    width: 30%;
 }

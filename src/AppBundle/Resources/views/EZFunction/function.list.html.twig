@@ -1,34 +1,40 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'functionList.title'|trans }}{% endblock %}
 
 {% block content %}
 
-    <h1>List Function</h1>
-    
-    <table class="table  table-bordered">
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for function in functions %}
-            <tr>
-                <td>{{ function.id }}</td>
-                <td>{{ function.name }}</td>
-                <td><a class="btn btn-default" href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}"><i class="fa fa-pencil"></i></a>
-                <button class="btn btn-default deleteFunction" data-id="{{ function.id  }}" ><i class="fa fa-times"></i></button></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+   <div class="container">
+        <div class="boxElement white_background">
+            <h2 class="main_title">{{'functionList.title' | trans}}</h2>
 
-    <div class="navigation col-md-12 text-center">
-        {{ knp_pagination_render(functions) }}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ 'list.code'|trans }}</th>
+                        <th>{{ 'list.name'|trans }}</th>
+                        <th>{{ 'list.action'|trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for function in functions %}
+                        <tr>
+                            <td>{{ function.id}}</td>
+                            <td>{{ function.name }}</td>
+                            <td><a class="btn btn-default" href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}"><i class="fa fa-pencil"></i></a>
+                            <button class="btn btn-default deleteFunction" data-id="{{ function.id  }}" ><i class="fa fa-times"></i></button></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="row">
+                {# display navigation #}
+                <div class="navigation col-md-12 text-center">
+                    {{ knp_pagination_render(functions) }}
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock content %}

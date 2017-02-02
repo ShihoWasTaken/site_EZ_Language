@@ -90,7 +90,7 @@ class EZFunctionController extends Controller {
 
         if ($form->isValid()) {
 
-            //Save $function;
+            // Save function;
             $em->persist($function);
             $em->flush();
 
@@ -112,7 +112,7 @@ class EZFunctionController extends Controller {
 
         $function = new EZFunction();
 
-        //Create form
+        // Create form
         $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
             'locale' => $this->get('request')->getLocale())
         );
@@ -121,7 +121,7 @@ class EZFunctionController extends Controller {
         $form->handleRequest($request);
         
         if ($form->isValid()) {
-            //Save $function;
+            // Save function;
             $em = $this->getDoctrine()->getManager();
             $em->persist($function);
 

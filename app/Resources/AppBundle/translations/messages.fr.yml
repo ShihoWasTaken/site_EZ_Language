@@ -10,9 +10,61 @@ home_page.title: Accueil
 contact.title: 'Nous contacter'
 navbar.admin.label: Admin
 navbar.admin.function: Fonctions
-navbar.admin.function.list: Liste Fonction
-navbar.admin.function.create: Créer Fonction
+navbar.admin.function.list: 'Liste Fonction'
+navbar.admin.function.create: 'Créer Fonction'
 navbar.admin.category: Catégorie
-navbar.admin.tutorial.list: Liste Tutoriel
-navbar.admin.tutorial.create: Créer Tutoriel
+navbar.admin.tutorial.list: 'Liste Tutoriel'
+navbar.admin.tutorial.create: 'Créer Tutoriel'
 navbar.admin.tutorial: Tutoriel
+form.email: Mail
+form.name: Nom
+form.subject: Sujet
+form.body: Message
+home.title: 'Do something you love.'
+home.title.description: 'Easy langage est un langage destiné aux développeurs ainsi qu''aux non développeurs,facile d''utilisation,flexible et pragmatique, grâce à ses nombreuses fonctionnalités.'
+home.bloc1: 'Premier pas avec EZ'
+home.bloc1.description: 'Découverez nos tutoriels détaillés et apprennez à programmer en EZ en quelques clicks'
+home.bloc1.submit: Commencer
+home.bloc2: Documentation
+home.bloc2.description: 'Cette section fournit des informations détaillées sur les fonctionnalités clés du langage EZ et les fonctions accessibles'
+home.bloc2.submit: 'Click ici'
+home.bloc3: 'A propos du langage'
+home.bloc3.description: 'Easy language est un langage deprogrammation compilé,son atout principal, est sa syntaxe claire'
+user.name : 'Nom d''utilisateur'
+user.mail : 'Adresse mail'
+user.date : 'Dérniére connexion'
+home.bloc3.submit: Découvrir
+home.bloc4: Avancement
+list.code: Code
+list.name: Nom
+list.action: Action
+home: Accueil
+navbar.logout: 'Se déconnecter'
+navbar.admin.page.list: 'Liste des pages'
+functionList.title: 'Liste des fonctions'
+functionCreate.title: 'Créer un fonction'
+functionEdit.title: 'Editer une fonction'
+functionEdit.addArg: 'Ajouter un argument'
+form.send: Envoyer
+search.placeholder: 'Rechercher ...'
+search.searchLabel: Recherche
+search.resultLabel: Résultat(s)
+pageList.title: 'Liste des pages'
+pageEdit.title: 'Modifier une page'
+form.frenchTitle: 'Titre en français'
+form.englishTitle: 'Titre en anglais'
+tutoList.title: 'Liste des tutoriels'
+tutorial.prev: Précédent
+tutorial.next: Suivant
+tutoEdit.title: 'Modifier un tutoriel'
+form.frenchHTML: 'HTML en français'
+form.englishHTML: 'HTML en anglais'
+tutoCreate.title: 'Créer un tutoriel'
+form.submit: Valider
+category.title: Catégories
+category.add: 'Ajouter une catégorie'
+form.frenchLabel: 'Label en français'
+form.englishLabel: 'Label en anglais'
+notFound.title: 'Page introuvable'
+profil.title: 'Mon compte'
+searchPage.title: Recherche

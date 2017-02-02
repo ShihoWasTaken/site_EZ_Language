@@ -29,7 +29,20 @@ class StaticController extends Controller
 
     public function aboutAction()
 	{
-		return $this->render('AppBundle:Static:about.html.twig');
+        $lang  = $this->get('request')->getLocale();
+
+        //Load Page "about"
+        $em    = $this->getDoctrine()->getManager();
+        $page  = $em->getRepository('AppBundle:Page')->findOneById(3);
+        $text  = '';
+        if ($page !== null) {
+            $text = $lang === 'en' ? $page->getEnglishText() : $page->getFrenchText();
+        }
+
+
+        return $this->render('AppBundle:Static:about.html.twig', array(
+            'text' => $text
+        ));
 	}
 
     public function notfoundAction()
@@ -82,7 +95,9 @@ class StaticController extends Controller
         //Get user by Id
         $em         = $this->getDoctrine()->getManager();
         $user       = $em->getRepository('AppBundle:User')->findOneById($userId);
-
+        $default    = "http://sentireconcepts.com/images/male_face_128.jpg";
+        $size       = 40;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->getEmail() ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
         // user exist
         if (!$user) {
             throw $this->createNotFoundException(
@@ -91,7 +106,8 @@ class StaticController extends Controller
         }
 
         return $this->render('AppBundle:Static:profil.html.twig', array(
-                    'user'      => $user
+                    'user'      => $user,
+                    'grav_url'  => $grav_url,
         ));
     }
 }
