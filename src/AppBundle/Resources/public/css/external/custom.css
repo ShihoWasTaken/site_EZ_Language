@@ -1,7 +1,6 @@
-/*
- * Enzo Chevallier, création : 21/09/2016
- * Modifié par Sara ZALARHE
- */
+html{
+    min-height: 100%;
+}
 
 /* Mise à 0 des border radius */
 input[type=text], input[type=email], textarea.form-control, .form-control, btn{
@@ -378,4 +377,24 @@ FORM LOGIN
 }
 .wrapper_login {
     width: 30%;
+}
+.arguments{
+    list-style: none;
+    margin: 0;
+    font-size: 0.8em;
+}
+.arguments li{
+    margin-bottom: 10px;
+}
+.boxArgument{
+    border: 1px solid #DADADA;
+    background: #F2F2F2;
+    padding: 10px;
+}
+.boxArgument input, .boxArgument textarea, .boxArgument select{
+    background: #FFF;
+}
+.closeArgument{
+    cursor: pointer;
+    float: right;
 }

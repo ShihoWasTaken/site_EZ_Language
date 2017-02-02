@@ -1,0 +1,17 @@
+<div  class="boxArgument row">
+    <div class="form-group col-md-12">
+        {{ form_row(form.name, {'label': 'form.name' | trans , 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group col-md-6">
+        {{ form_row(form.french_description, {'label': 'form.descriptionFrench' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group col-md-6">
+        {{ form_row(form.english_description, {'label': 'form.descriptionEnglish' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group col-md-12">
+        {{ form_row(form.type, {'label': 'form.type' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group col-md-12">
+        {{ form_row(form.return, {'label': 'form.return' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+</div>

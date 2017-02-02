@@ -21,6 +21,10 @@ form.email: E-Mail
 form.name: Name
 form.subject: Subject
 form.body: Message
+form.descriptionFrench: 'Description French'
+form.descriptionEnglish: 'Description English'
+form.type: 'Type'
+form.return: 'Return'
 form.submit: Submit
 home.title: 'Do something you love.'
 home.title.description: 'EZ language is designed for developers and non developers as well. It''s easy to use, flexible and coherent thanks to its many features.'
@@ -68,3 +72,7 @@ tutorial.next: Next
 notFound.title: 'Page not found'
 profil.title: 'My account'
 searchPage.title: Search
+argument.title: 'Argument'
+argument.add: 'Add argument'
+argument.create: 'Create argument'
+argument.edit: 'Edit argument'

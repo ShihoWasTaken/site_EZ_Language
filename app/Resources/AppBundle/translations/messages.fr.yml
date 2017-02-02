@@ -20,6 +20,10 @@ form.email: Mail
 form.name: Nom
 form.subject: Sujet
 form.body: Message
+form.descriptionFrench: 'Description en Francais'
+form.descriptionEnglish: 'Description en Anglais'
+form.type: 'Type'
+form.return: 'Retour'
 home.title: 'Do something you love.'
 home.title.description: 'Easy langage est un langage destiné aux développeurs ainsi qu''aux non développeurs,facile d''utilisation,flexible et pragmatique, grâce à ses nombreuses fonctionnalités.'
 home.bloc1: 'Premier pas avec EZ'
@@ -68,3 +72,7 @@ form.englishLabel: 'Label en anglais'
 notFound.title: 'Page introuvable'
 profil.title: 'Mon compte'
 searchPage.title: Recherche
+argument.title: 'Argument'
+argument.add: 'Ajouter argument'
+argument.create: 'Creation argument'
+argument.edit: 'Edition argument'
