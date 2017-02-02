@@ -9,21 +9,16 @@ jQuery(document).ready(function() {
 
         // get the new index
         var index = $collectionHolder.data('index');
-        
-       
 
         // Replace '__name__' in the prototype's HTML to
         // instead be a number based on how many items we have
         var newForm = prototype.replace(/__name__/g, index);
-        
-        
-        
+
         // increase the index with one for the next item
         $collectionHolder.data('index', index + 1); 
 
         // Display the form in the page in an li, before the "Add a tag" link li
         $collectionHolder.append($newLinkLi.append(newForm));
-
     }
 
     function addTagFormDeleteLink($tagFormLi) {
@@ -40,7 +35,8 @@ jQuery(document).ready(function() {
     }
 
     // Get the ul that holds the collection of arguments
-    $collectionHolder = $('div.arguments');
+    $collectionHolder = $('ul.arguments');
+
     $collectionHolder.find('li').each(function() {
         addTagFormDeleteLink($(this));
     });
