@@ -1,6 +1,9 @@
-{% block integer_widget %}
-    <div class="integer_widget">
-        {% set type = type|default('number') %}
-        {{ block('form_widget_simple') }}
-    </div>
+{# app/Resources/views/form/_arguments.html.twig #}
+{% block argument_widget %}
+    Coucou ça marche
+    {{ form_row(argument.name, {'label': 'Nameuh'}) }}
+    {{ form_row(argument.french_description) }}
+    {{ form_row(argument.english_description) }}
+    {{ form_row(argument.return) }}
+    {{ form_row(argument.type) }}
 {% endblock %}

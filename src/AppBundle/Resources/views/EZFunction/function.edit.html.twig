@@ -1,6 +1,5 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
@@ -48,10 +47,29 @@
             <div class="form-group">
                 <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
             </div>
-            {#{% form_theme form 'EZFunction/_argument.html.twig' %}#}
+
+
             <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
                 {% for argument in form.arguments %}
-                    <li>{{ form_widget(argument) }}</li>
+                    <li>
+                        <div  style="border: 1px groove #b8b8b8;">
+                            <div class="form-group">
+                                {{ form_row(argument.name, {'label': 'Nom', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_row(argument.french_description, {'label': 'Description française', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_row(argument.english_description, {'label': 'Description anglaise', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_row(argument.type, {'label': 'Type', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_row(argument.return, {'label': 'Retour', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
             
