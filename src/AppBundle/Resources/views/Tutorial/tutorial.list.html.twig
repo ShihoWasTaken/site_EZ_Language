@@ -1,31 +1,34 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'tutoList.title'|trans }}{% endblock %}
 
 {% block content %}
     
-    <h1>Liste des tutos</h1>
-    
-    <table class="table  table-bordered">
-        <thead>
-            <tr>
-                <th>{{ 'list.code'|trans }}</th>
-                <th>{{ 'list.name'|trans }}</th>
-                <th>{{ 'list.action'|trans }}</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tutorial in tutorials %}
-        <tr>
-            <td>{{ tutorial.id }}</td>
-            <td>{{  app.request.locale == 'en' ? tutorial.englishTitle : tutorial.frenchTitle }}</td>
-                <td><a class="btn btn-default" href="{{ path('app_admin_tutorialEdit', {'id': tutorial.id } ) }}"><i class="fa fa-pencil"></i></a>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-            
+     <div class="container">
+        <div class="boxElement white_background">
+            <h2 class="main_title">{{ 'tutoList.title'|trans }}</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ 'list.code'|trans }}</th>
+                        <th>{{ 'list.name'|trans }}</th>
+                        <th>{{ 'list.action'|trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tutorial in tutorials %}
+                    <tr>
+                        <td>{{ tutorial.id }}</td>
+                        <td>{{  app.request.locale == 'en' ? tutorial.englishTitle : tutorial.frenchTitle }}</td>
+                            <td><a class="btn btn-default" href="{{ path('app_admin_tutorialEdit', {'id': tutorial.id } ) }}"><i class="fa fa-pencil"></i></a>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="navigation col-md-12 text-center">
         {{ knp_pagination_render(tutorials) }}

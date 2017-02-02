@@ -17,7 +17,7 @@
 						<li><a data-nav-section="login" href="{{ path('fos_user_security_login') }}"><span>{{ 'navbar.login' | trans }}</span></a></li>
 					{% else %}
 						<li><a data-nav-section="account" href="{{ path('app_profile',  {'userId':app.user.id}) }}"><span>{{ 'navbar.account' | trans }}</span></a></li>
-						<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>Se déconnecter</span></a></li>
+						<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>{{ 'navbar.logout' | trans }}</span></a></li>
 					{% endif %}
 					<li><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 					</ul>
