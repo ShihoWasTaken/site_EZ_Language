@@ -32,6 +32,9 @@ home.bloc2.description: 'This section provides detailed informations about the k
 home.bloc2.submit: 'Click here'
 home.bloc3: 'About language'
 home.bloc3.description: 'EZ language is a compiled programming language. Its main trump, is its clear syntax.'
+user.name : 'User name'
+user.mail : 'E-mail'
+user.date : 'Last connexion'
 home.bloc3.submit: Discover
 home.bloc4: Released
 list.code: Code
