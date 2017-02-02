@@ -4,5 +4,15 @@
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
 
 {% block content %}
-	Name : {{ user.username }}
+	<div class="container">
+			<div clas="row">
+				<div class="col-md-push-3 col-md-6 white_background boxElement">
+						<img src={{grav_url}} alt="" /></br>
+						<strong>{{ 'user.name'|trans }}</strong>{{ user.username }}</br>
+						<strong>{{ 'user.mail'|trans }}</strong>{{ user.email }}</br>
+						<strong>{{ 'user.date'|trans }}</strong>{{ user.lastLogin|date('d/m/Y') }}</br>
+				</div>
+			</div>
+		</div>
+	
 {% endblock content %}
