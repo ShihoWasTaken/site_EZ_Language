@@ -1,7 +1,7 @@
 
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'contact.title'|trans }}{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -32,7 +32,7 @@
 
 				{{ form_rest(form) }}
 
-				<input type="submit" value="{{'form.submit'|trans}}" class="btn btn-primary" />
+				<input type="submit" value={{'form.send'|trans}} class="btn btn-primary" />
 			</form>
 		</div>
 	</div>

@@ -341,3 +341,28 @@ tr:last-child {
 #fh5co-intro .fh5co-block{
     min-height: 385px !important;
 }
+
+.titleFunction {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.titleFunction > div{
+    padding-bottom: 0;
+}
+.titleFunction h1{
+    margin-bottom: 0;
+    padding: 10px;
+    font-weight: normal;
+    color: #777;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+}
+.description_block h2{
+    margin: 40px 0 10px 0;
+    padding: 5px 0;
+}
+.description_block ul h3, .description_block ul p{
+    margin: 0;
+}
+.description_block ul li{
+    margin-bottom: 20px;
+}
