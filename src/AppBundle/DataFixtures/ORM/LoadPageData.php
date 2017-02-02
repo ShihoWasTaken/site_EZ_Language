@@ -29,8 +29,6 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
 	{
             $faker = \Faker\Factory::create();
             
-            $userManager = $this->container->get('fos_user.user_manager');
-            
             //Create Page Home
             $page = new Page();
             $page->setEnglishText("[ENGLISH]" . $faker->text(400));

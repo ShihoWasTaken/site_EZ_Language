@@ -28,7 +28,6 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
 	public function load(ObjectManager $manager)
 	{
 		$faker = \Faker\Factory::create();
-                $userManager = $this->container->get('fos_user.user_manager');
                 
 		for ($i=0; $i<self::MAX_NB_CATEGORY; ++$i)
 		{
