@@ -45,9 +45,12 @@
             <div class="form-group">
                 <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
             </div>
-            <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
+            <ul class="arguments" data-prototype="{% filter escape %}
+             {{ include('AppBundle:EZFunction:_argument.html.twig', { 'form': form.arguments.vars.prototype }) }}
+         {% endfilter %}">
             </ul>
-            <input type="submit" value="Submit" />
+            <hr>
+            <input type="submit" value="Submit" class="btn btn-success" />
         </form>
     </div>
 </div>
