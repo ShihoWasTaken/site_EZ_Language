@@ -1,51 +1,26 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ function.name }}{% endblock %}
 
 {% block content %}
 
-    <div class="row">
-        <div class="jumbotron">
-            <div class="container">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6">
-                    <div class="title">
-                        <h1>{{ function.name }}
-                            {% set aArgs = [] %}
-
-                            {% for argument in function.arguments %}
-                                {% set aArgs = aArgs|merge([argument.name]) %}
-                            {% endfor %}
-
-                            ({{ aArgs|join(', ') }})
-                        </h1>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                </div>
+<div class="container-fuild">
+    <div class="row titleFunction">
+        <div class="col-md-push-12 white_background">
+            <div class="title">
+                <h1>{{ function.name }}</h1>
             </div>
         </div>
     </div>
 
     <div class="row">
-    </div>
-
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <div class="jumbotron animated slideInUp">
-                <div class="container">
-                    <div class="description">
-                        {% include '_description.html.twig' with {'function': function, 'language': language} %}
-                    </div>
-                </div>
+        <div class=" col-md-push-3 col-md-6 boxElement animated slideInUp">
+            <div class="description_block">
+                {% include 'AppBundle:EZFunction:_description.html.twig' with {'function': function, 'language': language} %}
             </div>
         </div>
-        <div class="col-md-3">
-        </div>
     </div>
+</div>
 
 {% endblock content %}

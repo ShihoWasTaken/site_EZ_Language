@@ -4,14 +4,14 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'searchPage.title'|trans }}{% endblock %}
 
 {% block content %}
 	<div class="container">
 		<div clas="row">
 			<form class="col-md-12 boxElement marginTop" role="search" action="{{ path('app_search') }}" method="GET">
 				<div class="input-group boxRecherche">
-					<input type="text" name="q" class="form-control" placeholder="Search for..." value="{{ searchtext }}">
+					<input type="text" name="q" class="form-control" placeholder="{{'search.placeholder' | trans}}" value="{{ searchtext }}">
 					<div class="input-group-addon">
 						<button class="btn btn-transparent" type="submit">
 							<i class="fa fa-search" aria-hidden="true"></i>
@@ -23,7 +23,7 @@
 			{# display result #}
 
 			<div class="list_result col-md-12 boxElement">
-				Search : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} RESULT)</span>
+				{{'search.searchLabel' | trans}} : <strong>{{ searchtext }}</strong> <span class="count">({{ pagination.getTotalItemCount }} {{'search.resultLabel' | trans}})</span>
 				<hr>
 				{% for element in pagination %}
 					<div class="result">
