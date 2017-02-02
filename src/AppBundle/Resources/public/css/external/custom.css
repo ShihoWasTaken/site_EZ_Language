@@ -1,7 +1,6 @@
-/*
- * Enzo Chevallier, création : 21/09/2016
- * Modifié par Sara ZALARHE
- */
+html{
+    height: 100%;
+}
 
 /* Mise à 0 des border radius */
 input[type=text], input[type=email], textarea.form-control, .form-control, btn{
