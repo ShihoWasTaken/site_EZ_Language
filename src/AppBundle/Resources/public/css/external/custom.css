@@ -378,3 +378,19 @@ FORM LOGIN
 .wrapper_login {
     width: 30%;
 }
+.arguments{
+    list-style: none;
+    margin: 0;
+    font-size: 0.8em;
+}
+.arguments li{
+    margin-bottom: 10px;
+}
+.boxArgument{
+    border: 1px solid #DADADA;
+    padding: 10px;
+}
+.closeArgument{
+    cursor: pointer;
+    float: right;
+}

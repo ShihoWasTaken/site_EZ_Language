@@ -1,9 +1,17 @@
-{# app/Resources/views/form/_arguments.html.twig #}
-{% block argument_widget %}
-    Coucou ça marche
-    {{ form_row(argument.name, {'label': 'Nameuh'}) }}
-    {{ form_row(argument.french_description) }}
-    {{ form_row(argument.english_description) }}
-    {{ form_row(argument.return) }}
-    {{ form_row(argument.type) }}
-{% endblock %}
+<div  class="boxArgument">
+    <div class="form-group">
+        {{ form_row(form.name, {'label': 'Nom', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.french_description, {'label': 'Description française', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.english_description, {'label': 'Description anglaise', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.type, {'label': 'Type', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.return, {'label': 'Retour', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+    </div>
+</div>

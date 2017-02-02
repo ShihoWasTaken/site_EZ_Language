@@ -23,8 +23,8 @@ jQuery(document).ready(function() {
     }
 
     function addTagFormDeleteLink($tagFormLi) {
-        var $removeFormA = $('<a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>');
-        $tagFormLi.prepend($removeFormA);
+        var $removeFormA = $('<i class="fa fa-times closeArgument" aria-hidden="true"></i>');
+        $tagFormLi.children().prepend($removeFormA);
 
         $removeFormA.on('click', function(e) {
             // prevent the link from creating a "#" on the URL

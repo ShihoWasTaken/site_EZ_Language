@@ -49,26 +49,12 @@
             </div>
 
 
-            <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
+            <ul class="arguments" data-prototype="{% filter escape %}
+             {{ include('AppBundle:EZFunction:_argument.html.twig', { 'form': form.arguments.vars.prototype }) }}
+         {% endfilter %}">
                 {% for argument in form.arguments %}
                     <li>
-                        <div  style="border: 1px groove #b8b8b8;">
-                            <div class="form-group">
-                                {{ form_row(argument.name, {'label': 'Nom', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-                            </div>
-                            <div class="form-group">
-                                {{ form_row(argument.french_description, {'label': 'Description française', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-                            </div>
-                            <div class="form-group">
-                                {{ form_row(argument.english_description, {'label': 'Description anglaise', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-                            </div>
-                            <div class="form-group">
-                                {{ form_row(argument.type, {'label': 'Type', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-                            </div>
-                            <div class="form-group">
-                                {{ form_row(argument.return, {'label': 'Retour', 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
-                            </div>
-                        </div>
+                      {{ include('AppBundle:EZFunction:_argument.html.twig', { 'form': argument }) }}
                     </li>
                 {% endfor %}
             </ul>
