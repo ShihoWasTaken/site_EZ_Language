@@ -1,2 +1,12 @@
 security.login.title: 'Connexion'
 security.forgotPassword: 'Mot de passe oublié ?'
+
+registration.email.subject: 'Bienvenue %username%'
+registration.email.header: 'Bonjour %username%,'
+registration.email.body: 'Bienvenue sur la documentation EZ Language, merci de confirmer votre adresse email'
+registration.email.confirm: 'Confirmer'
+registration.email.footer: 'Si le bouton ne fontionne pas, cliquez ici : '
+
+password_resetting.email.subject: 'Oubli de mot de passe - EZ Language'
+password_resetting.email.body: 'Vous pouvez réinitialiser votre mot de passe en cliquant ici'
+password_resetting.email.reinit: 'Réinitialiser'
