@@ -114,8 +114,8 @@ fos_user:
             enabled: true
             template: email/registration.email.html.twig
     from_email:
-        address:        noreply@ezlanguage.com
-        sender_name:    EZ Language
+        address:        noreply@example.com
+        sender_name:    One Trick Poro
     service:
         mailer: fos_user.mailer.twig_swift
     resetting:

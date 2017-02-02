@@ -1,12 +1,2 @@
 security.login.title: 'Log in'
 security.forgotPassword: 'Forgot Password ?'
-
-registration.email.subject: 'Welcome %username%'
-registration.email.header: 'Hi %username%,'
-registration.email.body: 'Welcome on the EZ Language documentation, please confirm your email here'
-registration.email.confirm: 'Confirm'
-registration.email.footer: 'If the button above is not working, click here : '
-
-password_resetting.email.subject: 'New password - EZ Language'
-password_resetting.email.body: 'You can reinitialize your password by clicking here'
-password_resetting.email.reinit: 'New password'
