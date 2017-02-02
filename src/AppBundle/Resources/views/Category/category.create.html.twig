@@ -1,30 +1,45 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'category.title'|trans }}{% endblock %}
 
 {% block content %}
 
-    <h1>Les categories</h1>
-    
-    <ul>
-        {% for category in categories %}
-            <li>{{ category.frenchLabel }} <span>{{ category.getEZFunctions()|length }}</span></li>
-        {% endfor %}
-    </ul>
-    
-    <h2>Ajouter une catégorie</h2>
-    
-     <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
+<div class="container">
+    <div class="row">
+        <div class="col-md-push-2 col-md-8 white_background boxElement">
+                <h1 class="main_title">{{ 'category.title' | trans }}</h1>
 
-        {{ form_widget(form._token) }}
-        {{ form_errors(form) }}
-        
-        {{ form_row(form.french_label) }}
-        {{ form_row(form.english_label) }}
+                <ul class="category_ul">
+                    {% for category in categories %}
+                        <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
+                    {% endfor %}
+                </ul>
 
-        <input type="submit" value="Submit" />
-    </form>
-        
+                <div class="top-buffer">
+                    <h2 class="main_title">{{ 'category.add' | trans }}</h2>
+                </div>
+
+            <form action="{{ path('app_admin_category') }}" method="post" {{ form_enctype(form) }} class="app">
+
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
+
+
+                <div class="form-group">
+                    {{ form_row(form.french_label, {'label': 'form.frenchLabel' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_label, {'label': 'form.englishLabel' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="{{ 'form.submit'|trans }}" class="btn btn-primary" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
-
