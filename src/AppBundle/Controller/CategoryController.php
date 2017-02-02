@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         if ($form->isValid()) {
 
-            //Save $function;
+            // Save category
             $em->persist($category);
             $em->flush();
 

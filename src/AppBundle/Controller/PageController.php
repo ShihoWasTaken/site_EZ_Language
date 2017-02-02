@@ -44,7 +44,7 @@ class PageController extends Controller {
         $form->handleRequest($request);
         
         if ($form->isValid()) {
-            //Save $page;
+            //Save page;
             $em->flush();
             return $this->redirectToRoute('app_admin_pageList');
         }

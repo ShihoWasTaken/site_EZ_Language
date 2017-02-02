@@ -1,11 +1,11 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'functionCreate.title'|trans }}{% endblock %}
 
 {% block content %}
     
-    <h1>Create Function</h1>
+    <h1>{{'functionCreate.title' | trans}}</h1>
 
     <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
         {{ form_row(form._token) }}
@@ -21,7 +21,7 @@
         <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
         <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
         </ul>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="{{'form.submit' | trans}}" />
     </form>
 
 {% endblock content %}

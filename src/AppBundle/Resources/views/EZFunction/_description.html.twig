@@ -1,16 +1,63 @@
+{% set aArgs = [] %}
+{% set reArg = "" %}
+{% set str_code = "" %}
+{% for argument in function.arguments %}
+    {% if argument.return %}
+        {% set reArg = argument.type.name %}
+    {% else %}
+        {% set aArgs = aArgs|merge([argument.name ~ " is " ~ argument.type.name]) %}
+    {% endif %}
+{% endfor %}
+{% if reArg == "" %}
+    {% set str_code = "procedure " ~  function.name ~ "(" ~  aArgs|join(', ') ~ ")" %}
+{% else %}
+    {% set str_code = "function " ~  function.name ~ "(" ~  aArgs|join(', ') ~ ") return " ~ reArg %}
+{% endif %}
+
+
+<div>
 {% if (language == "en") %}
     {{ function.getEnglishDescription|html}}
 {% else %}
     {{ function.getFrenchDescription|html }}
 {% endif %}
+<br>
+<code>{{ str_code }}</code>
 </div>
 <div class="arguments">
-    Arguments :
+    <h2 class="main_title">Arguments</h2>
+    <ul>
+    {% set returnValue = null %}
     {% for argument in function.getArguments %}
-        {{ argument.name }}
+        {% if argument.return %}
+            {% set returnValue = argument %}
+        {% else %}
+            <li>
+                <h3>{{ argument.name }}</h3>
+                {% if (language == "en") %}
+                    <p>{{ argument.getEnglishDescription }}</p>
+                {% else %}
+                    <p>{{ argument.getFrenchDescription }}</p>
+                {% endif %}
+            </li>
+        {% endif %}
     {% endfor %}
+    </ul>
+    {% if returnValue %}
+        <h2 class="main_title">Valeur de retour</h2>
+        <ul>
+            <li><h3>{{ returnValue.type.name }}</h3>
+                {% if (language == "en") %}
+                    <p>{{ returnValue.getEnglishDescription }}</p>
+                {% else %}
+                    <p>{{ returnValue.getFrenchDescription }}</p>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
 </div>
 <div class="html">
+    <h2 class="main_title">Description</h2>
     {% if (language == "en") %}
         {{ function.getEnglishHtml|html }}
     {% else %}

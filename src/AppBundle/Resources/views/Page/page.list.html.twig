@@ -1,12 +1,12 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'pageList.title'|trans }}{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="boxElement white_background">
-            <h2 class="main_title">Pages List</h2>
+            <h2 class="main_title">{{'pageList.title' | trans}}</h2>
 
             <table class="table">
                 <thead>
@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ page.id}}</td>
                             <td>{{ page.name }}</td>
-                            <td><a href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}">Modify</a></td>
+                            <td><a class="btn btn-default" href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}"><i class="fa fa-pencil"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
