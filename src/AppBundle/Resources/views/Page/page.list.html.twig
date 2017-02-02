@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ page.id}}</td>
                             <td>{{ page.name }}</td>
-                            <td><a href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}">Modify</a></td>
+                            <td><a class="btn btn-default" href="{{ path('app_admin_pageEdit', {'id': page.id } ) }}"><i class="fa fa-pencil"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
