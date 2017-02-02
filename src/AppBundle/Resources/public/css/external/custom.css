@@ -1,6 +1,12 @@
 /*
  * Enzo Chevallier, création : 21/09/2016
+ * Modifié par Sara ZALARHE
  */
+
+/* Mise à 0 des border radius */
+input[type=text], input[type=email], textarea.form-control, .form-control, btn{
+    border-radius: 0px ;
+}
 
 /* SELECT */
 ::selection{
@@ -107,10 +113,6 @@ a:hover, a:focus {
     /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
 }
 
-#form-login, #form-register {
-    background-color: #EAEAEA;
-    margin-top: 10%;
-}
 #form-register {
     padding-bottom: 10px;
 }
@@ -192,9 +194,7 @@ SHOW FUNCTION
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
 }
-.function .description {
 
-}
 .function .arguments {
     margin-top: 25px;
 }
@@ -210,4 +210,172 @@ Override row
 .row {
     margin-left: 0px;
     margin-top: 0px;
+}
+
+/* ------------------
+Top buffer for rows
+-------------------- */
+.top-buffer { margin-top:20px; }
+
+/* -----------------
+Catégories
+------------------- */
+.category_ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    overflow: hidden;
+}
+.category_li {
+    margin: 10px;
+    padding: 5px;
+    background-color: #52d3aa;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    float:left; /*pour IE*/
+}
+.category_number_li {
+    padding-left: 5px;
+    border-left: 1px solid white;
+}
+
+
+
+
+.main_title {
+font-family: "Open Sans",Arial,sans-serif;
+}
+.main_title:before{
+    padding: 1px 5px;
+    content: "";
+    background: #52d3aa;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+body{
+    background-image:url("../../../../../../bundles/app/images/backgrounds/mirrored_squares.png");
+}
+.white_background{
+    background: #FFFFFF;
+    padding: 10px;
+    padding-top: 0;
+}
+
+textarea
+{
+	resize: none;
+}
+
+.btn-transparent{
+    background: transparent;
+}
+
+.boxElement{
+    box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #FFF;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus  {
+    background: #686869;
+}
+#fh5co-header #navbar li a span{
+    margin: 0 auto;
+}
+#fh5co-header #navbar .dropdown-menu li a{
+    color:  #686869;
+}
+#fh5co-header #navbar li a:hover{
+    background: #686869;
+    color:  #FFF;
+}
+
+.marginTop{
+    margin-top: 30px;
+}
+.boxRecherche .form-control{
+    color: #2C3E52 !important;
+    height: 68px;
+}
+.boxRecherche .btn:hover, .boxRecherche .btn:active, .boxRecherche .btn:focus{
+    background: #ECF0F1 !important;
+    color: #2C3E52 !important;
+}
+
+.navigation{
+    margin-top: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+tr { 
+  border: solid;
+  border-width: 1px 0;
+  border-color: rgba(163, 174, 184, 0.4)
+}
+
+tr:first-child {
+  border-top: none;
+}
+tr:last-child {
+  border-bottom: none;
+}
+
+.botPage{
+    margin:auto;
+    margin-top: 25px;
+    text-align:center;
+}
+.botPage a{
+    text-decoration: none;
+}
+#fh5co-intro .fh5co-block{
+    min-height: 385px !important;
+}
+
+.titleFunction {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.titleFunction > div{
+    padding-bottom: 0;
+}
+.titleFunction h1{
+    margin-bottom: 0;
+    padding: 10px;
+    font-weight: normal;
+    color: #777;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+}
+.description_block h2{
+    margin: 40px 0 10px 0;
+    padding: 5px 0;
+}
+.description_block ul h3, .description_block ul p{
+    margin: 0;
+}
+.description_block ul li{
+    margin-bottom: 20px;
+}
+
+
+/* -----------------
+FORM LOGIN
+------------------- */
+.login_form {
+    background-color: #FFFFFF;
+    margin-left: 0%;
+    width: 100%;
+}
+.fos_user_resetting_request {
+    width: 100%;
+    margin-left: 0px;
+}
+.wrapper_login {
+    width: 30%;
 }

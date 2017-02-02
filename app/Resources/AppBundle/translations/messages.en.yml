@@ -1,0 +1,70 @@
+about: About
+contact: Contact
+navbar.register: Register
+navbar.login: Login
+navbar.account: 'My account'
+navbar.about: About
+navbar.contact: Contact
+sitename: 'EZ Language'
+home_page.title: Home
+contact.title: 'Contact us'
+navbar.admin.label: Admin
+navbar.admin.function: Functions
+navbar.admin.function.list: 'List Function'
+navbar.admin.function.create: 'Create Function'
+navbar.admin.category: Category
+navbar.admin.tutorial.list: 'List Tutorial'
+navbar.admin.tutorial.create: 'Create Tutorial'
+navbar.admin.tutorial: Tutorial
+navbar.admin.page.list: 'List Page'
+form.email: E-Mail
+form.name: Name
+form.subject: Subject
+form.body: Message
+form.submit: Submit
+home.title: 'Do something you love.'
+home.title.description: 'EZ language is designed for developers and non developers as well. It''s easy to use, flexible and coherent thanks to its many features.'
+home.bloc1: 'First step with EZ'
+home.bloc1.description: 'Discover our detailed tutorials and learn how to program in EZ in a few clicks.'
+home.bloc1.submit: start
+home.bloc2: Documentation
+home.bloc2.description: 'This section provides detailed informations about the key features of the EZ language and accessible features.'
+home.bloc2.submit: 'Click here'
+home.bloc3: 'About language'
+home.bloc3.description: 'EZ language is a compiled programming language. Its main trump, is its clear syntax.'
+user.name : 'User name'
+user.mail : 'E-mail'
+user.date : 'Last connexion'
+home.bloc3.submit: Discover
+home.bloc4: Released
+list.code: Code
+list.name: Name
+list.action: Action
+home: Home
+navbar.logout: Logout
+functionList.title: 'Functions list'
+functionCreate.title: 'Create function'
+functionEdit.title: 'Edit Function'
+functionEdit.addArg: 'Add function argument'
+form.send: Send
+pageEdit.title: 'Edit Page'
+form.frenchTitle: 'French title'
+form.englishTitle: 'English title'
+tutoList.title: 'Tutorials list'
+tutoEdit.title: 'Edit tutorial'
+form.frenchHTML: 'French HTML'
+form.englishHTML: 'English HTML'
+tutoCreate.title: 'Create tutorial'
+category.title: Category
+category.add: 'Add category'
+form.frenchLabel: 'French label'
+form.englishLabel: 'English label'
+search.placeholder: 'Search for ...'
+search.searchLabel: Search
+search.resultLabel: Result(s)
+pageList.title: 'Pages list'
+tutorial.prev: Previous
+tutorial.next: Next
+notFound.title: 'Page not found'
+profil.title: 'My account'
+searchPage.title: Search

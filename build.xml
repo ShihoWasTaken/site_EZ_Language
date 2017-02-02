@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="EZlanguage" default="build">
+	<property name="workspace" value="${basedir}" />
+	<property name="sourcedir" value="${basedir}/src" />
+	<property name="builddir" value="${workspace}/app/build" />
+
+	<target name="build" depends="prepare,composer,phpunit"/>
+
+	<target name="clean" description="Cleanup build artifacts">
+		<delete dir="${builddir}/logs"/>
+		<delete dir="${builddir}/docs/*"/>
+	</target>
+
+	<target name="prepare" depends="clean" description="Prepare for build">
+		<mkdir dir="${builddir}/logs"/>
+	</target>
+
+	<target name="composer" description="Installing composer dependencies">
+		<exec executable="composer" failonerror="true">
+			<arg value="install" />
+		</exec>
+	</target>
+
+	<target name="phpunit" description="Run unit tests with PHPUnit">
+		<exec executable="phpunit" failonerror="true">
+			<arg value="-c" />
+			<arg path="${basedir}/app/phpunit.xml" />
+		</exec>
+	</target>
+
+</project>

@@ -133,3 +133,7 @@ jms_i18n_routing:
     default_locale: en
     locales: [en, fr]
     strategy: prefix_except_default
+
+knp_paginator:
+    template:
+        pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig

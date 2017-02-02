@@ -1,22 +1,42 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ 'pageEdit.title'|trans }}{% endblock %}
 
 {% block content %}
-    
-    <h1>Form Update Page</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-push-2 col-md-8 white_background boxElement">
+            
+                <h2 class="main_title">{{'pageEdit.title' | trans}}</h1>
 
-    <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
-        {{ form_errors(form) }}
+            <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
+            <form action="{{ path('app_admin_pageEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
 
-        {{ form_row(form.name) }}
-        {{ form_row(form.french_text) }}
-        {{ form_row(form.english_text) }}
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
 
-        {{ form_rest(form) }}
+                <div class="form-group">
+                    {{ form_row(form.name, {'label': 'form.name' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.french_text, {'label': 'form.frenchTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_text, {'label': 'form.englishTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <script>
+                    CKEDITOR.replace('appbundle_page_french_text');
+                    CKEDITOR.replace('appbundle_page_english_text');
+                </script>
 
-        <input type="submit" value="Submit" />
-    </form>
-        
+                {{ form_rest(form) }}
+
+                <div class="form-group">
+                    <input type="submit" value="{{'form.submit' | trans}}" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}

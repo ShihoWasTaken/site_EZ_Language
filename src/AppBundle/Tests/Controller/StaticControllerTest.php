@@ -48,7 +48,7 @@ class DefaultControllerTest extends WebTestCase
 
     public function testFormContactShouldValidate()
     {
-        $client = static::createClient();
+        $client = self::createClient();
 
         $crawler = $client->request('GET', '/contact');
         $form = $crawler->selectButton('Submit')->form(array(
@@ -64,9 +64,10 @@ class DefaultControllerTest extends WebTestCase
 
     public function testFormContactShouldNotValidateWithIncorrectEmail()
     {
-        $client = static::createClient();
+        $client = self::createClient();
 
         $crawler = $client->request('GET', '/contact');
+
         $form = $crawler->selectButton('Submit')->form(array(
             'contact[name]'      => 'Kenny GUIOUGOU',
             'contact[email]'     => 'kenny.guiougougmail.com',
@@ -85,7 +86,7 @@ class DefaultControllerTest extends WebTestCase
 
     public function testFrenchFormContact()
     {
-        $client = static::createClient();
+        $client = self::createClient();
 
         $crawler = $client->request('GET', '/fr/contact');
         $form = $crawler->selectButton('Submit')->form(array(
@@ -98,6 +99,5 @@ class DefaultControllerTest extends WebTestCase
         $this->assertTrue($client->getResponse()->isRedirect());
         $client->followRedirect();
     }
-
 
 }

@@ -35,7 +35,7 @@ class Argument
     private $type;
 
     /**
-     * @ORM\Column(name="Name", type="string", length=16)
+     * @ORM\Column(name="Name", type="string", length=255)
      */
     private $name;
 
@@ -160,7 +160,8 @@ class Argument
         return $this->english_description;
     }
 
-    /**
+
+     /**
      * Set return
      *
      * @param boolean $return

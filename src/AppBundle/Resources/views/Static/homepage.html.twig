@@ -2,29 +2,75 @@
 
 
 {% block title %}{{ 'sitename' | trans }} | {{ 'home_page.title'|trans }}{% endblock %}
-
+{% block class_body %}home{% endblock %}
 {% block content %}
-	<div class="jumbotron">
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
 		<div class="container">
-			<div clas="row">
-				<div class="col-md-12">
-					<p>
-						Bienvenue sur le site d'EZ Language, le site est actuellement en construction.
-						<button class="btn btn-default">btn-default</button>
-						<button class="btn btn-primary">btn-primary</button>
-						<button class="btn btn-success">btn-success</button>
-						<button class="btn btn-info">btn-info</button>
-						<button class="btn btn-warning">btn-warning</button>
-						<button class="btn btn-danger">btn-danger</button>
-					</p>
-                                        <p> {{ text }} </p>
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h1 class="to-animate">{{'home.title'|trans}}</h1>
+							<h2 class="to-animate">{{'home.title.description'|trans}}</h2>
+
+						</div>
+					</div>
 				</div>
 			</div>
-			{#
-			<h1>{{ 'home_page.title'|trans }}</h1>
-			<p>{{ 'home_page.content'|trans }}</p>
-			<p><a class="btn btn-primary btn-lg" role="button" href="{{	url('app_about') }}">{{ 'home_page.more'|trans }}</a></p>
-			#}
 		</div>
-	</div>
+		<div class="slant"></div>
+	</section>
+
+	<section id="fh5co-intro">
+		<div class="container">
+			<div class="row row-bottom-padded-lg">
+				<div class="fh5co-block to-animate" style="background-image: url(images/img_7.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-bulb"></i>
+						<h2>{{'home.bloc1'|trans}}</h2>
+						<p>{{'home.bloc1.description'|trans}}</p>
+						<p><a href="#" class="btn btn-primary">{{'home.bloc1.submit'|trans}}</a></p>
+					</div>
+				</div>
+				<div class="fh5co-block to-animate" style="background-image: url(images/img_8.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-wrench"></i>
+						<h2>{{'home.bloc2'|trans}}</h2>
+						<p>{{'home.bloc2.description'|trans}}</p>
+						<p><a href="#" class="btn btn-primary">{{'home.bloc2.submit'|trans}}</a></p>
+					</div>
+				</div>
+				<div class="fh5co-block to-animate" style="background-image: url(images/img_10.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-rocket"></i>
+						<h2>{{'home.bloc3'|trans}}</h2>
+						<p> {{'home.bloc3.description'|trans}}</p>
+						<p><a href="#" class="btn btn-primary">{{'home.bloc3.submit'|trans}}</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-work" data-section="work">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">{{'home.bloc4'|trans}}</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							{{text|html}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock content %}

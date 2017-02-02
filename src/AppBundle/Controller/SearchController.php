@@ -14,13 +14,28 @@ class SearchController extends Controller
         $page       = $request->get('page');
 
         $em         = $this->getDoctrine()->getManager();
-        $tabPage    = $em->getRepository('AppBundle:EZFunction')->createQueryBuilder('a')
+        
+        $tabPage    = $em->getRepository('AppBundle:EZFunction')->createQueryBuilder("a")
+                                                                ->select('a.id, a.name, a.french_description, a.english_description, \'function\' as type')
                                                                 ->where('a.name LIKE :name')
-                                                                ->setParameter('name', '%'. $searchtext .'%');
+                                                                ->setParameter('name', '%'. $searchtext .'%')
+                                                                ->getQuery()
+                                                                ->getResult();
+
+        
+        
+        $tabTuto    = $em->getRepository('AppBundle:Tutorial')->createQueryBuilder("a")
+                                                                ->select('a.id, a.french_title, a.english_title, \'tuto\' as type')
+                                                                ->where('a.french_title LIKE :name OR a.english_title LIKE :name')
+                                                                ->setParameter('name', '%'. $searchtext .'%')
+                                                                ->getQuery()
+                                                                ->getResult();       
+
+        $tab = array_merge($tabTuto, $tabPage);  
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-            $tabPage, 
+            $tab, 
             $request->query->getInt('page', $page || 1 ), //page number
             20 // limit per page
         );

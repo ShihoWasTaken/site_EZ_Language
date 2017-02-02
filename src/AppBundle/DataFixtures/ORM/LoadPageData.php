@@ -29,8 +29,6 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
 	{
             $faker = \Faker\Factory::create();
             
-            $userManager = $this->container->get('fos_user.user_manager');
-            
             //Create Page Home
             $page = new Page();
             $page->setEnglishText("[ENGLISH]" . $faker->text(400));
@@ -50,6 +48,16 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             $pageContact->setLastUpdateDate(new \DateTime());
             $this->addReference('pagecontact', $pageContact);
             $manager->persist($pageContact);
+
+            //Create Page About
+            $pageAbout = new Page();
+            $pageAbout->setEnglishText("[ENGLISH]" . $faker->text(400));
+            $pageAbout->setFrenchText("[FRANCAIS]" . $faker->text(400));
+            $pageAbout->setName("ABOUT");
+            $pageAbout->setUser($this->getReference('user'.rand(0, 9)));
+            $pageAbout->setLastUpdateDate(new \DateTime());
+            $this->addReference('pageabout', $pageAbout);
+            $manager->persist($pageAbout);
             
             //Flush Data
             $manager->flush();

@@ -6,17 +6,30 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\EZFunctionType;
 use AppBundle\Entity\EZFunction;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class EZFunctionController extends Controller {
 
-    public function listAction() {
+    public function listAction(Request $request) {
+        // Variable
+        $page        = $request->get('page');
 
-        $em = $this->getDoctrine()->getManager();
+        $em          = $this->getDoctrine()->getManager();
         $tabFunction = $em->getRepository('AppBundle:EZFunction')->findAll();
 
+        // Lang
+        $lang = $this->get('request')->getLocale();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tabFunction, 
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
 
         return $this->render('AppBundle:EZFunction:function.list.html.twig', array(
-                    'functions' => $tabFunction
+              'functions' => $pagination,
+              'lang' => $lang
         ));
     }
 
@@ -77,11 +90,11 @@ class EZFunctionController extends Controller {
 
         if ($form->isValid()) {
 
-            //Save $function;
+            // Save function;
             $em->persist($function);
             $em->flush();
 
-            //return $this->redirectToRoute('app_admin_functionList');
+            return $this->redirectToRoute('app_admin_functionEdit', array('id' => $function->getId() ));
         }
 
         return $this->render('AppBundle:EZFunction:function.edit.html.twig', array(
@@ -99,7 +112,7 @@ class EZFunctionController extends Controller {
 
         $function = new EZFunction();
 
-        //Create form
+        // Create form
         $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
             'locale' => $this->get('request')->getLocale())
         );
@@ -108,7 +121,7 @@ class EZFunctionController extends Controller {
         $form->handleRequest($request);
         
         if ($form->isValid()) {
-            //Save $function;
+            // Save function;
             $em = $this->getDoctrine()->getManager();
             $em->persist($function);
 

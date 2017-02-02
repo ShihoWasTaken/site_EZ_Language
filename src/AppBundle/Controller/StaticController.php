@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
-use Symfony\Component\HttpFoundation\Response;
 
 class StaticController extends Controller
 {
@@ -30,7 +29,20 @@ class StaticController extends Controller
 
     public function aboutAction()
 	{
-		return $this->render('AppBundle:Static:about.html.twig');
+        $lang  = $this->get('request')->getLocale();
+
+        //Load Page "about"
+        $em    = $this->getDoctrine()->getManager();
+        $page  = $em->getRepository('AppBundle:Page')->findOneById(3);
+        $text  = '';
+        if ($page !== null) {
+            $text = $lang === 'en' ? $page->getEnglishText() : $page->getFrenchText();
+        }
+
+
+        return $this->render('AppBundle:Static:about.html.twig', array(
+            'text' => $text
+        ));
 	}
 
     public function notfoundAction()
@@ -51,7 +63,7 @@ class StaticController extends Controller
             if ($form->isValid())
             {
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Contact enquiry from symblog')
+                    ->setSubject('[EzLanguage.com] Contact')
                     ->setFrom('ezlanguage.contact@gmail.com')
                     ->setTo('kenny.guiougou@gmail.com')
                     ->setBody($this->renderView('AppBundle:Mail:contact.html.twig', array('contact' => $contact))
@@ -72,9 +84,30 @@ class StaticController extends Controller
 
 
 
-
+    /**
+     * Show user
+     * @param int $userId
+     * @return type
+     * @throws type
+     */
     public function profileAction($userId)
     {
-        return new Response('Il faut faire la vue de cette action');
+        //Get user by Id
+        $em         = $this->getDoctrine()->getManager();
+        $user       = $em->getRepository('AppBundle:User')->findOneById($userId);
+        $default    = "http://sentireconcepts.com/images/male_face_128.jpg";
+        $size       = 40;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->getEmail() ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        // user exist
+        if (!$user) {
+            throw $this->createNotFoundException(
+                    '[User] No found for id ' . $userId
+            );
+        }
+
+        return $this->render('AppBundle:Static:profil.html.twig', array(
+                    'user'      => $user,
+                    'grav_url'  => $grav_url,
+        ));
     }
 }
