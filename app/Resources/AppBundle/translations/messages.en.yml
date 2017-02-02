@@ -72,3 +72,7 @@ tutorial.next: Next
 notFound.title: 'Page not found'
 profil.title: 'My account'
 searchPage.title: Search
+argument.title: 'Argument'
+argument.add: 'Add argument'
+argument.create: 'Create argument'
+argument.edit: 'Edit argument'

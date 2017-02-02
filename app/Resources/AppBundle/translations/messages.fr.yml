@@ -72,3 +72,7 @@ form.englishLabel: 'Label en anglais'
 notFound.title: 'Page introuvable'
 profil.title: 'Mon compte'
 searchPage.title: Recherche
+argument.title: 'Argument'
+argument.add: 'Ajouter argument'
+argument.create: 'Creation argument'
+argument.edit: 'Edition argument'
