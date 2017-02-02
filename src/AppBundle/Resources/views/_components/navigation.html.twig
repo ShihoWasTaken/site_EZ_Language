@@ -20,6 +20,7 @@
 						<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>{{ 'navbar.logout' | trans }}</span></a></li>
 					{% endif %}
 					<li><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+					<li><a href="#" type="button" data-toggle="modal" data-target="#modalChooseLanguage">Langage: {{ app.request.locale | upper }} <span class="caret"></span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -27,3 +28,23 @@
 </header>
 
 
+{# Modal choix langue #}
+<div id="modalChooseLanguage" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Choix langue</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale':'en'}) ) }}"><div class="col-md-6"><img class='flag' src='{{ asset('bundles/app/images/flags/EN.png' ) }}' /> English</div></a>
+                    <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale':'fr'}) ) }}"><div class="col-md-6"><img class='flag' src='{{ asset('bundles/app/images/flags/FR.png' ) }}' /> Français</div></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
