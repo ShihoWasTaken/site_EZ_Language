@@ -30,9 +30,9 @@ home.bloc2.description: 'Cette section fournit des informations détaillées sur
 home.bloc2.submit: 'Click ici'
 home.bloc3: 'A propos du langage'
 home.bloc3.description: 'Easy language est un langage deprogrammation compilé,son atout principal, est sa syntaxe claire'
-user.name : 'Nom d''utilisateur'
-user.mail : 'Adresse mail'
-user.date : 'Dérniére connexion'
+user.name: 'Nom d''utilisateur'
+user.mail: 'Adresse mail'
+user.date: 'Dérniére connexion'
 home.bloc3.submit: Découvrir
 home.bloc4: Avancement
 list.code: Code

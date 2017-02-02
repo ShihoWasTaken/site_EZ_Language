@@ -1,28 +1,96 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 
+
 {% block title %}{{ 'sitename' | trans }} | {{ 'functionCreate.title'|trans }}{% endblock %}
 
 {% block content %}
-    
-    <h1>{{'functionCreate.title' | trans}}</h1>
+   
 
-    <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
-        {{ form_row(form._token) }}
-        {{ form_errors(form) }}
-        
-        {{ form_row(form.name) }}
-        {{ form_row(form.french_description) }}
-        {{ form_row(form.english_description) }}
-        {{ form_row(form.french_html) }}
-        {{ form_row(form.english_html) }}
-        {{ form_row(form.category) }}
-        <h3>Argument</h3>
-        <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
-        <ul class="arguments" data-prototype="{{ form_widget(form.arguments.vars.prototype)|e('html_attr') }}">
-        </ul>
-        <input type="submit" value="{{'form.submit' | trans}}" />
-    </form>
+    <!------------------------------------------>
+    
+    <div class="container">
+	<div class="row">
+		<div class="col-md-push-2 col-md-7 white_background boxElement">
+
+			<h2 class="main_title"> {{'functionCreate.title' | trans}}</h2>
+			<hr>
+   			 <form action="{{ path('app_admin_functionCreate') }}" method="post" {{ form_enctype(form) }} class="app">
+
+				{{ form_row(form._token) }}
+				{{ form_errors(form) }}
+				
+				
+			<div class="form-group">
+				{{ form_row(form.name,{'attr': {'class': 'form-control'}}) }}
+					
+					
+				</div>
+				<div class="form-group">
+					{{ form_row(form.french_description,{'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group">
+				{{ form_row(form.english_description,{'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group">
+					{{ form_row(form.french_html,{'attr': {'class': 'form-control'}}) }}
+				</div>      
+				
+				<div class="form-group">
+					{{ form_row(form.english_html,{'attr': {'class': 'form-control'}})}}
+				</div>   
+				
+				<div class="form-group">
+					 {{ form_row(form.category,{'attr': {'class': 'form-control'}}) }}
+				</div>      
+			
+			
+		        <button class="btn btn-default" id="add_argument_link" type="button">Add Argument</button>
+		        
+		        <br><br>
+		        
+		        
+		        <div class="arguments"  data-prototype="<br>
+		       	{{ form_label(form.arguments.vars.prototype.name)|e('html_attr') }}
+		        {{ form_widget(form.arguments.vars.prototype.name,{'attr': {'class': 'form-control'}})|e('html_attr') }}<br> 
+		       	
+		       	{{ form_label(form.arguments.vars.prototype.french_description)|e('html_attr') }}
+		        {{ form_widget(form.arguments.vars.prototype.french_description,{'attr': {'class': 'form-control'}})|e('html_attr') }} <br> 
+		       	
+		       	{{ form_label(form.arguments.vars.prototype.english_description)|e('html_attr') }}
+		        {{ form_widget(form.arguments.vars.prototype.english_description,{'attr': {'class': 'form-control'}})|e('html_attr') }} <br>
+		       	
+		       	{{ form_label(form.arguments.vars.prototype.type)|e('html_attr') }}
+		        {{ form_widget(form.arguments.vars.prototype.type,{'attr': {'class': 'form-control'}})|e('html_attr') }} <br>	        
+		        
+		        {{ form_label(form.arguments.vars.prototype.return)|e('html_attr') }} <br>
+		        {{ form_widget(form.arguments.vars.prototype.return,{'attr': {'class': 'form-control','class' : 'text-left'}})|e('html_attr') }} 
+		        
+		        
+		        " >
+	
+		        
+		        
+		        </div>
+		        
+		      
+
+		        <br>
+		        
+		        
+		        
+		        
+		        
+		        <input type="submit" class="btn btn-primary" value="{{'form.submit' | trans}}" />
+			</form>
+		</div>
+	</div>
+</div>
+    
+    
+        <!------------------------------------------>
+    
+    
 
 {% endblock content %}
 

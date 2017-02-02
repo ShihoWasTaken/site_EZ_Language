@@ -110,7 +110,7 @@ class EZFunctionController extends Controller {
      */
     public function createAction() {
 
-        $function = new EZFunction();
+    	$function = new EZFunction();
 
         // Create form
         $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
@@ -124,7 +124,6 @@ class EZFunctionController extends Controller {
             // Save function;
             $em = $this->getDoctrine()->getManager();
             $em->persist($function);
-
             $em->flush();
             return $this->redirectToRoute('app_admin_functionList');
         }
