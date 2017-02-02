@@ -388,7 +388,11 @@ FORM LOGIN
 }
 .boxArgument{
     border: 1px solid #DADADA;
+    background: #F2F2F2;
     padding: 10px;
+}
+.boxArgument input, .boxArgument textarea, .boxArgument select{
+    background: #FFF;
 }
 .closeArgument{
     cursor: pointer;
