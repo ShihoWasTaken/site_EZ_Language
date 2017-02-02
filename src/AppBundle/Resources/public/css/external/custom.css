@@ -113,10 +113,6 @@ a:hover, a:focus {
     /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
 }
 
-#form-login, #form-register {
-    background-color: #EAEAEA;
-    margin-top: 10%;
-}
 #form-register {
     padding-bottom: 10px;
 }
@@ -365,4 +361,21 @@ tr:last-child {
 }
 .description_block ul li{
     margin-bottom: 20px;
+}
+
+
+/* -----------------
+FORM LOGIN
+------------------- */
+.login_form {
+    background-color: #FFFFFF;
+    margin-left: 0%;
+    width: 100%;
+}
+.fos_user_resetting_request {
+    width: 100%;
+    margin-left: 0px;
+}
+.wrapper_login {
+    width: 30%;
 }
