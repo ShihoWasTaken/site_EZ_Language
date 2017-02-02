@@ -7,7 +7,7 @@
 <div class="boxElement white_background login_form">
     <div class="row">
         <div id="form-login" class="login_form col-xs-12 col-md-4 col-md-offset-4 white-bg">
-            <h2 class="titre">{{ 'security.login.title'|trans }}</h2>
+            <h2 class="titre main_title">{{ 'security.login.title'|trans }}</h2>
             {% if error %}
                 <div class="alert alert-danger" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
@@ -28,14 +28,8 @@
                 <input class="btn btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
                 <hr>
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-sm">{{ 'layout.register'|trans }}</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-default btn-sm right">{{ 'security.forgotPassword'|trans }}</a>
-                        </div>
-                    </div>
+                    <a href="{{ path('fos_user_registration_register') }}" class="btn btn-default btn-sm pull-left">{{ 'layout.register'|trans }}</a>
+                    <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-default btn-sm right pull-right">{{ 'security.forgotPassword'|trans }}</a>
                 </div>
             </form>
         </div>
