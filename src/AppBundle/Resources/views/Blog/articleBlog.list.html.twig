@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ articlesBlog.id }}</td>
                         <td>{{  app.request.locale == 'en' ? articlesBlog.englishTitle : articlesBlog.frenchTitle }}</td>
-                            <td><a class="btn btn-default" href="{{ path('app_admin_articlesBlogEdit', {'id': articlesBlog.id } ) }}"><i class="fa fa-pencil"></i></a>
+                        <td><a class="btn btn-default" href="{{ path('app_admin_articleBlogEdit', {'id': articlesBlog.id } ) }}"><i class="fa fa-pencil"></i></a>
                     </tr>
                     {% endfor %}
                 </tbody>

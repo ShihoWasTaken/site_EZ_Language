@@ -102,3 +102,10 @@ app_admin_articleBlogList:
     path:     /admin/articleBlog/
     defaults: { _controller: AppBundle:Blog:listArticle }
     methods: GET
+
+app_admin_articleBlogEdit:
+    path:     /admin/articleBlog/{id}/edit
+    defaults: { _controller: AppBundle:Blog:editArticle }
+    methods: GET|POST
+    requirements:
+        id: \d+

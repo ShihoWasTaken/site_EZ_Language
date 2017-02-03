@@ -34,4 +34,36 @@ class BlogController extends Controller
         ));
     } 
     
+
+    public function editArticleAction($id){
+        
+        //Get ArticleBlog by Id
+        $em             = $this->getDoctrine()->getManager();
+        $articleBlog    = $em->getRepository('AppBundle:ArticleBlog')->findOneById($id);
+
+        // articleBlog exist
+        if (!$articleBlog) {
+            throw $this->createNotFoundException(
+                    '[ArticleBlog] No found for id ' . $id
+            );
+        }
+
+        //Create form
+        $form = $this->get('form.factory')->create(new ArticleBlogType, $articleBlog);
+        
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($articleBlog);
+
+            $em->flush();
+            return $this->redirectToRoute('app_admin_articleBlogList');
+        }
+
+        return $this->render('AppBundle:Blog:articleBlog.edit.html.twig', array(
+                'form' => $form->createView()
+        ));
+    } 
 }
