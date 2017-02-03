@@ -399,5 +399,8 @@ FORM LOGIN
     float: right;
 }
 .word-spacing{
-margin-left: 55px;
+  margin-left: 55px;
+}
+a{
+    text-decoration: none !important;
 }
