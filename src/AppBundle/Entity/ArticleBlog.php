@@ -3,54 +3,23 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Entity\Article as Article;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="article_blog")
+ * @ORM\Table(name="articleblog")
  */
-class ArticleBlog
+class ArticleBlog extends Article
 {
-
-    public function __construct()
-    {
-    }
-
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(name="French_title", type="string", length=255, nullable=false)
-     */
-    private $french_title;
-
-    /**
-     * @ORM\Column(name="English_title", type="string", length=255, nullable=false)
-     */
-    private $english_title;
-
-    /**
-     * @ORM\Column(name="French_html", type="text", nullable=true)
-     */
-    private $french_html;
-
-    /**
-     * @ORM\Column(name="English_html", type="text", nullable=true)
-     */
-    private $english_html;
-
      /**
      * @ORM\OneToOne(targetEntity="User")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\Column(name="LastUpdateDate", type="datetime")
      * */
-    private $lastUpdateDate;
+    protected $lastUpdateDate;
 
 
 
@@ -65,111 +34,6 @@ class ArticleBlog
         $this->lastUpdateDate = $date;
     }
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set frenchTitle
-     *
-     * @param string $frenchTitle
-     *
-     * @return ArticleBlog
-     */
-    public function setFrenchTitle($frenchTitle)
-    {
-        $this->french_title = $frenchTitle;
-
-        return $this;
-    }
-
-    /**
-     * Get frenchTitle
-     *
-     * @return string
-     */
-    public function getFrenchTitle()
-    {
-        return $this->french_title;
-    }
-
-    /**
-     * Set englishTitle
-     *
-     * @param string $englishTitle
-     *
-     * @return ArticleBlog
-     */
-    public function setEnglishTitle($englishTitle)
-    {
-        $this->english_title = $englishTitle;
-
-        return $this;
-    }
-
-    /**
-     * Get englishTitle
-     *
-     * @return string
-     */
-    public function getEnglishTitle()
-    {
-        return $this->english_title;
-    }
-
-    /**
-     * Set frenchHtml
-     *
-     * @param string $frenchHtml
-     *
-     * @return ArticleBlog
-     */
-    public function setFrenchHtml($frenchHtml)
-    {
-        $this->french_html = $frenchHtml;
-
-        return $this;
-    }
-
-    /**
-     * Get frenchHtml
-     *
-     * @return string
-     */
-    public function getFrenchHtml()
-    {
-        return $this->french_html;
-    }
-
-    /**
-     * Set englishHtml
-     *
-     * @param string $englishHtml
-     *
-     * @return ArticleBlog
-     */
-    public function setEnglishHtml($englishHtml)
-    {
-        $this->english_html = $englishHtml;
-
-        return $this;
-    }
-
-    /**
-     * Get englishHtml
-     *
-     * @return string
-     */
-    public function getEnglishHtml()
-    {
-        return $this->english_html;
-    }
 
     /**
      * Set lastUpdateDate
