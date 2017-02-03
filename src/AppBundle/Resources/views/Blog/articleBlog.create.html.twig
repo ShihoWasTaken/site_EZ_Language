@@ -1,0 +1,42 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block title %}{{ 'sitename' | trans }} | {{ 'tutoEdit.title'|trans }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-push-2 col-md-8 white_background boxElement">
+            <h2 class="main_title">{{'tutoEdit.title' | trans}}</h1>
+
+            <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
+            <form action="{{ path('app_admin_articleBlogEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
+
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
+
+                <div class="form-group">
+                    {{ form_row(form.french_title, {'label': 'form.frenchTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_title, {'label': 'form.englishTitle' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.french_html, {'label': 'form.frenchHTML' | trans}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.english_html, {'label': 'form.englishHTML' | trans}) }}
+                </div>
+                <script>
+                    CKEDITOR.replace('appbundle_articleBlog_french_html');
+                    CKEDITOR.replace('appbundle_articleBlog_english_html');
+                </script>
+                <div class="form-group">
+                    <input type="submit" value="{{'form.submit' | trans}}" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

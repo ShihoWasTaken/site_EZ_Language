@@ -103,9 +103,15 @@ app_admin_articleBlogList:
     defaults: { _controller: AppBundle:Blog:listArticle }
     methods: GET
 
+app_admin_articleBlogCreate:
+    path:     /admin/articleBlog/create
+    defaults: { _controller: AppBundle:Blog:createArticle }
+    methods: GET|POST
+
 app_admin_articleBlogEdit:
     path:     /admin/articleBlog/{id}/edit
     defaults: { _controller: AppBundle:Blog:editArticle }
     methods: GET|POST
     requirements:
         id: \d+
+
