@@ -398,3 +398,6 @@ FORM LOGIN
     cursor: pointer;
     float: right;
 }
+a{
+    text-decoration: none !important;
+}
