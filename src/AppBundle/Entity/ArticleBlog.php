@@ -76,30 +76,6 @@ class ArticleBlog
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return ArticleBlog
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set frenchTitle
      *
      * @param string $frenchTitle
