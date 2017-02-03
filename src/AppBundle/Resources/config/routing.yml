@@ -114,3 +114,10 @@ app_admin_articleBlogEdit:
     methods: GET|POST
     requirements:
         id: \d+
+
+app_articleBlogShow:
+    path:     /blog/article/{id}
+    defaults: { _controller: AppBundle:Blog:showArticle }
+    methods: GET
+    requirements:
+        id: \d+

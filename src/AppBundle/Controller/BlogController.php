@@ -10,6 +10,26 @@ use Symfony\Component\HttpFoundation\Request;
 class BlogController extends Controller
 {
 
+    public function showArticleAction($id){
+        
+        $em = $this->getDoctrine()->getManager();
+        $articleBlog = $em->getRepository('AppBundle:ArticleBlog')->findOneById($id);
+        
+        // articleBlog exist
+        if (!$articleBlog) {
+            throw $this->createNotFoundException(
+                    '[ArticleBlog] No found for id ' . $id
+            );
+        }
+        
+        $lang = $this->get('request')->getLocale();
+        
+        return $this->render('AppBundle:Blog:articleBlog.show.html.twig', array(
+            'articleBlog' => $articleBlog,
+            'lang'      => $lang
+        ));
+    }
+
      public function listArticleAction(Request $request){
         // Variable
         $page           = $request->get('page');
