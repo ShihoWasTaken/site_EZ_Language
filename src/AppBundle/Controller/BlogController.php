@@ -109,5 +109,35 @@ class BlogController extends Controller
         ));
     }
 
+
+    public function searchAction(Request $request)
+    {
+        $searchtext = $request->get('q');
+        $page       = $request->get('page');
+
+        $em         = $this->getDoctrine()->getManager();
+        
+        $tabArticle = $em->getRepository('AppBundle:ArticleBlog')->createQueryBuilder("a")
+                                                                ->select('a.id, a.french_title, a.english_title')
+                                                                ->where('a.french_title LIKE :name OR a.english_title LIKE :name')
+                                                                ->setParameter('name', '%'. $searchtext .'%')
+                                                                ->getQuery()
+                                                                ->getResult();
+
+             
+
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tabArticle, 
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
+
+        return $this->render('AppBundle:Blog:blog.html.twig', array(
+            'pagination' => $pagination,
+            'searchtext' => $searchtext
+        ));
+    }
     
 }

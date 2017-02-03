@@ -121,3 +121,8 @@ app_articleBlogShow:
     methods: GET
     requirements:
         id: \d+
+
+app_blogShow:
+    path:     /blog/
+    defaults: { _controller: AppBundle:Blog:search }
+    methods: GET
