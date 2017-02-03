@@ -23,32 +23,27 @@ class ArticleBlog
     private $id;
 
     /**
-     * @ORM\Column(name="Name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(name="French_title", type="string", length=255)
+     * @ORM\Column(name="French_title", type="string", length=255, nullable=false)
      */
     private $french_title;
 
     /**
-     * @ORM\Column(name="English_title", type="string", length=255)
+     * @ORM\Column(name="English_title", type="string", length=255, nullable=false)
      */
     private $english_title;
 
     /**
-     * @ORM\Column(name="French_html", type="text")
+     * @ORM\Column(name="French_html", type="text", nullable=true)
      */
     private $french_html;
 
     /**
-     * @ORM\Column(name="English_html", type="text")
+     * @ORM\Column(name="English_html", type="text", nullable=true)
      */
     private $english_html;
 
      /**
-    * @ORM\OneToOne(targetEntity="User")
+     * @ORM\OneToOne(targetEntity="User")
      */
     private $user;
 
