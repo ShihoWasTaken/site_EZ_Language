@@ -97,3 +97,32 @@ app_tutorialShow:
     methods: GET
     requirements:
         id: \d+
+
+app_admin_articleBlogList:
+    path:     /admin/articleBlog/
+    defaults: { _controller: AppBundle:Blog:listArticle }
+    methods: GET
+
+app_admin_articleBlogCreate:
+    path:     /admin/articleBlog/create
+    defaults: { _controller: AppBundle:Blog:createArticle }
+    methods: GET|POST
+
+app_admin_articleBlogEdit:
+    path:     /admin/articleBlog/{id}/edit
+    defaults: { _controller: AppBundle:Blog:editArticle }
+    methods: GET|POST
+    requirements:
+        id: \d+
+
+app_articleBlogShow:
+    path:     /blog/article/{id}
+    defaults: { _controller: AppBundle:Blog:showArticle }
+    methods: GET
+    requirements:
+        id: \d+
+
+app_blogShow:
+    path:     /blog/
+    defaults: { _controller: AppBundle:Blog:search }
+    methods: GET
