@@ -11,7 +11,7 @@
             <h2 class="main_title">{{'tutoEdit.title' | trans}}</h1>
 
             <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
-            <form action="{{ path('app_admin_articleBlogEdit', {'id': app.request.get('id') } ) }}" method="post" {{ form_enctype(form) }} class="app">
+            <form action="{{ path('app_admin_articleBlogCreate') }}" method="post" {{ form_enctype(form) }} class="app">
 
                 {{ form_widget(form._token) }}
                 {{ form_errors(form) }}
