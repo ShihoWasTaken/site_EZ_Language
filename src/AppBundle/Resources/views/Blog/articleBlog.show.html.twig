@@ -1,7 +1,7 @@
 {% extends 'AppBundle::layout_tutorial.html.twig' %}
 
 
-{% block title %}{{ 'sitename' | trans }} | {{ 'showblog.title'|trans }}{% endblock %}
+{% block title %}{{ 'sitename' | trans }} | {{ app.request.locale == 'en' ? articleBlog.EnglishTitle: articleBlog.FrenchTitle}}{% endblock %}
 
 {% block content %}
     <div class="container">
