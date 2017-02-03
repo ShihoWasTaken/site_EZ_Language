@@ -17,6 +17,8 @@ navbar.admin.tutorial.list: 'List Tutorial'
 navbar.admin.tutorial.create: 'Create Tutorial'
 navbar.admin.tutorial: Tutorial
 navbar.admin.page.list: 'List Page'
+navbar.admin.blog.list : 'List blogs'
+navbar.admin.blog.create : 'Create Blog'
 form.email: E-Mail
 form.name: Name
 form.subject: Subject
@@ -76,3 +78,8 @@ argument.title: 'Argument'
 argument.add: 'Add argument'
 argument.create: 'Create argument'
 argument.edit: 'Edit argument'
+articleBlogListe.title : 'List of blog posts'
+EditBlog.title : 'Edit blog'
+CreatBlog.title : 'Create Blog'
+blog.user : 'Author'
+blog.date : 'Date'

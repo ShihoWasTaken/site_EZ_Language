@@ -15,7 +15,9 @@ navbar.admin.function.create: 'Créer Fonction'
 navbar.admin.category: Catégorie
 navbar.admin.tutorial.list: 'Liste Tutoriel'
 navbar.admin.tutorial.create: 'Créer Tutoriel'
-navbar.admin.tutorial: Tutoriel
+navbar.admin.tutorial: 
+navbar.admin.blog.list : 'Liste blogs'
+navbar.admin.blog.create : 'Créer une blog'
 form.email: Mail
 form.name: Nom
 form.subject: Sujet
@@ -76,3 +78,9 @@ argument.title: 'Argument'
 argument.add: 'Ajouter argument'
 argument.create: 'Creation argument'
 argument.edit: 'Edition argument'
+articleBlogListe.title : 'Liste des articles du blog'
+EditBlog.title : 'Modifier le blog'
+CreatBlog.title : 'Créer un blog'
+showblog.title : 'Afficher les blogs'
+blog.user : Auteur'
+blog.date : 'Date'
