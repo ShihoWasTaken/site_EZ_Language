@@ -97,3 +97,8 @@ app_tutorialShow:
     methods: GET
     requirements:
         id: \d+
+
+app_admin_articleBlogList:
+    path:     /admin/articleBlog/
+    defaults: { _controller: AppBundle:Blog:listArticle }
+    methods: GET
