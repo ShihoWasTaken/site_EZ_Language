@@ -22,7 +22,7 @@
 							<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>{{ 'navbar.logout' | trans }}</span></a></li>
 						{% endif %}
 						<li class="{{currentPath == 'app_search' ? 'active'}}"><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-						<li><a href="#" type="button" data-toggle="modal" data-target="#modalChooseLanguage">Langage: {{ app.request.locale | upper }} <span class="caret"></span></a></li>
+						<li><a href="#" type="button" data-toggle="modal" data-target="#modalChooseLanguage"> {{ app.request.locale | upper }} <span class="caret"></span></a></li>
 					</ul>
 				</div>
 			</nav>
