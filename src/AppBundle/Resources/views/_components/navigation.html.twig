@@ -1,3 +1,5 @@
+{% set currentPath = app.request.attributes.get('_route') %}
+
 <header role="banner" id="fh5co-header">
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -8,19 +10,19 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="{{ url('app_homepage') }}" data-nav-section="home"><span>{{ "home" | trans }}</span></a></li>
-					<li><a href="{{ url('app_about') }}" data-nav-section="about"><span>{{ "about" | trans }}</span></a></li>
-					<li><a href="{{ url('app_contact') }}" data-nav-section="contact"><span>{{ "contact" | trans }}</span></a></li>
-					{% include 'AppBundle:_components:admin_navigation.html.twig' %}
-					{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-						<li><a data-nav-section="register" href="{{ path('fos_user_registration_register') }}"><span>{{ 'navbar.register' | trans }}</span></a></li>
-						<li><a data-nav-section="login" href="{{ path('fos_user_security_login') }}"><span>{{ 'navbar.login' | trans }}</span></a></li>
-					{% else %}
-						<li><a data-nav-section="account" href="{{ path('app_profile',  {'userId':app.user.id}) }}"><span>{{ 'navbar.account' | trans }}</span></a></li>
-						<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>{{ 'navbar.logout' | trans }}</span></a></li>
-					{% endif %}
-					<li><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-					<li><a href="#" type="button" data-toggle="modal" data-target="#modalChooseLanguage">Langage: {{ app.request.locale | upper }} <span class="caret"></span></a></li>
+						<li class="{{currentPath == 'app_homepage' ? 'active'}}"><a href="{{ url('app_homepage') }}" data-nav-section="home"><span>{{ "home" | trans }}</span></a></li>
+						<li class="{{currentPath == 'app_about' ? 'active'}}"><a href="{{ url('app_about') }}" data-nav-section="about"><span>{{ "about" | trans }}</span></a></li>
+						<li class="{{currentPath == 'app_contact' ? 'active'}}"><a href="{{ url('app_contact') }}" data-nav-section="contact"><span>{{ "contact" | trans }}</span></a></li>
+						{% include 'AppBundle:_components:admin_navigation.html.twig' %}
+						{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+							<li class="{{currentPath == 'fos_user_registration_register' ? 'active'}}"><a data-nav-section="register" href="{{ path('fos_user_registration_register') }}"><span>{{ 'navbar.register' | trans }}</span></a></li>
+							<li class="{{currentPath == 'fos_user_security_login' ? 'active'}}"><a data-nav-section="login" href="{{ path('fos_user_security_login') }}"><span>{{ 'navbar.login' | trans }}</span></a></li>
+						{% else %}
+							<li><a data-nav-section="account" href="{{ path('app_profile',  {'userId':app.user.id}) }}"><span>{{ 'navbar.account' | trans }}</span></a></li>
+							<li><a data-nav-section="logout" href="{{ path('fos_user_security_logout') }}"><span>{{ 'navbar.logout' | trans }}</span></a></li>
+						{% endif %}
+						<li class="{{currentPath == 'app_search' ? 'active'}}"><a href="{{ url('app_search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+						<li><a href="#" type="button" data-toggle="modal" data-target="#modalChooseLanguage"> {{ app.request.locale | upper }} <span class="caret"></span></a></li>
 					</ul>
 				</div>
 			</nav>
