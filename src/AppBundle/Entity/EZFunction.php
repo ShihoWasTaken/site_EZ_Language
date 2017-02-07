@@ -24,27 +24,27 @@ class EZFunction
     private $id;
 
     /**
-     * @ORM\Column(name="Name", type="string")
+     * @ORM\Column(name="Name", type="string",length=255, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(name="French_description", type="text",length=255, nullable=true)
+     * @ORM\Column(name="French_description", type="text", nullable=true)
      */
     private $french_description;
 
     /**
-     * @ORM\Column(name="English_description", type="text",length=255, nullable=true)
+     * @ORM\Column(name="English_description", type="text", nullable=true)
      */
     private $english_description;
 
     /**
-     * @ORM\Column(name="French_html", type="text",length=255, nullable=true)
+     * @ORM\Column(name="French_html", type="text", nullable=true)
      */
     private $french_html;
 
     /**
-     * @ORM\Column(name="English_html", type="text",length=255, nullable=true)
+     * @ORM\Column(name="English_html", type="text", nullable=true)
      */
     private $english_html;
 
