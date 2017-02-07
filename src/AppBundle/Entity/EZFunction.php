@@ -29,22 +29,22 @@ class EZFunction
     private $name;
 
     /**
-     * @ORM\Column(name="French_description", type="text")
+     * @ORM\Column(name="French_description", type="text",length=255, nullable=true)
      */
     private $french_description;
 
     /**
-     * @ORM\Column(name="English_description", type="text")
+     * @ORM\Column(name="English_description", type="text",length=255, nullable=true)
      */
     private $english_description;
 
     /**
-     * @ORM\Column(name="French_html", type="text")
+     * @ORM\Column(name="French_html", type="text",length=255, nullable=true)
      */
     private $french_html;
 
     /**
-     * @ORM\Column(name="English_html", type="text")
+     * @ORM\Column(name="English_html", type="text",length=255, nullable=true)
      */
     private $english_html;
 

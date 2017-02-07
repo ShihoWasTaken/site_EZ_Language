@@ -66,8 +66,8 @@ class BlogController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($articleBlog);
-
             $em->flush();
+            
             return $this->redirectToRoute('app_admin_articleBlogList');
         }
 
