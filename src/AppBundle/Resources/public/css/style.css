@@ -6857,7 +6857,7 @@ img.mfp-img {
     src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
 }
 body { 
-    background-color: #52d3aa;
+     background-color: #52d3aa;
     background-image: repeating-linear-gradient(to right bottom, #3f95ea 0px, #52d3aa 100%);
     color: #7f7f7f;
     font-family: "Source Sans Pro",Arial,sans-serif;
@@ -6867,6 +6867,12 @@ body {
     line-height: 1.5;
     position: relative;    
     padding-top: 150px;
+}
+body.blog{ 
+  
+     background-color: #0CB556;
+    background-image: repeating-linear-gradient(to right bottom, #148578 0px, #0CB556 100%);
+    color: #7f7f7f;
 }
 body.home{
   background: #FFF;   
