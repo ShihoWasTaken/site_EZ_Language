@@ -29,12 +29,12 @@ abstract class Article
     protected $english_title;
 
     /**
-     * @ORM\Column(name="French_html", type="text", nullable=true)
+     * @ORM\Column(name="French_html", type="text",  length=255,nullable=true)
      */
     protected $french_html;
 
     /**
-     * @ORM\Column(name="English_html", type="text", nullable=true)
+     * @ORM\Column(name="English_html", type="text", length=255, nullable=true)
      */
     protected $english_html;
 
@@ -44,6 +44,8 @@ abstract class Article
      *
      * @return integer
      */
+    
+
     public function getId()
     {
         return $this->id;

@@ -56,6 +56,9 @@ class BlogController extends Controller
     
      public function createArticleAction(){
         $articleBlog = new ArticleBlog();
+        
+        
+      
 
         //Create form
         $form = $this->get('form.factory')->create(new ArticleBlogType, $articleBlog);
@@ -63,13 +66,16 @@ class BlogController extends Controller
         $request = $this->getRequest();
         $form->handleRequest($request);
         
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($articleBlog);
-            $em->flush();
-            
-            return $this->redirectToRoute('app_admin_articleBlogList');
-        }
+        	 
+       
+	        if ($form->isValid()) {
+	            $em = $this->getDoctrine()->getManager();
+	            $em->persist($articleBlog);
+	            $em->flush();
+	            
+	            return $this->redirectToRoute('app_admin_articleBlogList');
+	        }
+        
 
         return $this->render('AppBundle:Blog:articleBlog.create.html.twig', array(
                 'form' => $form->createView()

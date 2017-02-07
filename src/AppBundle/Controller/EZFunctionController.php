@@ -111,6 +111,7 @@ class EZFunctionController extends Controller {
     public function createAction() {
 
         $function = new EZFunction();
+      
 
         // Create form
         $form = $this->get('form.factory')->create(new EZFunctionType, $function, array(
@@ -120,14 +121,17 @@ class EZFunctionController extends Controller {
         $request = $this->getRequest();
         $form->handleRequest($request);
         
-        if ($form->isValid()) {
-            // Save function;
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($function);
-
-            $em->flush();
-            return $this->redirectToRoute('app_admin_functionList');
-        }
+        if($function->getName()!="" && $function->getFrenchDescription()!="" && $function->getEnglishDescription()!=""){
+        	
+	        if ($form->isValid()) {
+	            // Save function;
+	            $em = $this->getDoctrine()->getManager();
+	            $em->persist($function);
+	
+	            $em->flush();
+	            return $this->redirectToRoute('app_admin_functionList');
+	        }
+    }
 
         return $this->render('AppBundle:EZFunction:function.create.html.twig', array(
                     'form' => $form->createView()
