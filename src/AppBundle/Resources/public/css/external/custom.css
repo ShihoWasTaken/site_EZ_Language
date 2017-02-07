@@ -404,3 +404,30 @@ FORM LOGIN
 a{
     text-decoration: none !important;
 }
+
+/* ROUINEB Hamza : to make the footer fixed to the bottom*/
+.footer_fixed {
+   position:fixed;
+   bottom:0px;
+   width:100%;
+}
+
+/* ROUINEB Hamza : and of course, don't forget IE6 */
+/* IE 6 */
+* html .footer_fixed {
+   position:absolute;
+   top:expression((0-(footer_fixed.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+.beautiful_comment{
+    width:60%;
+    margin: auto;
+    color:white;
+    margin-bottom: 2%;
+}
+
+.custom_header{
+    color:white;
+    font-weight: bold;
+}
+

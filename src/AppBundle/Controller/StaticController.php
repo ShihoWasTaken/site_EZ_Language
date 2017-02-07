@@ -70,7 +70,7 @@ class StaticController extends Controller
                         ,'text/html');
                 $this->get('mailer')->send($message);
 
-
+                
                 // Redirect - This is important to prevent users re-posting
                 // the form if they refresh the page
                 return $this->redirect($this->generateUrl('app_contact'));
