@@ -12,18 +12,19 @@ jQuery(document).ready(function() {
 
         // Replace '__name__' in the prototype's HTML to
         // instead be a number based on how many items we have
-        var newForm = prototype.replace(/__name__/g, index);
+        var newForm = prototype.replace(/__name__/g, index)
+                               .replace(/__name__label__/g, "Bonjour");
 
         // increase the index with one for the next item
-        $collectionHolder.data('index', index + 1); 
+        $collectionHolder.data('index', index + 1);
 
         // Display the form in the page in an li, before the "Add a tag" link li
         $collectionHolder.append($newLinkLi.append(newForm));
     }
 
     function addTagFormDeleteLink($tagFormLi) {
-        var $removeFormA = $('<a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>');
-        $tagFormLi.prepend($removeFormA);
+        var $removeFormA = $('<i class="fa fa-times closeArgument" aria-hidden="true"></i>');
+        $tagFormLi.children().prepend($removeFormA);
 
         $removeFormA.on('click', function(e) {
             // prevent the link from creating a "#" on the URL

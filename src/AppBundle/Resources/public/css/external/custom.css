@@ -1,7 +1,6 @@
-/*
- * Enzo Chevallier, création : 21/09/2016
- * Modifié par Sara ZALARHE
- */
+html{
+    min-height: 100%;
+}
 
 /* Mise à 0 des border radius */
 input[type=text], input[type=email], textarea.form-control, .form-control, btn{
@@ -113,10 +112,6 @@ a:hover, a:focus {
     /* background:url('../../../../bundles/app/images/login_wallpaper.jpg') no-repeat center top; */
 }
 
-#form-login, #form-register {
-    background-color: #EAEAEA;
-    margin-top: 10%;
-}
 #form-register {
     padding-bottom: 10px;
 }
@@ -365,4 +360,47 @@ tr:last-child {
 }
 .description_block ul li{
     margin-bottom: 20px;
+}
+
+
+/* -----------------
+FORM LOGIN
+------------------- */
+.login_form {
+    background-color: #FFFFFF;
+    margin-left: 0%;
+    width: 100%;
+}
+.fos_user_resetting_request {
+    width: 100%;
+    margin-left: 0px;
+}
+.wrapper_login {
+    width: 30%;
+}
+.arguments{
+    list-style: none;
+    margin: 0;
+    font-size: 0.8em;
+}
+.arguments li{
+    margin-bottom: 10px;
+}
+.boxArgument{
+    border: 1px solid #DADADA;
+    background: #F2F2F2;
+    padding: 10px;
+}
+.boxArgument input, .boxArgument textarea, .boxArgument select{
+    background: #FFF;
+}
+.closeArgument{
+    cursor: pointer;
+    float: right;
+}
+.word-spacing{
+  margin-left: 55px;
+}
+a{
+    text-decoration: none !important;
 }

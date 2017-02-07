@@ -9,7 +9,7 @@
 {% block content %}
 	<div class="container">
 		<div clas="row">
-			<form class="col-md-12 boxElement marginTop" role="search" action="{{ path('app_search') }}" method="GET">
+			<form class="col-md-12 boxElement marginTop" role="search" action="{{ path('app_blogShow') }}" method="GET">
 				<div class="input-group boxRecherche">
 					<input type="text" name="q" class="form-control" placeholder="{{'search.placeholder' | trans}}" value="{{ searchtext }}">
 					<div class="input-group-addon">
@@ -27,20 +27,11 @@
 				<hr>
 				{% for element in pagination %}
 					<div class="result">
-						{% if element.type == "function" %}
-							<div class="result_title">
-									<a href="{{ path('app_functionShow', {'id': element.id } ) }}"><h2>{{ element.name }}</h2></a>
-							</div>
-							<div class="result_content">
-								<p>{{  app.request.locale == 'en' ? element.english_description : element.french_description }}</p>
-							</div>
-						{% else %}
-							<div class="result_title">
-								<a href="{{ path('app_tutorialShow', {'id': element.id } ) }}">
-									<h2><i class="fa fa-book" aria-hidden="true"></i> {{  app.request.locale == 'en' ? element.english_title : element.french_title }}</h2>
-								</a>
-							</div>
-						{% endif %}
+						<div class="result_title">
+							<a href="{{ path('app_articleBlogShow', {'id': element.id } ) }}">
+								<h2><i class="fa fa-book" aria-hidden="true"></i> {{  app.request.locale == 'en' ? element.english_title : element.french_title }}</h2>
+							</a>
+						</div>
 					</div>
 					<hr/>
 				{% endfor %}

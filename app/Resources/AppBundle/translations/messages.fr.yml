@@ -15,11 +15,17 @@ navbar.admin.function.create: 'Créer Fonction'
 navbar.admin.category: Catégorie
 navbar.admin.tutorial.list: 'Liste Tutoriel'
 navbar.admin.tutorial.create: 'Créer Tutoriel'
-navbar.admin.tutorial: Tutoriel
+navbar.admin.tutorial: 
+navbar.admin.blog.list : 'Liste blogs'
+navbar.admin.blog.create : 'Créer une blog'
 form.email: Mail
 form.name: Nom
 form.subject: Sujet
 form.body: Message
+form.descriptionFrench: 'Description en Francais'
+form.descriptionEnglish: 'Description en Anglais'
+form.type: 'Type'
+form.return: 'Retour'
 home.title: 'Do something you love.'
 home.title.description: 'Easy langage est un langage destiné aux développeurs ainsi qu''aux non développeurs,facile d''utilisation,flexible et pragmatique, grâce à ses nombreuses fonctionnalités.'
 home.bloc1: 'Premier pas avec EZ'
@@ -30,6 +36,9 @@ home.bloc2.description: 'Cette section fournit des informations détaillées sur
 home.bloc2.submit: 'Click ici'
 home.bloc3: 'A propos du langage'
 home.bloc3.description: 'Easy language est un langage deprogrammation compilé,son atout principal, est sa syntaxe claire'
+user.name : 'Nom d''utilisateur'
+user.mail : 'Adresse mail'
+user.date : 'Dérniére connexion'
 home.bloc3.submit: Découvrir
 home.bloc4: Avancement
 list.code: Code
@@ -65,3 +74,13 @@ form.englishLabel: 'Label en anglais'
 notFound.title: 'Page introuvable'
 profil.title: 'Mon compte'
 searchPage.title: Recherche
+argument.title: 'Argument'
+argument.add: 'Ajouter argument'
+argument.create: 'Creation argument'
+argument.edit: 'Edition argument'
+articleBlogListe.title : 'Liste des articles du blog'
+EditBlog.title : 'Modifier le blog'
+CreatBlog.title : 'Créer un blog'
+showblog.title : 'Afficher les blogs'
+blog.user : Auteur'
+blog.date : 'Date'
