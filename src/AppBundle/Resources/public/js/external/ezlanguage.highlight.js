@@ -1,12 +1,9 @@
 /*
-Language: C++
-Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
-Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>
-Category: common, system
+Ezlanguage: ez ezl
 */
 
 hljs.registerLanguage("ezlanguage",function(hljs) {
-  var CPP_PRIMITIVE_TYPES = {
+  var EZLANGUAGE_PRIMITIVE_TYPES = {
     className: 'keyword',
     begin: '\\b[a-z\\d_]*_t\\b'
   };
@@ -46,7 +43,8 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
     keywords: {
       'meta-keyword':
         'if else elif endif define undef warning error line ' +
-        'pragma ifdef ifndef include'
+        'pragma ifdef ifndef include'+
+        'begin on until store restore empty sort qsort'//ezlanguage_keywords
     },
     contains: [
       {
@@ -65,7 +63,7 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
 
   var FUNCTION_TITLE = hljs.IDENT_RE + '\\s*\\(';
 
-  var CPP_KEYWORDS = {
+  var EZLANGUAGE_KEYWORDS = {
     keyword: 'int float while private char catch import module export virtual operator sizeof ' +
       'dynamic_cast|10 typedef const_cast|10 const struct for static_cast|10 union namespace ' +
       'unsigned long volatile static protected bool template mutable if public friend ' +
@@ -75,7 +73,8 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
       'noexcept static_assert thread_local restrict _Bool complex _Complex _Imaginary ' +
       'atomic_bool atomic_char atomic_schar ' +
       'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
-      'atomic_ullong new throw return',
+      'atomic_ullong new throw return'+
+      'when procedure function structure program regex alignas',//ezlanguage keywords
     built_in: 'std string cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream ' +
       'auto_ptr deque list queue stack vector map set bitset multiset multimap unordered_set ' +
       'unordered_map unordered_multiset unordered_multimap array shared_ptr abort abs acos ' +
@@ -84,12 +83,14 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
       'isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow ' +
       'printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp ' +
       'strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan ' +
-      'vfprintf vprintf vsprintf endl initializer_list unique_ptr',
-    literal: 'true false nullptr NULL'
+      'vfprintf vprintf vsprintf endl initializer_list unique_ptr'+
+      'contstant real variable global local final print list',//ezlanguage keywords
+    literal: 'true false nullptr NULL'+
+      'and or xor not annd_eq'//ezlanguage keywords
   };
 
   var EXPRESSION_CONTAINS = [
-    CPP_PRIMITIVE_TYPES,
+    EZLANGUAGE_PRIMITIVE_TYPES,
     hljs.C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
     NUMBERS,
@@ -97,19 +98,19 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
   ];
 
   return {
-    aliases: ['c', 'cc', 'h', 'c++', 'h++', 'hpp'],
-    keywords: CPP_KEYWORDS,
+    aliases: ['c', 'cc', 'h', 'c++', 'h++', 'hpp', 'ez', 'ezl'],
+    keywords: EZLANGUAGE_KEYWORDS,
     illegal: '</',
     contains: EXPRESSION_CONTAINS.concat([
       PREPROCESSOR,
       {
         begin: '\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<', end: '>',
-        keywords: CPP_KEYWORDS,
-        contains: ['self', CPP_PRIMITIVE_TYPES]
+        keywords: EZLANGUAGE_KEYWORDS,
+        contains: ['self', EZLANGUAGE_PRIMITIVE_TYPES]
       },
       {
         begin: hljs.IDENT_RE + '::',
-        keywords: CPP_KEYWORDS
+        keywords: EZLANGUAGE_KEYWORDS
       },
       {
         // This mode covers expression context where we can't expect a function
@@ -120,11 +121,11 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
           {begin: /\(/, end: /\)/},
           {beginKeywords: 'new throw return else', end: /;/}
         ],
-        keywords: CPP_KEYWORDS,
+        keywords: EZLANGUAGE_KEYWORDS,
         contains: EXPRESSION_CONTAINS.concat([
           {
             begin: /\(/, end: /\)/,
-            keywords: CPP_KEYWORDS,
+            keywords: EZLANGUAGE_KEYWORDS,
             contains: EXPRESSION_CONTAINS.concat(['self']),
             relevance: 0
           }
@@ -136,7 +137,7 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
         begin: '(' + hljs.IDENT_RE + '[\\*&\\s]+)+' + FUNCTION_TITLE,
         returnBegin: true, end: /[{;=]/,
         excludeEnd: true,
-        keywords: CPP_KEYWORDS,
+        keywords: EZLANGUAGE_KEYWORDS,
         illegal: /[^\w\s\*&]/,
         contains: [
           {
@@ -147,14 +148,14 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
           {
             className: 'params',
             begin: /\(/, end: /\)/,
-            keywords: CPP_KEYWORDS,
+            keywords: EZLANGUAGE_KEYWORDS,
             relevance: 0,
             contains: [
               hljs.C_LINE_COMMENT_MODE,
               hljs.C_BLOCK_COMMENT_MODE,
               STRINGS,
               NUMBERS,
-              CPP_PRIMITIVE_TYPES
+              EZLANGUAGE_PRIMITIVE_TYPES
             ]
           },
           hljs.C_LINE_COMMENT_MODE,
@@ -166,7 +167,7 @@ hljs.registerLanguage("ezlanguage",function(hljs) {
     exports: {
       preprocessor: PREPROCESSOR,
       strings: STRINGS,
-      keywords: CPP_KEYWORDS
+      keywords: EZLANGUAGE_KEYWORDS
     }
   };
 });
