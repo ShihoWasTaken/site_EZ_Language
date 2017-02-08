@@ -56,7 +56,10 @@ functionEdit.addArg: 'Add function argument'
 navbar.admin.comment.create: 'New comment'
 navbar.admin.comment.edit: 'Edit comment'
 navbar.admin.comment.remove: 'Remove comment'
-navbar.admin.comment.list: 'Comments list '
+navbar.admin.comment.list: 'Comments list'
+CreateComment.title: 'Create Comment'
+CreateComment.form.comment: 'Your comment'
+CreateComment.form.comment.users: 'Utilisateurs'
 # end comments section
 # start missing data 
 missing.data:  Sorry for the time being, The database is empty

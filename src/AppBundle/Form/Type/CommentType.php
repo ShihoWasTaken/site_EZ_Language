@@ -22,27 +22,44 @@ class CommentType extends AbstractType
           ->add('user', EntityType::class, array(
               // query choices from this entity
               'class' => 'AppBundle:User',
-
               // use the User.username property as the visible option string
-              'choice_label' => 'username'
-
-              // used to render a select box, check boxes or radios
-              // 'multiple' => true,
-              // 'expanded' => true,
+              'label' => 'User',
+              'label_attr' => array(
+                  'class' => 'col-sm-2 control-label',
+                  'for'   =>  'inputEmail3'
+               ),
+              'attr' => array(
+                  'class' => 'form-control',
+                  'id'   =>  'inputEmail3'
+               ),
+              'required' => true
           ))
           ->add('comment', TextareaType::class, array(
-              'attr' => array('class' => 'tinymce'),
-              'required' => 'true',
-              'trim' => 'true'
+              'label' => 'Comment',
+              'attr' => array(
+                  'class' => 'tinymce form-control',
+                  'rows'  => '3'
+               ),
+              'label_attr' => array('class' => 'col-sm-5 control-label'),
+              'required' => true,
+              'trim' => true,
           ))
           ->add('postedAt', DateType::class, array(
-              // render as a single text box
-              'widget' => 'single_text',
-              'placeholder' => 'Select a value',
-              // this is actually the default format for single_text
-              'format' => 'dd-MM-yyyy',
-              'model_timezone' => 'Europe/Paris'
-          ))
+                // do not render as type="date", to avoid HTML5 date pickers
+                'html5' => false,
+                'widget' => 'single_text',
+                'format' => 'dd-MM-yyyy',
+                'label' => 'Posted at',
+                'label_attr' => array('class' => 'col-sm-5 control-label'),
+                'attr' => array(
+                    'class' => 'form-control input-inline datepicker',
+                    'data-provide' => 'datepicker',
+                    'data-date-format' => 'dd-mm-yyyy',
+                    'data-date-autoclose' => 'true',
+                    'data-date-clearBtn' => 'true',
+                    'data-date-language' => 'fr'
+            )
+            ))
           ->add('save', SubmitType::class);
     }
 
@@ -53,7 +70,6 @@ class CommentType extends AbstractType
 public function configureOptions(OptionsResolver $resolver)
 {
     $resolver->setDefaults(array(
-        #'data_class' => Comment::class,
         'data_class' => 'AppBundle\Entity\Comment',
         'locale' => 'en'
     ));
