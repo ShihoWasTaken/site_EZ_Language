@@ -141,8 +141,8 @@ app_admin_commentList:
 
 app_admin_commentEdit:
     path:     /admin/comment/{id}/edit
-    defaults: { id: 1 }
-    #defaults: { _controller: AppBundle:Comment:edit}
+    #defaults: { id: 1 }
+    defaults: { _controller: AppBundle:Comment:edit}
     methods: GET|POST
     requirements:
       id: \d+

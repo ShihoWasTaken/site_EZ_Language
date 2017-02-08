@@ -7,7 +7,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" />
 {% endblock stylesheets %}
    
 {% block javascripts_body %}
@@ -18,11 +18,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-push-2 col-md-8 white_background boxElement">
-            <h2 class="main_title">{{'CreateComment.title' | trans}}</h2>
-                
-                {{ form_errors(form) }}
+            <h2 class="main_title">{{'CreateComment.title' | trans}} <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></h2>
                  
-                 {{ form_start(form,{'attr':{'style':'width:90%;margin:auto;'}} ) }}
+                 <p class="bg-warning"> 
+                    {{ form_errors(form) }}
+                 </p>
+                 
+                 {{ form_start(form,{'attr':{}} ) }}
                     
                     {{ form_widget(form._token) }}
                     

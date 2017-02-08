@@ -50,7 +50,7 @@ class CommentController extends Controller {
      if ($form->isValid()) {
          //Save $page;
          $em->flush();
-         //return $this->redirectToRoute('app_admin_pageList');
+         return $this->redirectToRoute('app_admin_commentList');
      }
 
      return $this->render('AppBundle:Comment:comment.edit.html.twig', array(

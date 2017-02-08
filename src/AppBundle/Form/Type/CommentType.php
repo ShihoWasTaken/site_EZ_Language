@@ -25,12 +25,10 @@ class CommentType extends AbstractType
               // use the User.username property as the visible option string
               'label' => 'User',
               'label_attr' => array(
-                  'class' => 'col-sm-2 control-label',
-                  'for'   =>  'inputEmail3'
+                  'class' => 'col-sm-2 control-label'
                ),
               'attr' => array(
-                  'class' => 'form-control',
-                  'id'   =>  'inputEmail3'
+                  'class' => 'form-control' 
                ),
               'required' => true
           ))
@@ -60,7 +58,11 @@ class CommentType extends AbstractType
                     'data-date-language' => 'fr'
             )
             ))
-          ->add('save', SubmitType::class);
+          ->add('save', SubmitType::class,array(
+                'attr' => array(
+                    'class' => 'btn btn-primary center-block'
+                ) 
+          ));
     }
 
 

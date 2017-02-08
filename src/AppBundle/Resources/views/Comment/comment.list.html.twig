@@ -19,14 +19,14 @@
             {{ comment.comment }}
         </div>
         <div class="media-right media-middle">
-          <a href="{{ (comment.user is not null ) ? '/profile/'~comment.user.id:'#' }}">
+          <a href="{{ (comment.user is not null ) ?  path('app_admin_commentEdit', {'id': comment.id }):'#' }}">
             <img src="{{ asset('bundles/app/images/male.png') }}" alt="{{ comment.user ? comment.user.username:'user\'s image' }}" />
           </a>
         </div>
       {% set flag = false %}
       {% else %}
         <div class="media-left media-middle">
-          <a href="{{ (comment.user is not null ) ? '/profile/'~comment.user.id:'#' }}">
+          <a href="{{ (comment.user is not null ) ?  path('app_admin_commentEdit', {'id': comment.id }):'#' }}">
             <img src="{{ asset('bundles/app/images/female.png') }}" alt="{{ comment.user ? comment.user.username:'user\'s image' }}" />
           </a>
         </div>
