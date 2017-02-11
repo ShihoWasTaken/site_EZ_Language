@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity
@@ -36,16 +38,19 @@ class Argument
 
     /**
      * @ORM\Column(name="Name", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(name="French_description", type="text")
+     * @Assert\NotBlank
      */
     private $french_description;
 
     /**
      * @ORM\Column(name="English_description", type="text")
+     * @Assert\NotBlank
      */
     private $english_description;
 

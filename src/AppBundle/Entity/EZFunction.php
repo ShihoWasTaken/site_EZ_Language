@@ -31,14 +31,14 @@ class EZFunction
     private $name;
 
     /**
-     * @ORM\Column(name="French_description", type="text",length=255, nullable=true)
+     * @ORM\Column(name="French_description", type="text",length=255, nullable=false)
      * @Assert\NotBlank
      */
     private $french_description;
 
     /**
-     * @ORM\Column(name="English_description", type="text",length=255, nullable=true)
-     * 
+     * @ORM\Column(name="English_description", type="text",length=255, nullable=false)
+     * @Assert\NotBlank
      */
     private $english_description;
 
