@@ -21,4 +21,4 @@ Developers
 * Enzo CHEVALLIER - Phobie53
 * Mathieu BOURBON - Mathieubourbon
 * Sara ZALARHE    - szalarhe
-* ROUINEB Hamza   - devlifealways
+* Hamza ROUINEB   - devlifealways
