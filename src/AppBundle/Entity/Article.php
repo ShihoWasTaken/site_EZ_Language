@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity
@@ -20,11 +22,13 @@ abstract class Article
 
     /**
      * @ORM\Column(name="French_title", type="string", length=200, nullable=false)
+     * @Assert\NotBlank
      */
     protected $french_title;
 
     /**
      * @ORM\Column(name="English_title", type="string", length=200, nullable=false)
+     * @Assert\NotBlank
      */
     protected $english_title;
 

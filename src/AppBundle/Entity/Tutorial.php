@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Article as Article;
 
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="tutorial")

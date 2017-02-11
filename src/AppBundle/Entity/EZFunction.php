@@ -38,7 +38,7 @@ class EZFunction
 
     /**
      * @ORM\Column(name="English_description", type="text",length=255, nullable=true)
-     * @Assert\NotBlank
+     * 
      */
     private $english_description;
 
