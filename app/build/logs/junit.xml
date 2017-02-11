@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AppBundle\Tests\Entity\CommentFunctionalTest" file="/home/phoenix/Desktop/website/src/AppBundle/Tests/Entity/CommentFunctionalTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.035326">
+    <testcase name="testSearchByCategoryName" class="AppBundle\Tests\Entity\CommentFunctionalTest" file="/home/phoenix/Desktop/website/src/AppBundle/Tests/Entity/CommentFunctionalTest.php" line="30" assertions="1" time="0.035326"/>
+  </testsuite>
+</testsuites>

@@ -19,12 +19,19 @@ class Comment{
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Your first name must be at least 2 characters long",
+     *      maxMessage = "Your first name cannot be longer than 255 characters"
+     * )
      */
     protected $comment;
 
     /**
      * @ORM\Column(type="datetime", name="posted_at")
+     * @Assert\DateTime(message="This is not a valid DateTime") 
      */
     protected $postedAt;
 
@@ -92,7 +99,7 @@ class Comment{
 
     /**
      * Get postedAt
-     *
+     * 
      * @return \DateTime
      */
     public function getPostedAt()
