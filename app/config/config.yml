@@ -52,6 +52,10 @@ assetic:
         uglifyjs:
           bin: /usr/local/bin/uglifyjs
     assets:
+      highlight_js:
+        inputs:
+        - '@AppBundle/Resources/public/js/external/highlight.min.js'  
+        - '@AppBundle/Resources/public/js/external/ezlanguage.highlight.js' 
       jquery_js:
         inputs:
         - '@AppBundle/Resources/public/js/external/jquery-2.2.3.min.js'

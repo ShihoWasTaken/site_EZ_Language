@@ -22,40 +22,43 @@
     {{ function.getFrenchDescription|html }}
 {% endif %}
 <br>
-<code>{{ str_code }}</code>
+<pre><code class="ezlanguage hljs">{{ str_code }}</code></pre>
 </div>
-<div class="arguments">
-    <h2 class="main_title">Arguments</h2>
-    <ul>
-    {% set returnValue = null %}
-    {% for argument in function.getArguments %}
-        {% if argument.return %}
-            {% set returnValue = argument %}
-        {% else %}
-            <li>
-                <h3>{{ argument.name }}</h3>
-                {% if (language == "en") %}
-                    <p>{{ argument.getEnglishDescription }}</p>
-                {% else %}
-                    <p>{{ argument.getFrenchDescription }}</p>
-                {% endif %}
-            </li>
-        {% endif %}
-    {% endfor %}
-    </ul>
-    {% if returnValue %}
-        <h2 class="main_title">Valeur de retour</h2>
+{% if function.getArguments|length > 0 %}
+    <div class="arguments">
+        <h2 class="main_title">Arguments</h2>
         <ul>
-            <li><h3>{{ returnValue.type.name }}</h3>
-                {% if (language == "en") %}
-                    <p>{{ returnValue.getEnglishDescription }}</p>
-                {% else %}
-                    <p>{{ returnValue.getFrenchDescription }}</p>
-                {% endif %}
-            </li>
+        {% set returnValue = null %}
+        {% for argument in function.getArguments %}
+            {% if argument.return %}
+                {% set returnValue = argument %}
+            {% else %}
+                <li>
+                    <h3>{{ argument.name }}</h3>
+                    {% if (language == "en") %}
+                        <p>{{ argument.getEnglishDescription }}</p>
+                    {% else %}
+                        <p>{{ argument.getFrenchDescription }}</p>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
         </ul>
-    {% endif %}
-</div>
+        {% if returnValue %}
+            <h2 class="main_title">Valeur de retour</h2>
+            <ul>
+                <li><h3>{{ returnValue.type.name }}</h3>
+                    {% if (language == "en") %}
+                        <p>{{ returnValue.getEnglishDescription }}</p>
+                    {% else %}
+                        <p>{{ returnValue.getFrenchDescription }}</p>
+                    {% endif %}
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}
+
 <div class="html">
     <h2 class="main_title">Description</h2>
     {% if (language == "en") %}

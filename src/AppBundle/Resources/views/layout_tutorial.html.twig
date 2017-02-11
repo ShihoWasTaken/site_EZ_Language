@@ -3,24 +3,14 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
 {% endblock stylesheets %}
 
 {% block javascripts_head %}
 	{{ parent() }}
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 {% endblock javascripts_head %}
 
 {% block javascripts_body %}
 	{{ parent() }}
-	<script>
-		$(document).ready(function() {
-			$('pre code').each(function(i, block) {
-				hljs.highlightBlock(block);
-			});
-		});
-	</script>
 {% endblock javascripts_body %}
 
 {% block body %}
