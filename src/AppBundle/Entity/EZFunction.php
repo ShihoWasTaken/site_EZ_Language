@@ -26,16 +26,19 @@ class EZFunction
 
     /**
      * @ORM\Column(name="Name", type="string")
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(name="French_description", type="text",length=255, nullable=true)
+     * @Assert\NotBlank
      */
     private $french_description;
 
     /**
      * @ORM\Column(name="English_description", type="text",length=255, nullable=true)
+     * @Assert\NotBlank
      */
     private $english_description;
 
