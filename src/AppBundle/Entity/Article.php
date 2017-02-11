@@ -19,22 +19,22 @@ abstract class Article
     private $id;
 
     /**
-     * @ORM\Column(name="French_title", type="string", length=255, nullable=false)
+     * @ORM\Column(name="French_title", type="string", length=200, nullable=false)
      */
     protected $french_title;
 
     /**
-     * @ORM\Column(name="English_title", type="string", length=255, nullable=false)
+     * @ORM\Column(name="English_title", type="string", length=200, nullable=false)
      */
     protected $english_title;
 
     /**
-     * @ORM\Column(name="French_html", type="text",  length=255,nullable=true)
+     * @ORM\Column(name="French_html", type="text",nullable=true)
      */
     protected $french_html;
 
     /**
-     * @ORM\Column(name="English_html", type="text", length=255, nullable=true)
+     * @ORM\Column(name="English_html", type="text", nullable=true)
      */
     protected $english_html;
 
