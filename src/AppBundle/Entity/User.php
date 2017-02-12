@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
-use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
@@ -17,7 +16,6 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-	      $comments = new ArrayCollection();
     }
 
     /**
