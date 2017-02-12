@@ -9,12 +9,19 @@
 		<ul class="dropdown-menu">
 			<li><a href="{{ url('app_admin_functionList') }}">{{ 'navbar.admin.function.list' | trans }}</a></li>
 			<li><a href="{{ url('app_admin_functionCreate') }}">{{ 'navbar.admin.function.create' | trans }}</a></li>
+			<li role="separator" class="divider"></li>
 			<li><a href="{{ url('app_admin_tutorialList') }}">{{ 'navbar.admin.tutorial.list' | trans }}</a></li>
 			<li><a href="{{ url('app_admin_tutorialCreate') }}">{{ 'navbar.admin.tutorial.create' | trans }}</a></li>
 			<li><a href="{{ url('app_admin_category') }}">{{ 'navbar.admin.category' | trans }}</a></li>
 			<li><a href="{{ url('app_admin_pageList') }}">{{ 'navbar.admin.page.list' | trans }}</a></li>
+			<li role="separator" class="divider"></li>
 			<li><a href="{{ url('app_admin_articleBlogList') }}">{{ 'navbar.admin.blog.list' | trans }}</a></li>
 			<li><a href="{{ url('app_admin_articleBlogCreate') }}">{{ 'navbar.admin.blog.create' | trans }}</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="{{ url('app_admin_commentList') }}">{{ 'navbar.admin.comment.list' | trans }}</a></li>
+			<li><a href="{{ url('app_admin_commentCreate') }}">{{ 'navbar.admin.comment.create' | trans }}</a></li>
+			{# <li><a href="{{ url('app_admin_commentEdit') }}">{{ 'navbar.admin.comment.edit' | trans }}</a></li> #}
+			{# <li><a href="{{ url('app_admin_commentRemove') }}">{{ 'navbar.admin.comment.remove' | trans }}</a></li> #}
 		</ul>
 	</li>
 {% endif %}

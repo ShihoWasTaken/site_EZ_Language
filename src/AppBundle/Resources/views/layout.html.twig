@@ -3,7 +3,7 @@
 {% block stylesheets %}
 	{{ parent() }}
 
-	{% stylesheets filter='cssrewrite' '@bootstrap_css' output='css/bootstrap.css' %}
+	{% stylesheets filter='cssrewrite' '@bootstrap_css' output='css/bootstrap.min.css' %}
 		<link rel="stylesheet" href="{{ asset_url }}" />
 	{% endstylesheets %}
 	{% stylesheets 'bundles/app/css/*' filter='cssrewrite, uglifycss' %}
@@ -26,7 +26,7 @@
 
 {% block javascripts_body %}
 	{{ parent() }}
-	{% javascripts '@bootstrap_js' output='js/bootstrap.js'	%}
+	{% javascripts '@bootstrap_js' output='js/bootstrap.min.js'	%}
 		<script src="{{ asset_url }}"></script>
 	{% endjavascripts %}
 	{% javascripts '@highlight_js' output='js/highlight.min.js'	%}

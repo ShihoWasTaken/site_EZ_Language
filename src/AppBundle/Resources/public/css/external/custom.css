@@ -404,3 +404,28 @@ FORM LOGIN
 a{
     text-decoration: none !important;
 }
+
+/* ROUINEB Hamza : to make the footer fixed to the bottom*/
+.footer_fixed {
+   position:fixed;
+   bottom:0px;
+   width:100%;
+}
+
+.beautiful_comment{
+    width:60%;
+    margin: auto;
+    color:white;
+    margin-bottom: 2%;
+}
+
+.custom_header{
+    color:white;
+    font-weight: bold;
+}
+
+.form_beauti {
+  max-width: 10%;
+}
+
+

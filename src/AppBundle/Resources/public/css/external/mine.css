@@ -1,0 +1,6 @@
+/* ROUINEB Hamza : to make the footer fixed to the bottom*/
+.footer_fixed {
+   position:fixed;
+   bottom:0px;
+   width:100%;
+}

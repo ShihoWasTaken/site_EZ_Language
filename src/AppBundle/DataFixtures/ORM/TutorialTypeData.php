@@ -29,7 +29,9 @@ class TutorialData extends AbstractFixture implements OrderedFixtureInterface, C
 		$tuto = new Tutorial();
 		$tuto->setFrenchTitle("Title french");
 		$tuto->setEnglishTitle("Title english");
-		$tuto->setFrenchHtml("<p style='color: red'>description en rouge - french</p><pre>
+        $tuto->setFrenchHtml("<p style='color: red'>description en rouge - french</p>");
+		$tuto->setEnglishHtml("<p style='color: red'>description en rouge - english</p>");
+		/*$tuto->setFrenchHtml("<p style='color: red'>description en rouge - french</p><pre>
         <code class=\"cpp prettyprint lang-cpp\">
             #include <SFML/Graphics.hpp>
 
@@ -56,8 +58,8 @@ class TutorialData extends AbstractFixture implements OrderedFixtureInterface, C
                 return 0;
             }
         </code>
-    </pre>");
-		$tuto->setEnglishHtml("<p style='color: red'>description en rouge - english</p><pre>
+    </pre>");*/
+		/*$tuto->setEnglishHtml("<p style='color: red'>description en rouge - english</p><pre>
         <code class=\"cpp prettyprint lang-cpp\">
             #include <SFML/Graphics.hpp>
 
@@ -84,7 +86,7 @@ class TutorialData extends AbstractFixture implements OrderedFixtureInterface, C
                 return 0;
             }
         </code>
-    </pre>");
+    </pre>");*/
 
 		$manager->persist($tuto);
 		$this->addReference('tuto1', $tuto);

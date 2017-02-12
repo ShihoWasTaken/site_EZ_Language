@@ -28,6 +28,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
 	public function load(ObjectManager $manager)
 	{
 		$faker = \Faker\Factory::create();
+                // should use the manager instead of creating a new one, don't u think so ?
                 $userManager = $this->container->get('fos_user.user_manager');
                 
 		for ($i=0; $i<self::MAX_NB_USERS; ++$i)

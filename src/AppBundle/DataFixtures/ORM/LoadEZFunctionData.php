@@ -38,6 +38,7 @@ class LoadEZFunctionData extends AbstractFixture implements OrderedFixtureInterf
             $EZFunction->setUser($this->getReference('user'.rand(0, 9)));
             $EZFunction->setFrenchDescription($faker->text(100));
             $EZFunction->setEnglishDescription($faker->text(100));
+
             // Il ne faut pas mettre 1000 ( c'est très long ) 
             $EZFunction->setEnglishHtml($faker->text(100));
             $EZFunction->setFrenchHtml($faker->text(100));
