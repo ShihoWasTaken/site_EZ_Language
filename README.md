@@ -22,3 +22,6 @@ Developers
 * Mathieu BOURBON - Mathieubourbon
 * Sara ZALARHE    - szalarhe
 * Hamza ROUINEB   - devlifealways
+
+###### Homologation et correction 
++ Hossam-Eddin BENHOUD
