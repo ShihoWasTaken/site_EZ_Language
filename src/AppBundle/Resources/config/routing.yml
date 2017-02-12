@@ -147,12 +147,6 @@ app_admin_commentEdit:
     requirements:
       id: \d+
 
-app_admin_commentRemove:
-    path:     /admin/comment/{id}/remove
-    defaults: { id: 1 }
-    #defaults: { _controller: AppBundle.Comment:remove}
-    methods:  DELETE
-
 ## end comments section  ##
 
 
