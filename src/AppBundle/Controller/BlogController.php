@@ -10,7 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 class BlogController extends Controller
 {
 
-    public function showArticleAction($id){
+    public function showArticleAction($id)
+    {
         
         $em = $this->getDoctrine()->getManager();
         $articleBlog = $em->getRepository('AppBundle:ArticleBlog')->findOneById($id);
@@ -30,7 +31,8 @@ class BlogController extends Controller
         ));
     }
 
-     public function listArticleAction(Request $request){
+     public function listArticleAction(Request $request)
+     {
         // Variable
         $page           = $request->get('page');
 
@@ -54,7 +56,8 @@ class BlogController extends Controller
         ));
     } 
     
-     public function createArticleAction(){
+     public function createArticleAction()
+     {
         $articleBlog = new ArticleBlog();
         
         
@@ -83,7 +86,8 @@ class BlogController extends Controller
     }
 
     
-    public function editArticleAction($id){
+    public function editArticleAction($id)
+    {
         
         //Get ArticleBlog by Id
         $em             = $this->getDoctrine()->getManager();

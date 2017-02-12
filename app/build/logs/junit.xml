@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Project Test Suite" tests="32" assertions="62" failures="4" errors="0" time="2.752237">
+    <testsuite name="AppBundle\Tests\Controller\BlogControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php" tests="4" assertions="10" failures="3" errors="0" time="0.798011">
+      <testcase name="testThatBlogEditIsSuccessful" class="AppBundle\Tests\Controller\BlogControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php" line="12" assertions="3" time="0.321510">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">AppBundle\Tests\Controller\BlogControllerTest::testThatBlogEditIsSuccessful
+Failed asserting that false is true.
+
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CustomWebTestCase.php:57
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php:14
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</failure>
+      </testcase>
+      <testcase name="testThatBlogCreateIsSuccessful" class="AppBundle\Tests\Controller\BlogControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php" line="17" assertions="3" time="0.271973">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">AppBundle\Tests\Controller\BlogControllerTest::testThatBlogCreateIsSuccessful
+Failed asserting that false is true.
+
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CustomWebTestCase.php:57
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php:19
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</failure>
+      </testcase>
+      <testcase name="testThatBlogListIsSuccessful" class="AppBundle\Tests\Controller\BlogControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php" line="25" assertions="3" time="0.105293"/>
+      <testcase name="testThatBlogShowIsSuccessful" class="AppBundle\Tests\Controller\BlogControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php" line="30" assertions="1" time="0.099235">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">AppBundle\Tests\Controller\BlogControllerTest::testThatBlogShowIsSuccessful
+Failed asserting that false is true.
+
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CustomWebTestCase.php:17
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/BlogControllerTest.php:32
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\CategoryControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CategoryControllerTest.php" tests="1" assertions="3" failures="0" errors="0" time="0.108169">
+      <testcase name="testThatCategoryCreateIsSuccessful" class="AppBundle\Tests\Controller\CategoryControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CategoryControllerTest.php" line="10" assertions="3" time="0.108169"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\CommentControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CommentControllerTest.php" tests="3" assertions="9" failures="1" errors="0" time="0.448096">
+      <testcase name="testThatCommentListIsSuccessful" class="AppBundle\Tests\Controller\CommentControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CommentControllerTest.php" line="7" assertions="3" time="0.072379"/>
+      <testcase name="testThatCommentEditIsSuccessful" class="AppBundle\Tests\Controller\CommentControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CommentControllerTest.php" line="13" assertions="3" time="0.284119">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">AppBundle\Tests\Controller\CommentControllerTest::testThatCommentEditIsSuccessful
+Failed asserting that false is true.
+
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CustomWebTestCase.php:57
+/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CommentControllerTest.php:15
+/usr/share/php/PHPUnit/TextUI/Command.php:155
+/usr/share/php/PHPUnit/TextUI/Command.php:106
+</failure>
+      </testcase>
+      <testcase name="testThatCommentCreateIsSuccessful" class="AppBundle\Tests\Controller\CommentControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/CommentControllerTest.php" line="19" assertions="3" time="0.091598"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\EZFunctionControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/EZFunctionControllerTest.php" tests="4" assertions="10" failures="0" errors="0" time="0.358921">
+      <testcase name="testThatEzFunctionListIsSuccessful" class="AppBundle\Tests\Controller\EZFunctionControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/EZFunctionControllerTest.php" line="12" assertions="3" time="0.102996"/>
+      <testcase name="testThatEzFunctionEditIsSuccessful" class="AppBundle\Tests\Controller\EZFunctionControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/EZFunctionControllerTest.php" line="17" assertions="3" time="0.104951"/>
+      <testcase name="testThatEzFunctionCreateIsSuccessful" class="AppBundle\Tests\Controller\EZFunctionControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/EZFunctionControllerTest.php" line="22" assertions="3" time="0.112185"/>
+      <testcase name="testThatEzFunctionShowIsSuccessful" class="AppBundle\Tests\Controller\EZFunctionControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/EZFunctionControllerTest.php" line="30" assertions="1" time="0.038789"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\PageControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/PageControllerTest.php" tests="2" assertions="6" failures="0" errors="0" time="0.198645">
+      <testcase name="testThatPageListIsSuccessful" class="AppBundle\Tests\Controller\PageControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/PageControllerTest.php" line="12" assertions="3" time="0.114808"/>
+      <testcase name="testThatPageEditIsSuccessful" class="AppBundle\Tests\Controller\PageControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/PageControllerTest.php" line="17" assertions="3" time="0.083837"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\SearchControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/SearchControllerTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.079725">
+      <testcase name="testSearchPageIsSuccessful" class="AppBundle\Tests\Controller\SearchControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/SearchControllerTest.php" line="7" assertions="1" time="0.057852"/>
+      <testcase name="testFrenchSearchPageIsSuccessful" class="AppBundle\Tests\Controller\SearchControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/SearchControllerTest.php" line="12" assertions="1" time="0.021873"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" tests="12" assertions="12" failures="0" errors="0" time="0.463960">
+      <testcase name="testThatIndexIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="18" assertions="1" time="0.018079"/>
+      <testcase name="testThatFrenchIndexIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="24" assertions="1" time="0.019536"/>
+      <testcase name="testThatAboutIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="30" assertions="1" time="0.015281"/>
+      <testcase name="testThatFrenchAboutIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="36" assertions="1" time="0.013830"/>
+      <testcase name="testThatContactIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="42" assertions="1" time="0.018018"/>
+      <testcase name="testFormContactShouldValidate" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="47" assertions="1" time="0.066682"/>
+      <testcase name="testFormContactShouldNotValidateWithIncorrectEmail" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="63" assertions="1" time="0.036880"/>
+      <testcase name="testThatFrenchContactIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="80" assertions="1" time="0.014916"/>
+      <testcase name="testFrenchFormContact" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="85" assertions="1" time="0.084420"/>
+      <testcase name="testThatProfileIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="102" assertions="1" time="0.046005"/>
+      <testcase name="testThatFrenchProfileIsSuccessful" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="108" assertions="1" time="0.018260"/>
+      <testcase name="testThatInvalidUserIdShouldReturn404" class="AppBundle\Tests\Controller\DefaultControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/StaticControllerTest.php" line="114" assertions="1" time="0.112054"/>
+    </testsuite>
+    <testsuite name="AppBundle\Tests\Controller\TutorialControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/TutorialControllerTest.php" tests="4" assertions="10" failures="0" errors="0" time="0.296710">
+      <testcase name="testThatTutorialListIsSuccessful" class="AppBundle\Tests\Controller\TutorialControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/TutorialControllerTest.php" line="12" assertions="3" time="0.109186"/>
+      <testcase name="testThatTutorialEditIsSuccessful" class="AppBundle\Tests\Controller\TutorialControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/TutorialControllerTest.php" line="17" assertions="3" time="0.087516"/>
+      <testcase name="testThatTutorialCreateIsSuccessful" class="AppBundle\Tests\Controller\TutorialControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/TutorialControllerTest.php" line="22" assertions="3" time="0.084603"/>
+      <testcase name="testThatTutorialShowIsSuccessful" class="AppBundle\Tests\Controller\TutorialControllerTest" file="/var/www/html/ezlanguage/src/AppBundle/Tests/Controller/TutorialControllerTest.php" line="30" assertions="1" time="0.015405"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -92,22 +92,24 @@ class StaticController extends Controller
      */
     public function profileAction($userId)
     {
-        //Get user by Id
-        $em         = $this->getDoctrine()->getManager();
-        $user       = $em->getRepository('AppBundle:User')->findOneById($userId);
-        $default    = "http://sentireconcepts.com/images/male_face_128.jpg";
-        $size       = 40;
-        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->getEmail() ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-        // user exist
-        if (!$user) {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('AppBundle:User')->findOneById($userId);
+        if (!$user)
+        {
             throw $this->createNotFoundException(
-                    '[User] No found for id ' . $userId
+                '[User] No found for id ' . $userId
             );
         }
+        else
+        {
+            $default = "http://sentireconcepts.com/images/male_face_128.jpg";
+            $size = 40;
+            $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->getEmail() ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
-        return $this->render('AppBundle:Static:profil.html.twig', array(
-                    'user'      => $user,
-                    'grav_url'  => $grav_url,
-        ));
+            return $this->render('AppBundle:Static:profil.html.twig', array(
+                'user'      => $user,
+                'grav_url'  => $grav_url,
+            ));
+        }
     }
 }
