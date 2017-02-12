@@ -2,27 +2,23 @@
 
 namespace AppBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Response;
-
-
-# functional tests
-# ROUINEB Hamza
-class CommentControllerTest extends WebTestCase
+class CommentControllerTest extends CustomWebTestCase
 {
-	// Code générique
-    /*private function checkThatPageIsSuccessful($url)
+    public function testThatCommentListIsSuccessful()
     {
-        $comment = self::createComment();
-        $client->request('GET', $url);
-        
-        $this->assertTrue($comment->getResponse()->isSuccessful());
-    }*/
+        $this->checkThatAdminPageIsSuccessful('/admin/comment/');
+    }
 
-    // Page "/comment"
-    public function testThatCommentIsSuccessful()
+
+    public function testThatCommentEditIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/comment');
+        $this->checkThatAdminPageIsSuccessful('/admin/comment/edit');
+    }
+
+
+    public function testThatCommentCreateIsSuccessful()
+    {
+        $this->checkThatAdminPageIsSuccessful('/admin/comment/create');
     }
 
 }

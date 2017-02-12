@@ -34,7 +34,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             $page->setEnglishText("[ENGLISH]" . $faker->text(400));
             $page->setFrenchText("[FRANCAIS]" . $faker->text(400));
             $page->setName("HOME");
-            $page->setUser($this->getReference('user'.rand(0, 9)));
+            $page->setUser($this->getReference('user3'));
             $page->setLastUpdateDate(new \DateTime());
             $this->addReference('pagehome', $page);
             $manager->persist($page);
@@ -44,7 +44,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             $pageContact->setEnglishText("[ENGLISH]" . $faker->text(400));
             $pageContact->setFrenchText("[FRANCAIS]" . $faker->text(400));
             $pageContact->setName("CONTACT");
-            $pageContact->setUser($this->getReference('user'.rand(0, 9)));
+            $pageContact->setUser($this->getReference('user2'));
             $pageContact->setLastUpdateDate(new \DateTime());
             $this->addReference('pagecontact', $pageContact);
             $manager->persist($pageContact);
@@ -54,7 +54,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
             $pageAbout->setEnglishText("[ENGLISH]" . $faker->text(400));
             $pageAbout->setFrenchText("[FRANCAIS]" . $faker->text(400));
             $pageAbout->setName("ABOUT");
-            $pageAbout->setUser($this->getReference('user'.rand(0, 9)));
+            $pageAbout->setUser($this->getReference('user1'));
             $pageAbout->setLastUpdateDate(new \DateTime());
             $this->addReference('pageabout', $pageAbout);
             $manager->persist($pageAbout);

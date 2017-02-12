@@ -2,48 +2,46 @@
 
 namespace AppBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
-class DefaultControllerTest extends WebTestCase
+class DefaultControllerTest extends CustomWebTestCase
 {
 
-	// Code générique
-    private function checkThatPageIsSuccessful($url)
-    {
-        $client = self::createClient();
-        $client->request('GET', $url);
+    /* Le texte des boutons de validation du formulaire de contact en anglais et en français
+    *  Si les tests ne passent plus, vérifier que le texte des boutons corresponds bien à celui des pages
+    */
+    const CONTACT_SUBMIT_BUTTON_TEXT = 'Send';
+    const CONTACT_SUBMIT_BUTTON_FRENCH_TEXT = 'Envoyer';
 
-        $this->assertTrue($client->getResponse()->isSuccessful());
-    }
+    const VALID_USER_ID = 1;
+    const INVALID_USER_ID = 'toto';
 
     // Page "/"
     public function testThatIndexIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/');
+        $this->checkThatPageIsSuccessful('/');
     }
 
-	// Page "/fr/"
+    // Page "/fr/"
     public function testThatFrenchIndexIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/fr/');
+        $this->checkThatPageIsSuccessful('/fr/');
     }
 
     // Page "/about"
     public function testThatAboutIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/about');
+        $this->checkThatPageIsSuccessful('/about');
     }
 
-	// Page "/fr/about"
+    // Page "/fr/about"
     public function testThatFrenchAboutIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/fr/about');
+        $this->checkThatPageIsSuccessful('/fr/about');
     }
 
     // Page "/contact"
     public function testThatContactIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/contact');
+        $this->checkThatPageIsSuccessful('/contact');
     }
 
     public function testFormContactShouldValidate()
@@ -51,7 +49,7 @@ class DefaultControllerTest extends WebTestCase
         $client = self::createClient();
 
         $crawler = $client->request('GET', '/contact');
-        $form = $crawler->selectButton('Submit')->form(array(
+        $form = $crawler->selectButton(self::CONTACT_SUBMIT_BUTTON_TEXT)->form(array(
             'contact[name]'      => 'Kenny GUIOUGOU',
             'contact[email]'     => 'kenny.guiougou@gmail.com',
             'contact[subject]'   => 'Test du formulaire',
@@ -68,7 +66,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/contact');
 
-        $form = $crawler->selectButton('Submit')->form(array(
+        $form = $crawler->selectButton(self::CONTACT_SUBMIT_BUTTON_TEXT)->form(array(
             'contact[name]'      => 'Kenny GUIOUGOU',
             'contact[email]'     => 'kenny.guiougougmail.com',
             'contact[subject]'   => 'Test du formulaire',
@@ -78,10 +76,10 @@ class DefaultControllerTest extends WebTestCase
         $this->assertFalse($client->getResponse()->isRedirect());
     }
 
-	// Page "/fr/contact"
+    // Page "/fr/contact"
     public function testThatFrenchContactIsSuccessful()
     {
-    	$this->checkThatPageIsSuccessful('/fr/contact');
+        $this->checkThatPageIsSuccessful('/fr/contact');
     }
 
     public function testFrenchFormContact()
@@ -89,7 +87,7 @@ class DefaultControllerTest extends WebTestCase
         $client = self::createClient();
 
         $crawler = $client->request('GET', '/fr/contact');
-        $form = $crawler->selectButton('Submit')->form(array(
+        $form = $crawler->selectButton(self::CONTACT_SUBMIT_BUTTON_FRENCH_TEXT)->form(array(
             'contact[name]'      => 'Kenny GUIOUGOU',
             'contact[email]'     => 'kenny.guiougou@gmail.com',
             'contact[subject]'   => 'Test du formulaire',
@@ -98,6 +96,26 @@ class DefaultControllerTest extends WebTestCase
         $client->submit($form);
         $this->assertTrue($client->getResponse()->isRedirect());
         $client->followRedirect();
+    }
+
+    // Page "/profile/{id}""
+    public function testThatProfileIsSuccessful()
+    {
+        $this->checkThatPageIsSuccessful('/profile/'. self::VALID_USER_ID);
+    }
+
+    // Page "/fr/profile/{id}"
+    public function testThatFrenchProfileIsSuccessful()
+    {
+        $this->checkThatPageIsSuccessful('/fr/profile/' . self::VALID_USER_ID);
+    }
+
+    // Page "/profile/{id}""
+    public function testThatInvalidUserIdShouldReturn404()
+    {
+            $client = self::createClient();
+            $client->request('GET', '/profile/' . self::INVALID_USER_ID);
+            $this->assertTrue($client->getResponse()->isNotFound());
     }
 
 }
