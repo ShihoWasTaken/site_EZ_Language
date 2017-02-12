@@ -121,7 +121,6 @@ class EZFunctionController extends Controller {
         $request = $this->getRequest();
         $form->handleRequest($request);
         
-        if($function->getName()!="" && $function->getFrenchDescription()!="" && $function->getEnglishDescription()!=""){
         	
 	        if ($form->isValid()) {
 	            // Save function;
@@ -130,7 +129,6 @@ class EZFunctionController extends Controller {
 	
 	            $em->flush();
 	            return $this->redirectToRoute('app_admin_functionList');
-	        }
     }
 
         return $this->render('AppBundle:EZFunction:function.create.html.twig', array(

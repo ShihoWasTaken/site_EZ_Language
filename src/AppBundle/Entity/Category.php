@@ -2,7 +2,11 @@
 
 namespace AppBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity
@@ -24,11 +28,13 @@ class Category
 
     /**
      * @ORM\Column(name="French_label", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $french_label;
 
     /**
      * @ORM\Column(name="English_label", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $english_label;
 

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -25,16 +26,19 @@ class EZFunction
 
     /**
      * @ORM\Column(name="Name", type="string",length=255, nullable=false)
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
-     * @ORM\Column(name="French_description", type="text", nullable=true)
+     * @ORM\Column(name="French_description", type="text",length=255, nullable=false)
+     * @Assert\NotBlank
      */
     private $french_description;
 
     /**
-     * @ORM\Column(name="English_description", type="text", nullable=true)
+     * @ORM\Column(name="English_description", type="text",length=255, nullable=false)
+     * @Assert\NotBlank
      */
     private $english_description;
 

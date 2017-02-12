@@ -22,7 +22,6 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-
 {% endblock javascripts_head %}
 
 {% block javascripts_body %}
@@ -30,7 +29,18 @@
 	{% javascripts '@bootstrap_js' output='js/bootstrap.min.js'	%}
 		<script src="{{ asset_url }}"></script>
 	{% endjavascripts %}
-	<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>
+	{% javascripts '@highlight_js' output='js/highlight.min.js'	%}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/ckeditor/ckeditor.js') }}"></script>	
+	<script>
+		$(document).ready(function() {
+			$('pre code').each(function(i, block) {
+				$(block).attr("class", "ezlanguage");
+				hljs.highlightBlock(block);
+			});
+		});
+	</script>
 {% endblock javascripts_body %}
 
 {% block body %}
