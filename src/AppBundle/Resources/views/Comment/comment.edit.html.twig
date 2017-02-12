@@ -3,17 +3,18 @@
 
 {% block title %}{{ 'sitename' | trans }} | {{ 'CreateComment.title'|trans }}{% endblock %}
 
-{% block content %}
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/bootstrapdatepicker/bootstrap-datepicker.min.css') }}" />
 {% endblock stylesheets %}
    
 {% block javascripts_body %}
     {{ parent() }}
-    <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ asset('bundles/app/bootstrapdatepicker/bootstrap-datepicker.js') }}"></script>
 {% endblock javascripts_body %}
+
+{% block content %}
 
 <div class="container">
     <div class="row">
