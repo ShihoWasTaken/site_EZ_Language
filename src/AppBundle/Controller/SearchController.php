@@ -16,7 +16,8 @@ class SearchController extends Controller
         $em         = $this->getDoctrine()->getManager();
         
         $tabPage    = $em->getRepository('AppBundle:EZFunction')->createQueryBuilder("a")
-                                                                ->select('a.id, a.name, a.french_description, a.english_description, \'function\' as type')
+                                                                ->select('c.french_label as french_category, c.english_label as english_category, a.id, a.name, a.french_description, a.english_description, \'function\' as type')
+                                                                ->join('a.category','c')
                                                                 ->where('a.name LIKE :name')
                                                                 ->setParameter('name', '%'. $searchtext .'%')
                                                                 ->getQuery()

@@ -12,7 +12,7 @@
 
                 <ul class="category_ul">
                     {% for category in categories %}
-                        <li class="category_li">{{ category.frenchLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
+                        <li class="category_li">{{  app.request.locale == 'en' ?  category.frenchLabel :  category.englishLabel }} <span class="category_number_li">{{ category.getEZFunctions()|length }}</span></li>
                     {% endfor %}
                 </ul>
 

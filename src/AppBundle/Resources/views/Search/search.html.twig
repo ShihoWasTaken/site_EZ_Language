@@ -29,7 +29,10 @@
 					<div class="result">
 						{% if element.type == "function" %}
 							<div class="result_title">
-									<a href="{{ path('app_functionShow', {'id': element.id } ) }}"><h2>{{ element.name }}</h2></a>
+								<h2>
+									<a href="{{ path('app_functionShow', {'id': element.id } ) }}">{{ element.name }}</a>
+									<span class="category">{{  app.request.locale == 'en' ?  element.french_category : element.english_category }}</span>
+								</h2>
 							</div>
 							<div class="result_content">
 								<p>{{  app.request.locale == 'en' ? element.english_description : element.french_description }}</p>
