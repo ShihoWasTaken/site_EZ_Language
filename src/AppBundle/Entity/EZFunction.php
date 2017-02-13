@@ -64,6 +64,11 @@ class EZFunction
     private $arguments;
 
     /**
+    * @ORM\OneToMany(targetEntity="Comment", mappedBy="EZFunction", cascade={"persist", "remove"}, orphanRemoval=true)
+    */
+    private $comments;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -329,4 +334,41 @@ class EZFunction
         return $this->arguments;
     }
 
+
+    /**
+     * Add comment
+     *
+     * @param \AppBundle\Entity\Comment $comments
+     *
+     * @return EZFunction
+     */
+    public function addComment(\AppBundle\Entity\Comment $comments)
+    {
+        $comments->setEZFunction($this);
+
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \AppBundle\Entity\Comment $comments
+     */
+    public function removeComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comments;
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
 }

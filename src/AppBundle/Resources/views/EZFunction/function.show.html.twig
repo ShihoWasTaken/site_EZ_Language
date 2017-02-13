@@ -15,9 +15,33 @@
     </div>
 
     <div class="row">
-        <div class=" col-md-push-3 col-md-6 boxElement animated slideInUp">
+        <div class=" col-md-push-3 col-md-6 boxElement">
             <div class="description_block">
                 {% include 'AppBundle:EZFunction:_description.html.twig' with {'function': function, 'language': language} %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-push-3 col-md-6 boxElement">
+            <h2 class="main_title">{{ 'comment.title'|trans}} ({{ function.comments|length }})</h2>
+            <div class="description_block">
+                {% include 'AppBundle:EZFunction:_commentaire.html.twig' with {'comments': function.comments, 'language': language} %}
+                 {% if app.user %}
+                   <form action="{{ path('app_functionShow', {'id': function.id } ) }}" method="post" {{ form_enctype(form) }} class="app boxComment">
+                        {{ form_widget(form._token) }}
+                        {{ form_errors(form) }}
+
+                        <div class="form-group">
+                            {{ form_row(form.comment, {'label': 'comment.add' | trans, 'attr': {'style': 'width:100%', 'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="{{ 'form.submit'|trans }}" class="btn btn-primary" />
+                        </div>
+                   </form>
+                 {% else %}
+                    {{ 'comment.message'|trans }}
+                 {% endif %}
             </div>
         </div>
     </div>

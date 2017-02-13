@@ -4,7 +4,9 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\Type\EZFunctionType;
+use AppBundle\Form\Type\CommentType;
 use AppBundle\Entity\EZFunction;
+use AppBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,11 +55,32 @@ class EZFunctionController extends Controller {
             );
         }
 
+         //Create form
+        $comment = new Comment();
+        $form = $this->get('form.factory')->create(new CommentType, $comment);
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+
+        //ADD COMMENT
+        if ($form->isValid() && $this->getUser() != null) {
+            $comment->setUser($this->getUser());
+            $comment->setEZFunction($function);
+            $comment->setPostedAt(new \DateTime());
+
+            // Save comment;
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute('app_functionShow', array('id' => $function->getId() ));
+        }
+
+
         $lang = $this->get('request')->getLocale();
 
         return $this->render('AppBundle:EZFunction:function.show.html.twig', array(
                     'function'      => $function,
-                    'language'      => $lang
+                    'language'      => $lang,
+                    'form'          => $form->createView()
         ));
     }
 
@@ -89,7 +112,6 @@ class EZFunctionController extends Controller {
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
             // Save function;
             $em->persist($function);
             $em->flush();

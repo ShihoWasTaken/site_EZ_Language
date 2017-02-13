@@ -35,11 +35,34 @@ class Comment{
      */
     protected $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="EZFunction", inversedBy="comments")
+     * @ORM\JoinColumn(name="cezfunction_id", referencedColumnName="id")
+     */
+    private $EZFunction;
+
+    
+    
     public function __construct()
     {
         // nothing special to be added
     }
 
+    /**
+    * @ORM\PrePersist
+    */
+    public function prePersistEvent()
+    {
+        $this->postedAt = new \DateTime();
+    }
+
+    /**
+    * @ORM\PreUpdate
+    */
+    public function preUpdateEvent()
+    {
+        $this->postedAt = new \DateTime();
+    }
 
     /**
      * Get id
@@ -122,5 +145,29 @@ class Comment{
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set eZFunction
+     *
+     * @param \AppBundle\Entity\EZFunction $eZFunction
+     *
+     * @return Argument
+     */
+    public function setEZFunction(\AppBundle\Entity\EZFunction $eZFunction = null)
+    {
+        $this->EZFunction = $eZFunction;
+
+        return $this;
+    }
+
+    /**
+     * Get eZFunction
+     *
+     * @return \AppBundle\Entity\EZFunction
+     */
+    public function getEZFunction()
+    {
+        return $this->EZFunction;
     }
 }

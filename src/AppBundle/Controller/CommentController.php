@@ -17,7 +17,7 @@ class CommentController extends Controller {
       }
 
       $em = $this->getDoctrine()->getManager();
-      $comments = $em->getRepository('AppBundle:Comment')->findAll();
+      $comments = $em->getRepository('AppBundle:Comment')->findBy(array(), array('id' => 'DESC'));
       return $this->render('AppBundle:Comment:comment.list.html.twig', array(
                   'comments' => $comments
       ));
@@ -55,39 +55,5 @@ class CommentController extends Controller {
                  'form' => $form->createView()
      ));
   }
-
-  /**
-   * Create Function
-   *
-   * @return
-   */
-  public function createAction() {
-
-       // build the form
-      $comment = new Comment();
-      
-      // it should be used like this, if not no need to extend from controller
-      $form = $this->createForm(new CommentType, $comment, array(
-          'locale' => $this->get('request')->getLocale()
-      ));
-
-      // handle the submit (will only happen on POST)
-        $request = $this->getRequest();
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // save the comment!
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($comment);
-            $em->flush();
-
-            return $this->redirectToRoute('app_admin_commentList');
-        }
-
-      return $this->render('AppBundle:Comment:comment.create.html.twig', array(
-                  'form' => $form->createView()
-      ));
-
-  }
-
 
 }
