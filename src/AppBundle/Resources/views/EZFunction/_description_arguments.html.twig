@@ -3,20 +3,7 @@
         <h2 class="main_title">Arguments</h2>
         <ul>
             {% set returnValue = null %}
-            {% for argument in function.getArguments %}
-                {% if argument.return %}
-                    {% set returnValue = argument %}
-                {% else %}
-                    <li>
-                        <h3>{{ argument.name }}</h3>
-                        {% if (language == "en") %}
-                            <p>{{ argument.getEnglishDescription }}</p>
-                        {% else %}
-                            <p>{{ argument.getFrenchDescription }}</p>
-                        {% endif %}
-                    </li>
-                {% endif %}
-            {% endfor %}
+            {% include 'AppBundle:EZFunction:_description_argument_value.html.twig' %}
         </ul>
         {% if returnValue %}
             <h2 class="main_title">Valeur de retour</h2>

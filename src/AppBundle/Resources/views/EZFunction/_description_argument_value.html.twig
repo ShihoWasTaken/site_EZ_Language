@@ -1,0 +1,14 @@
+{% for argument in function.getArguments %}
+    {% if argument.return %}
+        {% set returnValue = argument %}
+    {% else %}
+        <li>
+            <h3>{{ argument.name }}</h3>
+            {% if (language == "en") %}
+                <p>{{ argument.getEnglishDescription }}</p>
+            {% else %}
+                <p>{{ argument.getFrenchDescription }}</p>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}
