@@ -8,17 +8,4 @@ class CommentControllerTest extends CustomWebTestCase
     {
         $this->checkThatAdminPageIsSuccessful('/admin/comment/');
     }
-
-
-    public function testThatCommentEditIsSuccessful()
-    {
-        $this->checkThatAdminPageIsSuccessful('/admin/comment/edit');
-    }
-
-
-    public function testThatCommentCreateIsSuccessful()
-    {
-        $this->checkThatAdminPageIsSuccessful('/admin/comment/create');
-    }
-
 }
