@@ -39,6 +39,8 @@
                             <input type="submit" value="{{ 'form.submit'|trans }}" class="btn btn-primary" />
                         </div>
                    </form>
+                 {% else %}
+                    {{ 'comment.message'|trans }}
                  {% endif %}
             </div>
         </div>
