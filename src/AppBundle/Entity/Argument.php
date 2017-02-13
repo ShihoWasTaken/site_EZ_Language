@@ -197,27 +197,27 @@ class Argument
 
 
     /**
-     * Set require
+     * Set required
      *
-     * @param boolean $require
+     * @param boolean $required
      *
      * @return Argument
      */
-    public function setRequired($require)
+    public function setRequired($required)
     {
-        $this->require = $require;
+        $this->required = $required;
 
         return $this;
     }
 
     /**
-     * Get require
+     * Get required
      *
      * @return boolean
      */
     public function isRequired()
     {
-        return $this->require;
+        return $this->required;
     }
 
 

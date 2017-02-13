@@ -63,6 +63,7 @@ CreateComment.form.comment.users: 'Utilisateurs'
 comment.title: 'Comments'
 comment.add: 'Add comment'
 comment.message: 'Sign in to post a comment'
+form.required: 'Required'
 # end comments section
 # start missing data 
 missing.data:  Sorry for the time being, The database is empty
