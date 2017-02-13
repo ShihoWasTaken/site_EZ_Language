@@ -60,6 +60,7 @@ navbar.admin.comment.list: 'Comments list'
 CreateComment.title: 'Create Comment'
 CreateComment.form.comment: 'Your comment'
 CreateComment.form.comment.users: 'Utilisateurs'
+comment.title: 'Comments'
 # end comments section
 # start missing data 
 missing.data:  Sorry for the time being, The database is empty

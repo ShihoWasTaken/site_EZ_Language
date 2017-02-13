@@ -59,6 +59,7 @@ navbar.admin.comment.list: 'Liste commentaires'
 CreateComment.title: 'Créer commentaire'
 CreateComment.form.comment: 'Votre commentaire'
 CreateComment.form.comment.users: 'Utilisateurs'
+comment.title: 'Commentaires'
 # end comments section
 # start missing data 
 missing.data:  'Nous nous excusons, la base de données est actuellement vide.' 
