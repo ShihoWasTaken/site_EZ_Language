@@ -1,0 +1,31 @@
+
+{% set flag = true %}
+{% for comment in comments %}
+     <div class="beautiful_comment">
+      <div class="media">
+        {% if flag %} 
+        <div class="media-body">
+          <h4 class="media-heading custom_header"> {{ (comment.user is not null) ? comment.user.username:'' }} ({{ comment.postedAt|date('d/m/Y') }}) </h4>
+            {{ comment.comment }}
+        </div>
+        <div class="media-right media-middle">
+          <a href="{{ (comment.user is not null ) ?  path('app_admin_commentEdit', {'id': comment.id }):'#' }}">
+            <img src="{{ asset('bundles/app/images/male.png') }}" alt="{{ comment.user ? comment.user.username:'user\'s image' }}" />
+          </a>
+        </div>
+      {% set flag = false %}
+      {% else %}
+        <div class="media-left media-middle">
+          <a href="{{ (comment.user is not null ) ?  path('app_admin_commentEdit', {'id': comment.id }):'#' }}">
+            <img src="{{ asset('bundles/app/images/female.png') }}" alt="{{ comment.user ? comment.user.username:'user\'s image' }}" />
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading custom_header"> {{ (comment.user is not null) ? comment.user.username:'' }} ({{ comment.postedAt|date('d/m/Y') }}) </h4>
+            {{ comment.comment }}
+        </div>
+        {% set flag = true %}
+      {% endif %}
+      </div>
+      </div>
+{% endfor %}

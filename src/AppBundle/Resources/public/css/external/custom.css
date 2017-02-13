@@ -413,14 +413,15 @@ a{
 }
 
 .beautiful_comment{
-    width:60%;
     margin: auto;
-    color:white;
+    color:#777;
     margin-bottom: 2%;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 20px;
 }
 
 .custom_header{
-    color:white;
+    color: #777;
     font-weight: bold;
 }
 
