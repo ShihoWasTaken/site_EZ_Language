@@ -15,7 +15,7 @@ navbar.admin.function.create: 'Créer Fonction'
 navbar.admin.category: Catégorie
 navbar.admin.tutorial.list: 'Liste Tutoriel'
 navbar.admin.tutorial.create: 'Créer Tutoriel'
-navbar.admin.tutorial: null
+navbar.admin.tutorial: 'Tutoriels'
 navbar.admin.blog.list: 'Liste blogs'
 navbar.admin.blog.create: 'Créer une blog'
 form.email: Mail

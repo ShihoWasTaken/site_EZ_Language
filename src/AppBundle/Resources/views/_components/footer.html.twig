@@ -1,5 +1,11 @@
 <footer id="footer" class="text-center footer" >
-  <p> Copyright © 2016 Master 2 Angers </p>
+  <p>
+    <div class="row">
+        <div class="footer-link col-md-push-5 col-md-1"><a href="{{ url('app_about') }}" data-nav-section="about">{{ "about" | trans }}</a></div>
+        <div class="footer-link col-md-push-5 col-md-1"><a href="{{ url('app_contact') }}" data-nav-section="contact">{{ "contact" | trans }}</a></div>
+    </div>
+    Copyright © 2016 Master 2 Angers
+    </p>
   <ul class="social social-circle">
             <li> <a href="https://github.com/ezlanguage/ezlanguage">
             <i class="fa fa-lg fa-github" aria-hidden="true"></i>
