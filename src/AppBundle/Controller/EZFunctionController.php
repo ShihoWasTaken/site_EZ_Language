@@ -62,7 +62,7 @@ class EZFunctionController extends Controller {
         $form->handleRequest($request);
 
         //ADD COMMENT
-        if ($form->isValid() && $this->getUser() != null) {
+        if ($form->isValid() && $this->getUser() !== null) {
             $comment->setUser($this->getUser());
             $comment->setEZFunction($function);
             $comment->setPostedAt(new \DateTime());
