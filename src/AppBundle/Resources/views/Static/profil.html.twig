@@ -7,10 +7,10 @@
 	<div class="container">
 			<div clas="row">
 				<div class="col-md-push-3 col-md-6 white_background boxElement">
-						<img src={{grav_url}} alt="" />
-						<p><strong>{{ 'user.name'|trans }}</strong> : {{ user.username }}</p>
-						<p><strong>{{ 'user.mail'|trans }}</strong> : {{ user.email }}</p>
-						<p><strong>{{ 'user.date'|trans }}</strong> : {{ user.lastLogin|date('d/m/Y') }}</p>
+					<img src="{{ asset('bundles/app/images/male_face_128.jpg') }}" data-email="{{ user.email }}" data-size="128" class="img_gravatar" />
+					<p><strong>{{ 'user.name'|trans }}</strong> : {{ user.username }}</p>
+					<p><strong>{{ 'user.mail'|trans }}</strong> : {{ user.email }}</p>
+					<p><strong>{{ 'user.date'|trans }}</strong> : {{ user.lastLogin|date('d/m/Y') }}</p>
 				</div>
 			</div>
 		</div>

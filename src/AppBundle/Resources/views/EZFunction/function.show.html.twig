@@ -40,7 +40,7 @@
                         </div>
                    </form>
                  {% else %}
-                    {{ 'comment.message'|trans }}
+                    <a href="{{ path('fos_user_security_login') }}" class="btn btn-default"> {{ 'comment.message'|trans }}</a>
                  {% endif %}
             </div>
         </div>
