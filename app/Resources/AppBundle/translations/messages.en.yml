@@ -61,6 +61,7 @@ CreateComment.title: 'Create Comment'
 CreateComment.form.comment: 'Your comment'
 CreateComment.form.comment.users: 'Utilisateurs'
 comment.title: 'Comments'
+comment.add: 'Add comment'
 # end comments section
 # start missing data 
 missing.data:  Sorry for the time being, The database is empty

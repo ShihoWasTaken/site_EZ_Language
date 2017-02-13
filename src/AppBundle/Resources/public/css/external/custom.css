@@ -429,4 +429,12 @@ a{
   max-width: 10%;
 }
 
+.boxComment{
+   background: #DDDDDD;
+   padding: 25px 25px 5px 25px;
+}
 
+.boxComment textarea{
+   background: #FFF;
+   min-height: 200px;
+}

@@ -129,10 +129,10 @@ app_blogShow:
 
 ## start comments section ##
 
-app_admin_commentCreate:
-    path:     /admin/comment/create
+app_commentCreate:
+    path:     /comment/create
     defaults: { _controller: AppBundle:Comment:create}
-    methods: GET|POST
+    methods: POST
 
 app_admin_commentList:
     path:     /admin/comment/
