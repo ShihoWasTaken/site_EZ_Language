@@ -35,7 +35,7 @@ home.bloc1.description: 'Discover our detailed tutorials and learn how to progra
 home.bloc1.submit: start
 home.bloc2: Documentation
 home.bloc2.description: 'This section provides detailed informations about the key features of the EZ language and accessible features.'
-home.bloc2.submit: 'Click here'
+home.bloc2.submit: 'Read'
 home.bloc3: 'About language'
 home.bloc3.description: 'EZ language is a compiled programming language. Its main trump, is its clear syntax.'
 user.name: 'User name'
