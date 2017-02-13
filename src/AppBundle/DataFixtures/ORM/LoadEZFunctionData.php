@@ -50,6 +50,7 @@ class LoadEZFunctionData extends AbstractFixture implements OrderedFixtureInterf
             $argument->setFrenchDescription("Description en francais");
             $argument->setName("Argument 1");
             $argument->setReturn(false);
+            $argument->setRequired(false);
             $argument->setType($this->getReference('functionType5'));
             $EZFunction->addArgument($argument);
             
@@ -59,6 +60,7 @@ class LoadEZFunctionData extends AbstractFixture implements OrderedFixtureInterf
             $argument2->setFrenchDescription("Description en francais 2 ");
             $argument2->setName("Argument 2");
             $argument2->setReturn(false);
+            $argument2->setRequired(false);
             $argument2->setType($this->getReference('functionType4'));
             $EZFunction->addArgument($argument2);
             
@@ -68,6 +70,7 @@ class LoadEZFunctionData extends AbstractFixture implements OrderedFixtureInterf
             $argument3->setFrenchDescription("Description en francais 3 - valeur de retour");
             $argument3->setName("Argument 3 - retour ");
             $argument3->setReturn(true); 
+            $argument3->setRequired(false);
             $argument3->setType($this->getReference('functionType2'));
             $EZFunction->addArgument($argument3);
             

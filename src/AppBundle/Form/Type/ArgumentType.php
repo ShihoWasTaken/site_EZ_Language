@@ -21,6 +21,10 @@ class ArgumentType extends AbstractType
                 ->add('return', CheckboxType::class,  array(
                         'required' => false
                     ))
+                ->add('required', CheckboxType::class,  array(
+                        'required' => false,
+                        'data'     => true
+                    ))
                 ->add('type', EntityType::class , array(
                     'class' => 'AppBundle:FunctionType',
                     'choice_label' => 'name'
