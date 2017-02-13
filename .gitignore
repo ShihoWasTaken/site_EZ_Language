@@ -14,3 +14,6 @@
 /app/config/deploy.rb
 /.sonar/*
 /web/config.php
+database.sh
+launch_server.sh
+translate.sh

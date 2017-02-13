@@ -62,6 +62,7 @@ CreateComment.form.comment.users: 'Utilisateurs'
 comment.title: 'Commentaires'
 comment.add: 'Ajouter un commentaire'
 comment.message: 'Connectez-vous pour poster un commentaire'
+form.required: 'Obligatoire'
 # end comments section
 # start missing data 
 missing.data:  'Nous nous excusons, la base de données est actuellement vide.' 
