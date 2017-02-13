@@ -76,11 +76,37 @@ class EZFunctionController extends Controller {
 
 
         $lang = $this->get('request')->getLocale();
+        $aArgs = array();
+        $reArg = "";
+
+        foreach($function->getArguments() as $argument)
+        {
+            if($argument->isReturn())
+            {
+                $reArg = $argument->getType()->getName();
+            }
+            else
+            {
+                $aArgs = array_merge($aArgs, array($argument->getName() . " is " . $argument->getType()->getName()));
+            }
+        }
+
+        if(empty($reArg))
+        {
+            $str_code = "procedure " . $function->getName() . "(" . join(', ', $aArgs) . ")";
+        }
+        else
+        {
+            $str_code = "function " . $function->getName() . "(" . join(', ', $aArgs) . ") return " . $reArg;
+        }
 
         return $this->render('AppBundle:EZFunction:function.show.html.twig', array(
                     'function'      => $function,
                     'language'      => $lang,
-                    'form'          => $form->createView()
+                    'form'          => $form->createView(),
+                    'aArgs'         => $aArgs,
+                    'reArg'         => $reArg,
+                    'str_code'      => $str_code
         ));
     }
 
