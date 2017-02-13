@@ -102,13 +102,8 @@ class StaticController extends Controller
         }
         else
         {
-            $default = "http://sentireconcepts.com/images/male_face_128.jpg";
-            $size = 40;
-            $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->getEmail() ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
             return $this->render('AppBundle:Static:profil.html.twig', array(
-                'user'      => $user,
-                'grav_url'  => $grav_url,
+                'user'      => $user
             ));
         }
     }
