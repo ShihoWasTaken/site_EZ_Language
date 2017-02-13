@@ -37,6 +37,11 @@ app_admin_pageEdit:
 
 app_admin_functionList:
     path:     /admin/function/
+    defaults: { _controller: AppBundle:EZFunction:adminList }
+    methods: GET
+
+app_function_list:
+    path:     /function/
     defaults: { _controller: AppBundle:EZFunction:list }
     methods: GET
 
@@ -76,6 +81,11 @@ app_admin_category:
     
 app_admin_tutorialList:
     path:     /admin/tutorial/
+    defaults: { _controller: AppBundle:Tutorial:adminList }
+    methods: GET
+
+app_tutorial_list:
+    path:     /tutorial/
     defaults: { _controller: AppBundle:Tutorial:list }
     methods: GET
     

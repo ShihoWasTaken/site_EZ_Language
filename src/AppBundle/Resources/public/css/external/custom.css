@@ -438,3 +438,34 @@ a{
    background: #FFF;
    min-height: 200px;
 }
+
+.badge
+{
+    border-radius: 0;
+    padding: 10px;
+}
+
+.badge-1
+{
+    background-color: firebrick;
+}
+
+.badge-2
+{
+    background-color: aquamarine;
+}
+
+.badge-3
+{
+    background-color: greenyellow;
+}
+
+.badge-4
+{
+    background-color: #f1a417;
+}
+
+.badge-5
+{
+    background-color: navajowhite;
+}

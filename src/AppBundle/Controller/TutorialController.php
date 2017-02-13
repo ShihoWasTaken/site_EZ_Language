@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class TutorialController extends Controller
 {
-    public function listAction(Request $request){
+    public function adminListAction(Request $request){
         // Variable
         $page        = $request->get('page');
 
@@ -27,12 +27,36 @@ class TutorialController extends Controller
         );
 
 
+        return $this->render('AppBundle:Tutorial:tutorial.adminList.html.twig', array(
+            'tutorials' => $pagination,
+            'lang'      => $lang
+        ));
+    }
+
+    public function listAction(Request $request){
+        // Variable
+        $page        = $request->get('page');
+
+        $em          = $this->getDoctrine()->getManager();
+        $tutorials   = $em->getRepository('AppBundle:Tutorial')->findAll();
+
+        // Lang
+        $lang = $this->get('request')->getLocale();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tutorials,
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
+
+
         return $this->render('AppBundle:Tutorial:tutorial.list.html.twig', array(
             'tutorials' => $pagination,
             'lang'      => $lang
         ));
-    } 
-    
+    }
+
     public function showAction($id){
         
         $em = $this->getDoctrine()->getManager();

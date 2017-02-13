@@ -12,17 +12,18 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>{{ 'list.code'|trans }}</th>
                         <th>{{ 'list.name'|trans }}</th>
-                        <th>{{ 'category.title'|trans }}</th>
-                        <th></th>
+                        <th>{{ 'list.action'|trans }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for function in functions %}
                         <tr>
+                            <td>{{ function.id}}</td>
                             <td>{{ function.name }}</td>
-                            <td><span class="badge badge-{{ function.category.id }}">{{  app.request.locale == 'en' ? function.category.englishLabel: function.category.frenchLabel }}</span></td>
-                            <td><a class="btn btn-default" href="{{ path('app_functionShow', {'id': function.id } ) }}"><i class="fa fa-eye"></i> {{ 'home.bloc2.submit'|trans }}</a></td>
+                            <td><a class="btn btn-default" href="{{ path('app_admin_functionEdit', {'id': function.id } ) }}"><i class="fa fa-pencil"></i></a>
+                            <button class="btn btn-default deleteFunction" data-id="{{ function.id  }}" ><i class="fa fa-times"></i></button></td>
                         </tr>
                     {% endfor %}
                 </tbody>

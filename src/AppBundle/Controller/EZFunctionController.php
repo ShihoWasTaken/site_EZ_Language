@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EZFunctionController extends Controller {
 
-    public function listAction(Request $request) {
+    public function adminListAction(Request $request) {
         // Variable
         $page        = $request->get('page');
 
@@ -29,12 +29,34 @@ class EZFunctionController extends Controller {
             20 // limit per page
         );
 
-        return $this->render('AppBundle:EZFunction:function.list.html.twig', array(
+        return $this->render('AppBundle:EZFunction:function.adminList.html.twig', array(
               'functions' => $pagination,
               'lang' => $lang
         ));
     }
 
+    public function listAction(Request $request) {
+        // Variable
+        $page        = $request->get('page');
+
+        $em          = $this->getDoctrine()->getManager();
+        $tabFunction = $em->getRepository('AppBundle:EZFunction')->findAll();
+
+        // Lang
+        $lang = $this->get('request')->getLocale();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $tabFunction,
+            $request->query->getInt('page', $page || 1 ), //page number
+            20 // limit per page
+        );
+
+        return $this->render('AppBundle:EZFunction:function.list.html.twig', array(
+            'functions' => $pagination,
+            'lang' => $lang
+        ));
+    }
 
     /**
      * Show Function
