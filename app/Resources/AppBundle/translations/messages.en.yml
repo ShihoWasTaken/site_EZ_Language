@@ -99,3 +99,4 @@ EditBlog.title: 'Edit blog'
 CreatBlog.title: 'Create Blog'
 blog.user: Author
 blog.date: Date
+return.value: 'Return value'

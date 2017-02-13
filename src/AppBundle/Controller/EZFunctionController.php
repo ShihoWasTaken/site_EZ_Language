@@ -101,11 +101,14 @@ class EZFunctionController extends Controller {
         $aArgs = array();
         $reArg = "";
 
+        $returnValue = null;
         foreach($function->getArguments() as $argument)
         {
             if($argument->isReturn())
             {
                 $reArg = $argument->getType()->getName();
+                $returnValue = $argument;
+                $function->removeArgument($argument);
             }
             else
             {
@@ -128,7 +131,8 @@ class EZFunctionController extends Controller {
                     'form'          => $form->createView(),
                     'aArgs'         => $aArgs,
                     'reArg'         => $reArg,
-                    'str_code'      => $str_code
+                    'str_code'      => $str_code,
+                    'returnValue'   => $returnValue
         ));
     }
 

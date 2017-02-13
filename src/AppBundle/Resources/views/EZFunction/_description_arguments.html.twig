@@ -1,21 +1,21 @@
-{% if function.getArguments|length > 0 %}
-    <div class="arguments">
+<div class="arguments">
+    {% if function.getArguments|length > 0 %}
         <h2 class="main_title">Arguments</h2>
         <ul>
-            {% set returnValue = null %}
             {% include 'AppBundle:EZFunction:_description_argument_value.html.twig' %}
         </ul>
-        {% if returnValue %}
-            <h2 class="main_title">Valeur de retour</h2>
-            <ul>
-                <li><h3>{{ returnValue.type.name }}</h3>
-                    {% if (language == "en") %}
-                        <p>{{ returnValue.getEnglishDescription }}</p>
-                    {% else %}
-                        <p>{{ returnValue.getFrenchDescription }}</p>
-                    {% endif %}
-                </li>
-            </ul>
-        {% endif %}
-    </div>
-{% endif %}
+    {% endif %}
+    {% if returnValue %}
+        <h2 class="main_title">{{ 'return.value'|trans }}</h2>
+        <ul>
+            <li><h3>{{ returnValue.type.name }}</h3>
+                {% if (language == "en") %}
+                    <p>{{ returnValue.getEnglishDescription }}</p>
+                {% else %}
+                    <p>{{ returnValue.getFrenchDescription }}</p>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
+</div>
+

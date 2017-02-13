@@ -100,3 +100,4 @@ CreatBlog.title: 'Créer un blog'
 showblog.title: 'Afficher les blogs'
 blog.user: 'Auteur'''
 blog.date: Date
+return.value: 'Valeur de retour'
