@@ -17,3 +17,4 @@
 database.sh
 launch_server.sh
 translate.sh
+/app/build/
