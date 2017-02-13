@@ -12,7 +12,7 @@ use AppBundle\Entity\Article as Article;
 class ArticleBlog extends Article
 {
      /**
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      */
     protected $user;
 

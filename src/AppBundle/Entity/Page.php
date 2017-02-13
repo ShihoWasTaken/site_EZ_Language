@@ -39,7 +39,7 @@ class Page
     private $english_text;
 
     /**
-    * @ORM\OneToOne(targetEntity="User")
+    * @ORM\ManyToOne(targetEntity="User")
      */
     private $user;
 
