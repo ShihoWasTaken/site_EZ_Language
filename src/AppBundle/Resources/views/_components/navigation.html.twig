@@ -11,8 +11,8 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						{% include 'AppBundle:_components:admin_navigation.html.twig' %}
-						<li class="{{currentPath == 'app_tutorial_list' ? 'active'}}"><a data-nav-section="login" href="{{ path('app_tutorial_list') }}"><span>{{ 'navbar.admin.function' | trans }}</span></a></li>
-						<li class="{{currentPath == 'app_function_list' ? 'active'}}"><a data-nav-section="login" href="{{ path('app_function_list') }}"><span>{{ 'navbar.admin.tutorial' | trans }}</span></a></li>
+						<li class="{{currentPath == 'app_tutorial_list' ? 'active'}}"><a data-nav-section="login" href="{{ path('app_tutorial_list') }}"><span>{{ 'navbar.admin.tutorial' | trans }}</span></a></li>
+						<li class="{{currentPath == 'app_function_list' ? 'active'}}"><a data-nav-section="login" href="{{ path('app_function_list') }}"><span>{{ 'navbar.admin.function' | trans }}</span></a></li>
 						{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 							<li class="{{currentPath == 'fos_user_registration_register' ? 'active'}}"><a data-nav-section="register" href="{{ path('fos_user_registration_register') }}"><span>{{ 'navbar.register' | trans }}</span></a></li>
 							<li class="{{currentPath == 'fos_user_security_login' ? 'active'}}"><a data-nav-section="login" href="{{ path('fos_user_security_login') }}"><span>{{ 'navbar.login' | trans }}</span></a></li>
