@@ -48,6 +48,21 @@ class Comment{
         // nothing special to be added
     }
 
+    /**
+    * @ORM\PrePersist
+    */
+    public function prePersistEvent()
+    {
+        $this->postedAt = new \DateTime();
+    }
+
+    /**
+    * @ORM\PreUpdate
+    */
+    public function preUpdateEvent()
+    {
+        $this->postedAt = new \DateTime();
+    }
 
     /**
      * Get id

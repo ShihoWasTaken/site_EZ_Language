@@ -27,7 +27,7 @@
             <div class="description_block">
                 {% include 'AppBundle:EZFunction:_commentaire.html.twig' with {'comments': function.comments, 'language': language} %}
                  {% if app.user %}
-                   <form action="{{ path('app_commentCreate') }}" method="post" {{ form_enctype(form) }} class="app boxComment">
+                   <form action="{{ path('app_functionShow', {'id': function.id } ) }}" method="post" {{ form_enctype(form) }} class="app boxComment">
                         {{ form_widget(form._token) }}
                         {{ form_errors(form) }}
 

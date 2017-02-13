@@ -60,7 +60,7 @@ app_admin_functionRemove:
 app_functionShow:
     path:     /function/{id}
     defaults: { _controller: AppBundle:EZFunction:show }
-    methods: GET
+    methods: GET|POST
     requirements:
         id: \d+
 
@@ -128,12 +128,6 @@ app_blogShow:
     methods: GET
 
 ## start comments section ##
-
-app_commentCreate:
-    path:     /comment/create
-    defaults: { _controller: AppBundle:Comment:create}
-    methods: POST
-
 app_admin_commentList:
     path:     /admin/comment/
     defaults: { _controller: AppBundle:Comment:list}
