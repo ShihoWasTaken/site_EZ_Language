@@ -59,6 +59,11 @@ class Argument
      */
     private $return;
 
+     /**
+     * @ORM\Column(name="IsRequired", type="boolean")
+     */
+    private $required;
+
     /**
      * Get id
      *
@@ -189,6 +194,32 @@ class Argument
     {
         return $this->return;
     }
+
+
+    /**
+     * Set required
+     *
+     * @param boolean $required
+     *
+     * @return Argument
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+
+        return $this;
+    }
+
+    /**
+     * Get required
+     *
+     * @return boolean
+     */
+    public function isRequired()
+    {
+        return $this->required;
+    }
+
 
     /**
      * Set type
