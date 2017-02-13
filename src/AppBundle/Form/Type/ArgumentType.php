@@ -22,7 +22,8 @@ class ArgumentType extends AbstractType
                         'required' => false
                     ))
                 ->add('required', CheckboxType::class,  array(
-                        'required' => false
+                        'required' => false,
+                        'data'     => true
                     ))
                 ->add('type', EntityType::class , array(
                     'class' => 'AppBundle:FunctionType',

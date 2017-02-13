@@ -5,7 +5,11 @@
     {% if argument.return %}
         {% set reArg = argument.type.name %}
     {% else %}
-        {% set aArgs = aArgs|merge([argument.name ~ " is " ~ argument.type.name]) %}
+        {% if argument.required %}
+            {% set aArgs = aArgs|merge([argument.name ~ " is " ~ argument.type.name]) %}
+        {% else %}
+            {% set aArgs = aArgs|merge(["[" ~ argument.name ~ " is " ~ argument.type.name ~ "]" ]) %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 {% if reArg == "" %}
