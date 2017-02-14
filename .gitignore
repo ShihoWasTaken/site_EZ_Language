@@ -10,8 +10,6 @@
 /vendor/
 /bin/
 /composer.phar
-/app/config/parameters_prod.yml
-/app/config/deploy.rb
 /.sonar/*
 /web/config.php
 database.sh
