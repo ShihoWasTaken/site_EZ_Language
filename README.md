@@ -8,24 +8,24 @@ Nous utilisons Insight de Sensiolabs afin d'améliorer la qualité de notre code
 Le site est disponible en anglais et en français.
 La version online est disponible [ici](http://ezlanguage.onetrickporo.com/fr/)
 
-Projet crée le 18 Septembre 2016.
+Projet crée le 18 Septembre 2016 par la promotion Master 2 SILI 2016-2017.
 
-Developers
+Notre équipe
 ------
 ###### Back-end
 [<img alt="Kenny GUIOUGOU" src="https://avatars2.githubusercontent.com/u/16425377" width="140">](https://github.com/ShihoWasTaken) |  [<img alt="Adrien CASELLES" src="https://avatars0.githubusercontent.com/u/22172746" width="140">](https://github.com/adrien3) |
 -------------------------------------|----------------------------------------|----------------------|
-[Kenny GUIOUGOU / ShihoWasTaken](https://github.com/ShihoWasTaken) | [Adrien CASELLES / adrien3](https://github.com/adrien3) |
+[Kenny GUIOUGOU    ShihoWasTaken](https://github.com/ShihoWasTaken) | [Adrien CASELLES    adrien3](https://github.com/adrien3) |
 
 ###### Front-end
 [<img alt="Enzo CHEVALLIER" src="https://avatars1.githubusercontent.com/u/6780510" width="140">](https://github.com/Phobie53) |  [<img alt="Mathieu BOURBON" src="https://avatars2.githubusercontent.com/u/14941924" width="140">](https://github.com/Mathieubourbon) | [<img alt="Sara ZALARHE" src="https://avatars0.githubusercontent.com/u/17701146" width="140">](https://github.com/szalarhe) |  [<img alt="Hamza ROUINEB" src="https://avatars3.githubusercontent.com/u/17543310" width="140">](https://github.com/devlifealways) |  [<img alt="Hossam BENHOUD" src="https://avatars1.githubusercontent.com/u/11867755" width="140">](https://github.com/hbenhoud) |
 -------------------------------------|----------------------------------------|----------------------|----------------------------------------|----------------------|----------------------|
-[Enzo CHEVALLIER / Phobie53](https://github.com/Phobie53) | [Mathieu BOURBON / Mathieubourbon](https://github.com/Mathieubourbon) | [Sara ZALARHE / szalarhe](https://github.com/szalarhe) | [Hamza ROUINEB / devlifealways](https://github.com/devlifealways) | [Hossam BENHOUD / hbenhoud](https://github.com/hbenhoud) |
+[Enzo CHEVALLIER    Phobie53](https://github.com/Phobie53) | [Mathieu BOURBON    Mathieubourbon](https://github.com/Mathieubourbon) | [Sara ZALARHE    szalarhe](https://github.com/szalarhe) | [Hamza ROUINEB    devlifealways](https://github.com/devlifealways) | [Hossam BENHOUD    hbenhoud](https://github.com/hbenhoud) |
 
 ###### Traduction
 [<img alt="Morgane TROYSI" src="https://avatars1.githubusercontent.com/u/15076317" width="140">](https://github.com/mtroysi) |  [<img alt="Fatima AMZIL" src="https://avatars1.githubusercontent.com/u/11032715" width="140">](https://github.com/famzil) |
 -------------------------------------|----------------------------------------|----------------------|
-[Morgane TROYSI / mtroysi](https://github.com/mtroysi) | [Fatima HAMZIL / famzil](https://github.com/famzil) |
+[Morgane TROYSI    mtroysi](https://github.com/mtroysi) | [Fatima HAMZIL    famzil](https://github.com/famzil) |
 
 ### Installation en envioremment de développement
 
